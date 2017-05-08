@@ -144,7 +144,7 @@
             }
 
                 a.btn.btn-blue:hover {
-                    background-color: #4F87A2;
+                    background-color: #58b5ef;
                     border-color: rgba(0,0,0,0.5);
                 }
                 
@@ -168,6 +168,25 @@
                 }
                 
                 a.btn.btn-red:active {
+                    background-color: #B32C24;
+                    border-color: rgba(0,0,0,0.9);
+                }
+
+                 /* green button */
+
+            a.btn.btn-green {
+                background-color: #E48681;
+                border-color: rgba(0,0,0,0.3);
+                text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+                color: #FFF;
+            }
+
+                a.btn.btn-green:hover {
+                    background-color: #DA4F49;
+                    border-color: rgba(0,0,0,0.5);
+                }
+                
+                a.btn.btn-green:active {
                     background-color: #B32C24;
                     border-color: rgba(0,0,0,0.9);
                 }
@@ -295,11 +314,9 @@
                                 <td valign="middle" style="text-align: center; padding: 40px; mso-height-rule: exactly; line-height: 15px; color: #ffffff;">
                                     <%= image_tag @party.user.profile.image.url(:large), :width => "50", :height => "60", :style => "border-width:0; max-width:50px;height:auto; max-height:60px;", :alt => "", align: "left" %>&nbsp;<h2 align="left" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%= @party.user.name %></h2><br />
 
-                                     <h3 style="font-family: 'Courgette', serif; font-size: 38px; font-weight: bold; color: red">Welcome to this occassion Lets have some fun !!! </h3><br />
+                                     <h3 style="font-family: 'Handlee', serif; font-size: 38px; font-weight: bold; color: black">Welcome to this occassion. <br /><br /> Lets have some fun !!! </h3><br />
 
                                 <h3 style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;">Date:&nbsp; <%= localize(@party.date, format: :long) %><br /><br /><br /> Venue:&nbsp; <%= @party.venue %></h3>
-
-                                    <br>
 
                                    <h3 style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%= @party.message %><br />
                                       <br />R S V P-BY:&nbsp; <%= localize(@party.rsvp_by, format: :long) %></h3>
@@ -329,7 +346,7 @@
                                            
                                             <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
                                                 <tr class="hot-container">
-                                                   <h2><strong style="color:#111111;" align="center">R S V P</strong></h2>
+                                                   <h2 align="center"><strong style="color:#111111;">R S V P</strong></h2>
 
                                                    <p>Reserve a space for this occasion by click the botton below. Intimate your intention of either attending or not.</p><br />
 
@@ -357,7 +374,7 @@
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
                                         <td dir="ltr" valign="top" style="font-family: "Lucida Console", Courier, monospace; font-size: 25px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 0; text-align: right;" class="center-on-narrow">
-                                            <h2><strong style="color:#111111;">SOCIALIZE WITH OTHER GUESTS</strong></h2>
+                                            <h2><strong style="color:#111111;">GUEST POSTS</strong></h2>
                                              <p>Share all pre and post occasion pictures or even general post. Interact with other guest and the host with regards to the occasion and other things as the case may be.</p><br />
 
                                             <%= link_to "Post A Picture", @visitor_url, :class => "btn btn-red" %>
