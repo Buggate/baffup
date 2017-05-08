@@ -1,0 +1,26 @@
+   <% current_user.parties.each do |party| %>
+
+   <div class="col-lg-3 centered">
+
+
+      <div class="pull-left">
+
+        <%= image_tag(party.picture.url(:large), alt: "", :weight => "60", :height => "60") %>
+       
+
+      </div>&nbsp; &nbsp;
+
+       <div class="media-body">
+          
+          <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp; &nbsp;<%= link_to("Send your Invitation", party_path(party)) %><br>
+                                                    
+            <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp; &nbsp;<%= link_to("Occassion Albums", catalogues_path(:party_id => party.id) )%></p>
+                                                  
+       </div>
+
+       </div>
+
+  <% end %>  
+       
+
+

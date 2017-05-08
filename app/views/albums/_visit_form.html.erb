@@ -1,0 +1,43 @@
+  <%= simple_form_for([@visitor, @album, @visitor.albums.build]) do |f| %>
+   
+             <%= f.hidden_field :visitor_id, :value => @visitor.id %>
+             <%= f.hidden_field :party_id, :value => @visitor.party.id %>
+
+           <div class="form-group">
+
+             <a class="pull-left" href="#" >
+
+                <%= image_tag(@visitor.user.profile.image.url(:thumb), :weight => "60", :height => "60") %><br /><br />
+
+                <p style="font-family: 'Handlee', serif; font-size: 20px; font-weight: bold; color: red;"><%= @visitor.user.name %></p>
+
+              </a> <br /><br />&nbsp;&nbsp;&nbsp;
+              </div><br><br />
+              
+              <br />
+            <div class="form-group" style="font-family: 'Courgette', serif; font-size: 18px; font-weight: bold; color: black;" >
+
+
+                 <%= f.input :picture, as: :file, label: false %>
+
+            </div><br />
+
+            <div class="form-group" style="font-family: 'Courgette', serif; font-size: 18px; font-weight: bold; color: black;" >
+
+
+                <%= f.input :caption, label: 'Tell us about this Picture', wrapper_html: { class: 'username' } %>
+
+            </div><br />
+
+
+              <div class="group" style="font-family: 'Courgette', serif; font-size: 18px;">
+
+                <%= f.submit %>
+
+                           
+
+          </div><br />
+ 
+              
+     
+   <% end %>

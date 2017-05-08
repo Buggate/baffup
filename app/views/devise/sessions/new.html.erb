@@ -1,0 +1,69 @@
+ <div class="login-wrap">
+  <div class="login-html">
+    
+    <div class="login-form">
+
+        <div class="lock"></div>
+
+           
+             
+        <div class="login-options" style="font-family: 'Handlee', serif; font-size: 38px; font-weight: bold; color: red "><%= t('.sign_in', :default => "Sign in") %></div>
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
+
+        <div class="group">
+
+              <label for="user-email" class="label" style="font-size: 18px;" >Email</label>
+
+               <%= f.email_field :email, autofocus: true, class: "input" %>
+        </div>
+
+         <div class="group">
+
+              <label for="user-password_confirmation" class="label" style="font-size: 18px;" >Password</label>
+
+              <%= f.password_field :password, autocomplete: "off", class: "input" %>
+              
+          </div>
+
+        <div class="group">
+
+          <% if devise_mapping.rememberable? %>
+             <%= f.label :remember_me do %>
+                <%= f.check_box :remember_me %> <%= t('.remember_me', :default => "Remember me") %>
+              <% end %>
+
+          <% end %>
+
+        </div>  
+
+            <div class="group" style="font-family: 'Handlee', serif; font-size: 18px;">
+            <%= f.submit t('.sign_in', :default => "Sign in"), class: "button" %>
+
+          </div><br />
+
+        <% end %>
+  
+          
+        <div class="account">
+
+          <div align="center" style="font-family: 'Handlee', serif; font-size: 28px; font-weight: bold; " ><%= link_to "Not Registered yet? SIGN UP! ", new_user_registration_path %></div><br /><br />
+          
+          <div align="center" style="font-weight: bold;" ><a href="/users/auth/facebook" type="button" class="btn btn-primary" ><img src="/facebook.png" alt=""/>&nbsp;&nbsp;&nbsp;<i>Sign In with Facebook</i><div class="clear"></div></a></div><br />
+
+          <div align="center" style="font-weight: bold;"><a href="/users/auth/google_oauth2" type="button" class="btn btn-danger" ><img src="/gplus.png" alt=""/>&nbsp;&nbsp;&nbsp;<i>Sign In with Google+</i><div class="clear"></div></a></div><br />
+
+          <div align="center" style="font-weight: bold;"><a href="/users/auth/twitter" type="button" class="btn btn-info" ><img src="/twitter.png" alt=""/>&nbsp;&nbsp;&nbsp;<i>Sign In with Twitter</i><div class="clear"></div></a></div><br /><br />
+
+          
+        </div>
+       
+
+          <div align="center"><%= render "devise/shared/links", :style => "font-family: 'Sacramento', serif; font-size: 28px; font-weight: bold; color: black " %></div>
+
+
+</div>
+
+ </div>
+
+  </div>

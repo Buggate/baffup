@@ -1,0 +1,33 @@
+ <div class="well well-sm" >
+
+    <h3 style="font-family: 'Averia+Serif+Libre', serif; font-size: 28px; color: grey">Add more details for your Occassion</h3><br /> 
+
+	  <div class="6u 12u$(xsmall)" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+	     <%= f.input :title, :label => 'TITLE', placeholder: 'eg: John Bull Birthday Party.' %>
+	  </div>   
+	  
+   <br />
+
+
+	 <div class="6u 12u$(xsmall)" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+	  <%= f.input :date, :label => 'DATE', wrappers: :horizontal_select_date, as: :date, start_year: Date.today.year,
+	                              end_year: Date.today.year + 12,
+	                              order: [:day, :month, :year] %>
+
+	</div>
+
+	  <br />
+
+
+
+	 <div class="6u 12u$(xsmall)" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+	 
+	 <%= f.input :message, :input_html => { rows: 5}, :label => 'MESSAGE', :label_html => { :class => 'textarea' } %>
+
+	</div>
+
+	
+
+</div>
+
+

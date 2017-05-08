@@ -1,0 +1,31 @@
+<div class="top-1">
+                    <h6><strong>R S V P</strong> by guests:</h6>
+</div><br>
+
+    <% if @visitor != @party.visitors.first  %> 
+
+    <h5><b><%= render 'reservations/form'  %></b></h5>
+
+
+
+      
+
+           <!--/#Our-Team-->
+
+    
+
+    <% else @visitor = @party.visitors.first %>
+
+
+    
+    
+
+
+           <%= link_to("#{@party.reservations.count} R S V P", reservations_path)  %><br>
+          
+
+<br>
+       <%= render @party.reservations %>
+
+
+     <% end %>   

@@ -1,0 +1,13 @@
+
+<%= simple_form_for(@party, multipart: true) do |f| %>
+
+
+  <% if params[:all].nil? %>
+    <%= render 'parties/steps/current_step', f: f %>
+  <% else %>
+    <%= render 'parties/steps/all_steps', f: f %>
+  <% end %>
+<% end %>
+
+
+

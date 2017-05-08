@@ -1,0 +1,51 @@
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header" >
+      <a class="navbar-brand" href="#" ><h2 style="font-family: 'Courgette', serif; font-size: 38px; font-weight: bold; color: red">Album</h2></a>
+  </div>
+</nav>
+
+<%= render 'catalogues/form' %>
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-lg-12 col-lg-offset-1">
+      <div class="well">
+        <h4 style="font-family: 'Handlee', serif; font-size: 28px; font-weight: bold;">Catalogue</h4><hr>
+        <div class="row">
+          <div class="col-lg-12">
+            <%= form_tag '/delete_catalogue', method: :delete do %>
+              <%= submit_tag 'Delete', id: 'delete', class: 'btn btn-danger', disabled: @catalogues.empty? %>
+              <br><br>
+              <div class="row">
+                <div id="media-contents" class="col-lg-12">
+                  <% if @catalogues.empty? %>
+                    <h5 id="no-media" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;">Empty Catalogue </h5>
+                  <% else %>
+                    <% @catalogues.each do |catalogue| %>
+                      <div class="col-lg-3">
+                        <div class="thumbnail">
+                          <%= image_tag catalogue.file_name.url %>
+                          <div class="caption">
+                            <p>
+                              <%= check_box_tag 'catalogues[]', catalogue.id %>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-lg-1">
+            <%= link_to 'Delete All', delete_all_path, method: :delete, id: 'delete-all', class: 'btn btn-danger', :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold; color: black", disabled: @catalogues.empty? %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'View Your Occasion Album', visitor_catalogues_register_path(:visitor_id => @party.visitors.first.id, :party_id => @party.id), :type => "button", :class => "btn btn-success", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold; color: black"  %>

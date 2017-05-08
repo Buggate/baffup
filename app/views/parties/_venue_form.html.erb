@@ -1,0 +1,14 @@
+<div class="well">
+
+
+	 <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: red">
+
+	   <%= f.input :venue, :input_html => { :style=> 'width: 420px', :rows => 3}, :label => 'Change Venue:', :label_html => { :class => 'text' } %>
+
+	</div>   
+
+		<%= button_tag(type: 'submit', class: "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black;") do %>
+		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Venue
+		  <% end %>
+
+</div>

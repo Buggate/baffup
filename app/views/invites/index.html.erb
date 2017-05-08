@@ -1,0 +1,79 @@
+<div class="page_wrapper">
+
+
+ 
+ 
+
+
+  <%= link_to("My Groups", {:controller => 'groups', :action => 'index', :party_id => @group.party_id}, :class => 'back-link') %>
+
+
+
+  
+
+
+   <br>
+
+    <%= link_to("New Guest with Email", {:action => 'new', :group_id => @group.id}, :class => 'action new') %><br>
+
+      
+  
+    
+     
+
+
+      </div>
+
+      <div class="page_wrapper">
+    <div class="panel panel-default">
+       <div class="panel-body">
+
+        
+           <table>
+
+             <thead>
+                <tr>
+                  <th>Group</th>
+                  <th>Guest</th>
+                </tr>
+            </thead><br>
+
+           <tbody>
+              <% @group.invites.each do |invite| %>
+
+              <tr>
+                  <th><%= invite.group.name %></th>
+                  <th><%= invite.email %></th><br>
+                  <td class="date"><%= invite.created_at.strftime("%B, %d, %Y") %></td>
+              </tr>
+
+               <% end %>
+
+
+           </tbody>
+
+
+            
+
+         </table>
+          
+  
+
+
+    </div>
+
+    </div>
+
+
+
+    
+
+
+
+</div>
+    
+
+
+
+
+

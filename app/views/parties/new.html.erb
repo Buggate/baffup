@@ -1,0 +1,25 @@
+
+<div class="msf-container">
+	        <div class="container">
+	        	<div class="row">
+	                <div class="col-sm-12 msf-title">
+
+
+	             
+
+	          <%= simple_form_for(:party, :html => {:multipart => true}, :url => {:action => 'create', :user_id => current_user.id}) do |f| %>
+
+	           <%= render(:partial => "form", :locals => {:f => f}) %>
+
+	      		<% end %>
+
+
+               </div>
+
+            </div>
+
+
+        </div>
+
+  </div> 
+

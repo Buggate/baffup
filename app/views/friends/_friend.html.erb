@@ -1,0 +1,51 @@
+ 
+
+      
+     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#new_invite_modal">Invite Your Buddies</a>
+
+    <div class="modal fade" id="new_invite_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">      
+
+	    <div class="modal-dialog">  
+
+           <div class="modal-content">
+
+			  <div class="modal-header">
+
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                 
+
+			       <h4 class="modal-title" id="myModalLabel">Invite Your Guest</h4>
+			                                    
+			  </div>
+                                        
+		      <div class="modal-body">
+             
+  
+
+          <% current_user.friends.all do |friend| %>
+
+                <% @email = friend.email %>
+
+		         <%# Render the new person form (passing modal => true to enable remote => true) %>
+
+			       <%= render 'invites/uform', modal: true %> 
+
+
+			 <% end %>
+
+	                <div class="modal-footer">
+
+			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+			        </div>
+		                              
+             </div>
+
+                 </div>
+                          
+        </div>
+                        
+    </div>
+
+</div>
+
+

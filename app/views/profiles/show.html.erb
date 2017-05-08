@@ -1,0 +1,39 @@
+
+<div id="page_wrapper">
+  <div class="Profile show">
+     <h2> My Profile </h2>
+  <div>
+     <%= image_tag @profile.image.url(:medium) %>
+  </div>
+     <table summary="Profile detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @profile.name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @profile.email %></td>
+    </tr>
+     <tr>
+      <th>Birthday</th>
+      <td><%= @profile.age %></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td><%= @profile.gender %></td>
+    </tr>
+     <tr>
+      <th>Telephone</th>
+      <td><%= @profile.telephone %></td>
+    </tr>
+     <tr>
+      <th>Hobbies</th>
+      <td><%= @profile.hobbies %></td>
+    </tr>
+   
+  </table><br>
+
+  </div>
+
+</div>
+

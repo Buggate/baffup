@@ -1,0 +1,13 @@
+<%= simple_form_for([@party, @party.albums.build]) do |f| %>
+
+
+      <%= f.input :party_id, as: :hidden, :input_html => {:value => @party.id}  %>
+
+      <%= @party.user.name %><%= f.input :picture, as: :file %>
+
+      <%= f.input :caption, as: :text %>
+
+
+      <%= f.submit  %>
+
+<% end %>

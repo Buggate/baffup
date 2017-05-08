@@ -1,0 +1,41 @@
+ <div class="well well-sm">
+
+      <div class="media">
+
+  
+        <div class="media-body">
+
+            <%= simple_form_for Reservation.new do |f| %>
+             
+
+                   <%= f.input :party_id, as: :hidden, input_html: {value: @visitor.party.id } %>
+
+                   <%= f.input :visitor_id, as: :hidden, input_html: {value: @visitor.id } %>
+
+                   <%= f.input :name, as: :hidden, input_html: {value: @visitor.user.name} %>
+
+              <h3 style ="font-family: 'Handlee', serif; font-size: 38px; font-weight: bold; color: red;" > Are you attending? </h3><br>
+
+                      <div style ="font-size: 28px; color: black;">
+                        <%= label :accept, "Accept With Pleasure", value: true %>
+                        <%= f.radio_button :accept, true, :checked => true, :value => true %>
+                      </div><br />
+                      <div style ="font-size: 28px; color: black;">
+                        <%= label :accept, "Decline With Regards", value: false %>
+                        <%= f.radio_button :accept, false, :value => false%>
+                      </div><br /><br />
+
+                         <div class="form-group" class="group" style="font-family: 'Courgette', serif; font-size: 18px;">
+
+                          <%= f.submit %>
+                          
+                       </div>
+
+            <% end %>
+
+
+     </div>
+
+    </div>
+
+  </div>

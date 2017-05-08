@@ -1,0 +1,1 @@
+json.extract! @party, :current_step, :title, :venue, :date, :picture, :user_id, :category, :created_at, :updated_at

@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="https://www.w3.org/1999/xhtml" >
+  <head>
+
+   
+   <html itemscope itemtype="https://schema.org/Article">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= content_for?(:title) ? yield(:title) : "Baffup" %></title>
+        <meta name="description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Keep records of guests, photos, and comments" />
+        <meta itemprop="name" content="Baffup for your occassion">
+        <meta itemprop="description" content="Baffup for your occassion">
+        <meta itemprop="image" content="https://www.example.com/image.jpg">
+        <meta name="twitter:card" content="organize, your guests, get them to RSVP">
+        <meta name="twitter:site" content="@publisher_handle">
+        <meta name="twitter:title" content="Baffup for your occassion">
+        <meta name="twitter:description" content="Baffup for your occassion">
+        <meta name="twitter:creator" content="@author_handle">
+        <meta name="twitter:image:src" content="https://www.example.com/image.jpg">
+        <meta property="og:title" content="Baffup for your occassion" />
+        <meta property="og:type" content="Baffup" />
+        <meta property="og:url" content="https://www.example.com/" />
+        <meta property="og:image" content="https://example.com/image.jpg" />
+        <meta property="og:description" content="Baffup for your occassion" />
+        <meta property="og:site_name" content="baffup" />
+        <meta property="article:published_time" content="2017-04-19T05:59:00+01:00" />
+        <meta property="article:modified_time" content="2017-04-19T19:08:47+01:00" />
+        <meta property="article:section" content="Article Section" />
+        <meta property="article:tag" content="Article Tag" />
+        <meta property="fb:admins" content="Facebook numberic ID" />
+
+
+   
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %> 
+       <%= stylesheet_link_tag    'main' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link href="https://fonts.googleapis.com/css?family=Tangerine|Inconsolata:italic|Droid+Sans|Amatic+SC|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico" rel="stylesheet">
+
+     <style>
+      body {
+             font-family: 'Tangerine', serif;
+             font-family: 'Inconsolata:italic', serif;
+             font-family: 'Droid+Sans', serif;
+             font-family: 'Amatic+SC', serif;
+             font-family: 'Josefin+Slab', serif;
+             font-family: 'Open+Sans', serif;
+             font-family: 'Open+Sans+Condensed:300', serif;
+             font-family: 'Oswald', serif;
+             font-family: 'Pacifico', serif;
+             text-shadow: 1px 1px 1px #9ea016 ;
+      }
+    </style>
+
+          
+       <%= csrf_meta_tags %>
+     
+</head>
+<body>
+
+<header>
+    <div class="sticky-nav">
+
+      <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+        
+        <div id="logo">
+
+          <a id="goUp" href="#slider" title="Baffup | Load Anything ... ">Baffup Template</a>
+        </div>
+        
+        <nav id="menu">
+          <ul id="menu-nav">
+
+          <% if user_signed_in? %>
+
+            <div class="buttons">
+              <li class="current" style="font-family: 'Inconsolata:italic', serif;"><%= link_to 'mYCatlog', profiles_path  %></i></li>
+               
+                <li style="font-family: 'Inconsolata:italic', serif;"><%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete' %></li>
+
+
+           <% else %>
+
+           <div class="collapse navbar-collapse navbar-right">
+
+                <li class="active" style="font-family: 'Inconsolata:italic' , serif;"><%= link_to "OCCASSION LOADING...", profiles_path  %></li>
+
+               
+                <li style="font-family: 'Inconsolata:italic', serif;"><%= link_to 'SIGN IN', new_user_session_path %></li>
+                
+ 
+            <% end %>    
+
+            </ul>
+        </nav>
+
+
+    </div>
+
+     </header>
+
+ <section id="main-slider" class="no-margin">
+
+ <div id="main-slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <div class="item active" style="background-image: url(./2.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-8">
+                                <div class="carousel-content">
+                                    <h2 style="font-family: 'Tangerine', serif; font-size: 58px; font-weight: bold; color: red ">LOAD YOUR PARTIES</h2>
+                                     <h2 style="font-family: 'Droid+Sans', serif;">Load your Birthday party, Wedding after-party, Graduation Party, House Warming Party, Anniversary Party etc...</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#" style="font-family: 'Pacifico', serif; font-size: 28px">Wait to see more</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="" class="img-responsive">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/.item-->
+
+                <div class="item" style="background-image: url(/party_hall_1.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-8">
+                                <div class="carousel-content">
+                                    <h2 style="font-family: 'Tangerine', serif; font-size: 58px; font-weight: bold; color: red ">LOAD YOUR EVENTS</h2>
+                                    <h2 style="font-family: 'Droid+Sans', serif;">Load all your events either formal or informal. All your corporate events, meetings, alejesekus, religuous etc..</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#" style="font-family: 'Pacifico', serif; font-size: 28px">Wait to see more</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="" class="img-responsive">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/.item-->
+
+                <div class="item" style="background-image: url(/yoruba_wedding.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-8">
+                                <div class="carousel-content">
+                                    <h2 style="font-family: 'Tangerine', serif; font-size: 58px; font-weight: bold; color: red ">LOAD YOUR CEREMONIES</h2>
+                                    <h2 style="font-family: 'Droid+Sans', serif;">Load all your naming ceremonies, wedding ceremonies, burial ceremonies as the case may be...</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#" style="font-family: 'Pacifico', serif; font-size: 28px">Wait to see more</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+         
+
+                </div><!--/.item-->
+
+
+            </div><!--/.carousel-inner-->
+
+           
+
+
+        </div><!--/.carousel-->
+
+                
+        
+    </section><!--/#main-slider-->
+
+<!-- End Header -->
+
+ <!-- Homepage Slider -->
+
+
+      
+<!-- End Homepage Slider -->
+
+<!-- About Section -->
+<div id="about" class="page-alternate">
+<div class="container">
+    <!-- Title Page -->
+            <div class="row">
+                <div class="span12">
+                    <div class="title-page">
+                        <h2 class="title" style="font-family: 'Tangerine', serif; font-size: 58px; font-weight: bold; color: red ">LOAD ALL YOUR EVENTS, PARTIES, CEREMONIES, MEETINGS ETC </h2>
+                        <h3 class="title-description" style="font-family: 'Pacifico', serif; font-size: 28px">Register &amp; Start Loading</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- End Title Page -->
+    
+    <!-- People -->
+       <div class="row">
+      
+        <!-- Start Profile -->
+        <div class="span12">
+              <div class="span4 profile">
+                  <div class="image-wrap">
+                        <div class="hover-wrap">
+                            <span class="overlay-img"></span>
+                            <span class="overlay-text-thumb">Manage Your Invites</span>
+                        </div>
+                        <img src="invitation.jpg" alt="invite">
+                   </div>
+                    <h3 class="profile-name" style="font-family: 'Tangerine', serif; font-size: 48px; font-weight: bold; color: red ">Invitations</h3>
+                    <p class="profile-description" style="font-family: 'Open+Sans+Condensed:300', serif; font-size: 22px">Invite your guests with few clicks. All you have to provide is your guests email address for new users. Existing users only a single click to invite them. You can then manage your specific relationships amongst your invited guests. ie Family, Friends, Collegues, Planners etc.
+                    Engage your guests such that all important information regarding party can be shared in real time. Information about changes to plan, Dress code - ASO EBI, party themes etc. Guest are also able to send their greetings and even respond to your information.</p>
+                      
+                    
+                </div>
+                <!-- End Profile -->
+        
+        <!-- Start Profile -->
+                  <div class="span3 profile">
+                      <div class="image-wrap">
+                            <div class="hover-wrap">
+                                <span class="overlay-img"></span>
+                                <span class="overlay-text-thumb">Guests Responses</span>
+                            </div>
+                            <img src="rsvp.jpg" alt="Reservations">
+                        </div>
+                        <h3 class="profile-name" style="font-family: 'Tangerine', serif; font-size: 58px; font-weight: bold; color: red ">R S V P</h3>
+                        <p class="profile-description" style="font-family: 'Open+Sans+Condensed:300', serif; font-size: 22px">Your Guests can send you RSVP to inform you of their intention to attend or not, which helps you in the planning and preparation for the party or ceremony as the case may by. Either attending or not your guest can be a part of the party prepartion, even the d-day all in real time with the communication system. </p>
+                          
+                        
+                    </div>
+        <!-- End Profile -->
+        
+        <!-- Start Profile -->
+                      <div class="span4 profile">
+                          <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img"></span>
+                                    <span class="overlay-text-thumb">Photo Album &amp; Guest Perspectives</span>
+                                </div>
+                                <img src="frames.jpg" alt="Joshua Insanus">
+                            </div>
+                            <h3 class="profile-name" style="font-family: 'Tangerine', serif; font-size: 58px; font-weight: bold; color: red ">Photos</h3>
+                            <p class="profile-description" style="font-family: 'Open+Sans+Condensed:300', serif; font-size: 22px">You cab upload your photo album for all your guest to view. Guest also can share photos taking from individual lenses to add more colour and perspectives to the overall pictures. Keep a record of your pre-party picture, d-day photo album. Share these photos with other several others by sharing on Facebook, Instagram etc.</p>
+                              
+                         </div>  
+
+                         </div> 
+        <!-- End Profile -->
+        
+    
+    <!-- End People -->
+             </div>
+
+</div>
+
+</div>
+
+<footer style="font-size: 18px; font-weight: bold; ">
+
+  <p class="credits">&copy;2017 Baffup.com, Crafted by <a href="http://designscrazed.org/" title="Baffup | Load Anything ...">Dev Team</a></p>
+
+
+      <a class="btn-slide animation animated-item-3" href="/abouts/1">About</a>&nbsp | &nbsp
+
+      <a class="btn-slide animation animated-item-3" href="/how_it_works/1">How It Works</a>&nbsp | &nbsp
+
+      <a class="btn-slide animation animated-item-3" href="/term_and_conditions/1">Terms & Conditions</a>&nbsp | &nbsp
+
+      <a class="btn-slide animation animated-item-3" href="/privacies/1">Privacy</a>&nbsp | &nbsp
+
+      <a class="btn-slide animation animated-item-3" href="/contacts/1">Contact</a><br>
+
+</footer>      
+
+
+    <%= javascript_include_tag "application", 'data-turbolinks-track': true %>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<div class="login-wrap">
+  <div class="login-html">
+    
+    <div class="login-form">
+
+           
+             
+        <div class="login-options"><%= t('.forgot_your_password', :default => 'Forgot your password?') %></div>
+
+            <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, role: "form" }) do |f| %>
+           <%= f.hidden_field :reset_password_token %>
+
+        <div class="group">
+
+              <label for="password" class="label">New Password</label>
+
+              <%= f.password_field :password, autofocus: true, class: "input"  %>
+
+        </div>
+
+        <div class="group">
+
+              <label for="password" class="label">Confirm New Password</label>
+
+              <%= f.password_field :password_confirmation, autofocus: true, class: "input"  %>
+
+        </div>
+
+         <div class="group">
+            
+            <%= f.submit t('.change_my_password', :default => 'Change my password'), class: "btn btn-primary" %>
+
+          </div>
+
+        <% end %>
+        <br />
+
+                 
+        
+
+</div>
+
+ </div>
+
+  </div>

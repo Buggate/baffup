@@ -1,0 +1,29 @@
+
+
+   <article class="4u 12u$(xsmall) work-item">
+
+   <% if visitor.token != nil  %> 
+
+			
+
+			
+			
+
+
+       <a href="" class="image fit thumb"><%= image_tag visitor.party.picture.url(:medium) if visitor.party %></a>
+                                  
+       <h5 style="font-family: 'Courgette', serif; font-size: 32px; font-weight: bold; color: red"><%= link_to (visitor.party.title), visitor_path(visitor) if visitor.party  %></h5>
+
+        <p style="font-family: 'Handlee', serif; font-size: 23px; color: black"><%= visitor.party.comments.count %>&nbsp;-  &nbsp;Occassion Comments <br>
+
+         <%= visitor.party.albums.count %>&nbsp;-  &nbsp; Occassion Posts </p><br><br />
+
+
+<% end %>
+                            
+</article>
+
+
+
+ 
+      

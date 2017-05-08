@@ -1,0 +1,4 @@
+module PartiesHelper
+
+	
+end

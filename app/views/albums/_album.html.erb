@@ -1,0 +1,35 @@
+ <div class="col-sm-4 ">
+        <div class="box">
+          <a href="<%= album.picture %>" class="gall_item" ><%=  image_tag(album.picture.url(:medium), alt: '') %><span></span></a>
+       
+            <div class="box_bot">
+            
+               <div class="box_bot_title" style ="font-family: 'Handlee', serif; font-size: 18px; color: green;" >Posted By:  <%= album.visitor.user.name %></div>
+
+                  <p style ="font-family: 'Handlee', serif; font-size: 18px; color: green;">Caption:  <%= album.caption %></p>
+
+
+                 
+                    <div class="btn-group pull-left">
+
+                    <%= link_to like_visitor_album_path(:visitor_id => @visitor.id, :album_id => album.id), class: "like", method: :put do %>
+
+                        <span class="fa fa-chevron-up"></span>&nbsp  &nbsp
+                     
+
+                     <%= album.get_upvotes.size %>&nbsp  &nbsp
+
+                      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+
+                         
+                <% end %>
+
+                </div>
+  
+
+
+           
+           </div>
+      </div>
+
+      </div>

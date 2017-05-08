@@ -1,0 +1,14 @@
+
+<div id="notification">
+<h1 class="title">
+	<%= @notification.invite.group.party.title %>
+</h1>
+
+<h4><%= @notification.host.email %></h4>
+
+ <p>
+    <%= @notification.guest.email %>
+  </p>
+
+
+<%= link_to "Accept", "" %>

@@ -1,0 +1,25 @@
+<div id="comments-widget-of-visitor-<%= @visitor.id %>" class="comments-widget">
+
+  <h2 class="comments-header" >
+
+   
+
+    <span class="badge bg-important badge-success" ><strong id="comments-count-of-visitor-<%= @visitor.id %>" ><%= @visitor.party.comments.size %>&nbsp;&nbsp;Comments</strong></span>
+
+  </h2>
+
+  <br />
+  <br />
+  <ul class="comments-list">
+
+    <%= render @visitor.party.comments.where(parent: nil) %>
+
+  </ul>
+  <!-- comment-form -->
+  <%= render "comments/form", comment: @visitor.comments.build  %>
+  
+</div>
+
+
+                      
+

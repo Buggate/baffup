@@ -1,0 +1,15 @@
+
+<div class="well">
+
+  <%= simple_form_for(@profile, :url => {:action => 'update', :id => @profile.id, :user_id => current_user.id}) do |f| %>
+
+
+   <%= render(:partial => "form", :locals => {:f => f}) %>
+
+				 
+	 <% end %>
+
+</div>	 
+
+
+	

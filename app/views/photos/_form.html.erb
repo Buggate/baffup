@@ -1,0 +1,30 @@
+
+
+ <%= form_for([@photo, @party.photos.build(:party_id => @party.id)]) do |f| %>
+
+ 
+<p>
+   
+    <%= f.hidden_field(:party_id, :value => @party.id) %>
+</p>
+
+<p>
+   
+    <%= f.hidden_field(:visitor_id, :value => @party.visitors.first.id) %>
+</p>
+
+
+
+<div class="form-group">
+
+   
+    <%= f.file_field :image %>
+ 
+   
+</div><br>
+
+ <div class="form-group">
+    <%= f.submit  %>
+ </div>
+
+<% end %>

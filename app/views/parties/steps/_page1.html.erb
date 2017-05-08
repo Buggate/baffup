@@ -1,0 +1,79 @@
+<div class="well well-sm">
+
+
+	        <h3 style="font-family: 'Averia+Serif+Libre', serif; font-size: 28px; color: grey">Choose - Occassion Category</h3>
+
+
+    <fieldset>
+
+
+          <div class="radio-inline">
+
+			    <h4 style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black"><label for="party-category-get_together">GET TOGETHER</label></h4>
+					        
+					<input type="radio" id="party-category-get_together" name="party[category]" value="GET TOGETHER" class="form-control input-sm" id="inputsm">
+					
+		    </div>
+
+
+		    <div class="radio-inline">
+
+		       <h4 style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black"><label for="party-category-events">EVENTS</label></h4>
+
+				    <input type="radio" id="party-category-events" name="party[category]" value="EVENTS" class="form-control input-sm" id="inputsm">
+				    
+		   </div>
+
+
+		   <div class="radio-inline"> 
+
+
+			      <h4 style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black"><label for="party-category-ceremony">CEREMONIES</label></h4>
+				          
+				    <input type="radio" id="party-category-ceremony" name="party[category]" value="CEREMONIES" class="form-control input-sm" id="inputsm">
+				           
+				    
+
+			</div>
+
+			<div class="radio-inline">
+
+			        <h4 style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black"><label for="party-category-parties">PARTIES</label></h4>
+				
+				    <input type="radio" id="party-category-party" name="party[category]" value="PARTY" class="form-control input-sm" id="inputsm">
+				    
+				    
+
+		    </div>
+		        
+			
+		    	<div class="radio-inline">
+
+			    <h4 style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black"><label for="party-category-other_occssion">OTHER OCCASION</label></h4>
+					        
+					<input type="radio" id="party-category-other_occassion" name="party[category]" value="OTHER_OCCASSIONS" class="form-control input-sm" id="inputsm">
+					          
+				    
+
+		    </div>
+
+		
+		 
+			 <br />
+<br />
+<br />
+
+
+
+  <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id } %>
+
+
+  </fieldset>
+
+  </div>
+
+
+
+
+
+

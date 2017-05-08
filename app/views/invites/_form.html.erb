@@ -1,0 +1,37 @@
+       <%= simple_form_for([@party, @invite, @party.invites.build({:party_id => @party.id, :host_id => @party.user_id })]) do |f| %>
+
+
+       <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">
+           
+           Your guests are an email and a click away from invitation to your occassion. 
+        </p>
+
+         
+        <p>
+           
+            <%= f.hidden_field(:party_id, :value => @party.id) %>
+        </p>
+
+        <p>
+           
+            <%= f.hidden_field(:host_id, :value => @party.user_id) %>
+
+
+
+        <div class="form-group" style="font-family: 'Courgette', serif; font-size: 28px; font-weight: bold; color: red">
+
+       
+        <%= f.input :email, :input_html => { :style=> 'width: 420px', :rows => 3}, :label => 'Guest Invitations', :label_html => { :class => 'text' }, :placeholder => "guest_one@example.com, guest_two@example.com, etc" %>
+
+
+</div><br>
+
+   <%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black;") do %>
+    <i class="fa fa-users" aria-hidden="true"></i>&nbsp;send invitation
+  <% end %>
+
+
+<% end %>
+
+
+

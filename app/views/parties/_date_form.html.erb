@@ -1,0 +1,21 @@
+<div class="well">
+
+  <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: red">
+
+              <%= f.input :date, :label => 'Change Date', start_year: Date.today.year - 90,
+                              end_year: Date.today.year, order: [:day, :month, :year] %>
+
+              </div><br />
+
+
+
+
+		<%= button_tag(type: 'submit', class: "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black;") do %>
+		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Date
+		  <% end %>
+
+
+
+
+</div>
+

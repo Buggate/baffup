@@ -1,0 +1,91 @@
+<div class="well">
+
+      <div class="media">
+
+  
+        <div class="media-body">
+
+         <div class="row">
+          <div class="col-md-3 col-md-offset-4"><h4>Edit Your Profile </h4></div>
+      </div>
+
+        <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: red">
+
+          <%= f.input :image, :input_html => { :wrap => :soft, :rows => 3}, :label => 'Add your best Picture', :label_html => { :class => 'file' }  %>
+       </div><br /><br />
+
+       <div class="row">
+
+            <div class="col-sm-6">
+
+             <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+
+               <%= f.input :name, :input_html => { :style=> 'width: 420px', :rows => 3}, :label => 'Change your Name:', :label_html => { :class => 'text' } %>
+
+
+
+            </div><br />
+
+            </div>
+
+            <div class="col-sm-6">
+
+              <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+
+              <%= f.input :age, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year, order: [:day, :month, :year] %>
+
+              </div><br />
+
+              </div>
+
+              </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+
+          <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+
+                   <%= f.input :gender, as: :radio_buttons,
+              collection: ['Male', 'Female'], wrapper: :vertical_radio_and_checkboxes %>
+
+              </div>
+
+           </div>  
+           
+        <div class="col-sm-6"> 
+
+           <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+
+        <%= f.input :telephone, :input_html => { :style=> 'width: 420px', :rows => 3}, :label => 'Telephone:', :label_html => { :class => 'text' } %>
+
+        </div>
+
+
+        </div>
+
+
+        </div>
+
+        <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+
+        <%= f.input :hobbies, :input_html => { rows: 10, cols: 5}, :label => 'Hobbies:', :label_html => { :class => 'textarea' } %>
+
+        </div>
+
+
+     <%= button_tag(type: 'submit', class: "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black;") do %>
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;profile
+  <% end %>
+
+
+
+
+
+     
+
+  </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+<div id="page_wrapper">
+
+
+	
+
+
+<div>
+  
+
+ <%= form_for(:gist, :url => {:action => 'create', :party_id => @party.id}, :html => { :multipart => true }) do |f| %>
+ <%= render(:partial => "form", :locals => {:f => f}) %>
+
+ <% end %>
+
+</div>

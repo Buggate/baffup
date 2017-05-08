@@ -1,0 +1,7 @@
+<%= hidden_field_tag :all, 1 %>
+<% Parties.total_steps.times do |step| %>
+  <%= render "parties/steps/page#{step + 1}", f: f %>
+<% end %>
+<div class="12u$">
+  <%= f.submit %>
+</div>

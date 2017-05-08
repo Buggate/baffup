@@ -1,0 +1,14 @@
+div id="page_wrapper">
+
+
+    <div class="comment new">
+ 
+			 <%= form_for(:comment, :url => {:action => 'create', :group_id => @visitor.group.id, :visitor_id => @visitor.id}) do |f| %>
+			 <%= render(:partial => "comments/visitor_form", :locals => {:f => f}) %>
+
+			
+
+
+ <% end %>
+
+</div>
