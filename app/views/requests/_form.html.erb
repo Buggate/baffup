@@ -18,13 +18,15 @@
 
 		   <% if friend.invite.party != @party %>
 
-<div style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+       <div class="col-sm-4 ">
+
+           <div style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+
 			       <%= label_tag "request[email][][#{friend.email}]", "#{image_tag(friend.buddy.profile.image.url(:large), :width => "40", :height => "40" )}".html_safe + friend.name %>&nbsp;
-			    
-
-
-
+			   
 		          <%= check_box_tag "request[email][]", friend.email, (checked = true if current_user.friends.include?(friend.email)), :email => friend.email %></div>
+
+              </div>
 
 		          <% end %>
 
