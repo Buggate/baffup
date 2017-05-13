@@ -7,9 +7,9 @@
 
         <%= image_tag(party.picture.url(:large), alt: "", :weight => "40", :height => "40") %>
 
-        <i><img src="/envelop.png", width="20" height="20" alt=""></i>&nbsp; &nbsp;<%= link_to("I.V", party_path(party)) %>&nbsp; &nbsp;
+        <i><img src="/envelop.png", width="20" height="20" alt=""></i>&nbsp;<%= link_to("I.V", party_path(party)) %>&nbsp; &nbsp;
                                                     
-            <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp; &nbsp;<%= link_to("ALB", catalogues_path(:party_id => party.id) )%>
+            <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;<%= link_to("ALB", catalogues_path(:party_id => party.id) )%>
 
       </div>
 

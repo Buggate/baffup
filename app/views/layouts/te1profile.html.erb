@@ -51,7 +51,7 @@
             font-family: 'Courgette', cursive;
             font-family: 'Inconsolata:italic', cursive;
             font-family: 'Oswald', cursive;
-            text-shadow: 1px 1px 1px #9ea016 ;
+            text-shadow: 2px 2px 2px #9ea016 ;
                        
           }
     </style>
@@ -73,13 +73,14 @@
 
 	      <div class="dropdown">
 			                            
-			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><i class="fa fa-user fa-fw"></i><%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
+			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
 
 				     <ul class="dropdown-menu">
 
-				     <li><%= link_to "Upload a Picture", edit_profile_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"  %></li>
+				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"  %></li>
 
-				     <li><%= link_to "", edit_profile_path(@profile) %></li>
+				     
+				     <li><%= link_to "" %></li>
 
 
 
@@ -120,8 +121,18 @@
 						
 						
 						
-						  <span class="badge bg-important badge-success" ><h4 style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%=link_to "#{@profile.user.notifications.count}", notifications_path %></h4></span>
-						  <li><i class="fa fa-bell " aria-hidden="true"></i></li>
+						  <span class="badge bg-important badge-success" >
+
+
+						       <h4 id="notice" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%=link_to "#{@profile.user.notifications.count}", notifications_path, :title => "Occassion | Invitations ... " %>
+						       	
+						       <h4>
+
+						       <li><i class="fa fa-bell " aria-hidden="true"></i></li>
+
+
+						   </span>
+						  
 						  
 												
 					</ul>
@@ -155,8 +166,8 @@
   <section id="one">
 
 		    <header class="major">
-							<h2 style="font-family: 'Averia+Serif+Libres', serif; font-size: 48px; font-weight: bold;">Start preparing for your great events, party, ceremonies etc <br />
-							from here. Its easy and free</h2>
+							<h2 style="font-family: 'Averia+Serif+Libres', serif; font-size: 38px; font-weight: bold;">Create and manage your occassions. Keep records of your most important moments and share with your loved ones.<br />
+							Its easy and free !!!</h2>
 			</header>
 
   </section>
@@ -175,7 +186,7 @@
 
 	<section id="two">
 
-       <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
+       <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</p>
 
 			<div class="row">
 			

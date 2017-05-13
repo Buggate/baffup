@@ -33,6 +33,8 @@ Rails.application.routes.draw do
    # put 'parties/:id' => 'parties#update'
 
   resources :profiles 
+ 
+  get 'profiles/:id/edit_picture' => 'profiles#edit_picture', :as => :edit_picture_profiles
 
   resources :visitors do 
 

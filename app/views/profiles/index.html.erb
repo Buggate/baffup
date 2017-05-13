@@ -11,8 +11,8 @@
                  <div class="skill">
 
 
-                  <h2 style="font-family: 'Courgette', serif; font-size: 38px; font-weight: bold; color: red">Load your memorable Occassion</h2>
-                  <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed load of fun.</p>
+                  <h2 style="font-family: 'Courgette', serif; font-size: 38px; font-weight: bold; color: red">My memorable Occassions</h2>
+                  <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed-load of fun.</p>
 
                  </div>   
 
@@ -20,7 +20,7 @@
 
         <div class="col-sm-6">
 
-                  <h2 align="center" style="font-family: 'Averia+Serif+Libre', serif; font-size: 40px;">My Occassions</h2>
+                  <h2 align="center" style="font-family: 'Averia+Serif+Libre', serif; font-size: 38px;">My Occassions</h2>
 
                   <% @profile.user.parties.sorted.each_with_index do |party, index| %>
 
@@ -81,7 +81,7 @@
                 </div>
 
 
-                <%= link_to "All Occassions", parties_path(:user_id => @profile.user.id), :style => "font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black" %>
+                <p><%= link_to "All Occassions", parties_path(:user_id => @profile.user.id), :style => "font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black" %></p>
 
 
                 

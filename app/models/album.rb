@@ -33,6 +33,8 @@ class Album < ApplicationRecord
    
     validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
+    validates_attachment_presence :picture
+
     #validates_attachment :image,
      #                     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 

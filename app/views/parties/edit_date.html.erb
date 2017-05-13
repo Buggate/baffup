@@ -13,3 +13,5 @@
     <%= render(:partial => "date_form", :locals => {:f => f}) %>
 
  <% end %>
+
+ <strong><%= link_to 'Back', party_path(:party_id => @party.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></strong><br>

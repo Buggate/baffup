@@ -51,7 +51,7 @@
             font-family: 'Courgette', cursive;
             font-family: 'Inconsolata:italic', cursive;
             font-family: 'Oswald', cursive;
-            text-shadow: 1px 1px 1px #9ea016 ;
+            text-shadow: 2px 2px 2px #9ea016 ;
 
                   }
     </style>
@@ -91,6 +91,13 @@
 						
 																		
 					</ul>
+
+         
+
+          <strong><%= link_to 'mY Catlog', profiles_path(:profile_id => current_user.profile.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></strong><br>
+           <br />
+              <br />
+              <br />
 
 
 					 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :style => "font-family: 'Inconsolata:italic', serif;" %>

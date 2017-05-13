@@ -7,7 +7,7 @@
 
              <a class="pull-left" href="#" >
 
-                <%= image_tag(@visitor.user.profile.image.url(:thumb), :weight => "60", :height => "60") %><br /><br />
+                <%= image_tag(@visitor.user.profile.image.url(:large), :weight => "60", :height => "60") %><br /><br />
 
                 <p style="font-family: 'Handlee', serif; font-size: 20px; font-weight: bold; color: red;"><%= @visitor.user.name %></p>
 
@@ -32,11 +32,13 @@
 
               <div class="group" style="font-family: 'Courgette', serif; font-size: 18px;">
 
-                <%= f.submit %>
+                <%= f.submit "Post Pictures" %>
 
                            
 
           </div><br />
+
+       
  
               
      

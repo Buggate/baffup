@@ -48,7 +48,7 @@
             font-family: 'Courgette', cursive;
             font-family: 'Inconsolata:italic', cursive;
             font-family: 'Oswald', cursive;
-            text-shadow: 1px 1px 1px #9ea016 ;
+            text-shadow: 2px 2px 2px #9ea016 ;
 
                        
           }
@@ -79,8 +79,11 @@
 				     <ul class="dropdown-menu">
 
 				       <li><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;<%= link_to 'Upload photo', edit_party_path(@party), :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></li>
+
 				       <li><img src="/venue1.png", width="20" height="20" >&nbsp;<%= link_to 'Venue', edit_venue_parties_path(@party), :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></li>
+
 				       <li><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<%= link_to 'Date', edit_date_parties_path(@party), :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></li>
+
 				     </ul>
 			         
 

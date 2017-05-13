@@ -30,6 +30,12 @@ class ProfilesController < ApplicationController
             
             
           end
+
+           def edit_picture
+
+            @profile ||= Profile.find(params[:id])
+  
+         end
           
 
 
