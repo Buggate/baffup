@@ -1,7 +1,7 @@
 class RequestMailer < ApplicationMailer
 
 
-	default from: "app65234427@heroku.com"
+	default from: "Baffsup"
 
 
 	def friend_request(request, party,  visitor_url)
@@ -17,7 +17,7 @@ class RequestMailer < ApplicationMailer
       @url = 'https://secret-castle-41003.herokuapp.com'
 
 
-      attachments.inline['cool_logo3.jpg'] = File.read('./public/cool_logo3.jpg')
+      attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
      
 
       mail(to: @request.email)

@@ -1,7 +1,7 @@
 class InviteMailer < ApplicationMailer
 
 
-	default from: "app65234427@heroku.com"
+	default from: "Baffsup"
 
 
     def existing_user_invite(invite, party, visitor_url)
@@ -17,7 +17,7 @@ class InviteMailer < ApplicationMailer
            
         @url = 'https://secret-castle-41003.herokuapp.com'
 
-        attachments.inline['cool_logo3.jpg'] = File.read('./public/cool_logo3.jpg')
+        attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
   
 
 
@@ -48,7 +48,7 @@ class InviteMailer < ApplicationMailer
 
 
      
-        attachments.inline['cool_logo3.jpg'] = File.read('./public/cool_logo3.jpg')
+        attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
     
 
 

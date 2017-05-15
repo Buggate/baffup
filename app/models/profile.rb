@@ -4,7 +4,7 @@ class Profile < ApplicationRecord
 
 
    		has_attached_file :image, 
-	                   :styles => { large: "800x800", medium: "130x130>", thumb: "50x50>" }, default_url: "https://placehold.it/350x150.jpg&text=Upload Picture"
+	                   :styles => { large: "800x800", medium: "130x130>", thumb: "50x50>" }, default_url: "https://placehold.it/350x150.jpg&text=UPLOAD A PICTURE"
 
         validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 

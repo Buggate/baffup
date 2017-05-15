@@ -1,7 +1,7 @@
 <% if @party != current_user.parties.first %>
 
-<h2 style="font-family: 'Averia+Serif+Libres', serif; font-size: 48px; font-weight: bold;">Start preparing for your great events, party, ceremonies etc <br />
-							from here. Its easy and free</h2><br>
+ <%= link_to 'DATE', :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %>&nbsp;&nbsp;<%= localize(@party.created_at, format: :long) %><br /><br /><br />
+ <%= link_to 'VENUE', :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %>&nbsp;&nbsp;<%= @party.venue %><br /><br />
 
 
 

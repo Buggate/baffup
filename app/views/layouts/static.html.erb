@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Load Anything, event nio, party nio, etc" /> 
+    <title><%= content_for?(:title) ? yield(:title) : "Baffup" %></title>
+     
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %> 
+       <%= stylesheet_link_tag    'main' %>
+
+       
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Inconsolata:italic|Averia+Serif+Libre|Courgette|Handlee|Parisienne|Sacramento" rel="stylesheet"> 
+
+      <style>
+      
+      body {
+             
+            font-family: 'Handlee', cursive;
+            font-family: 'Sacramento', cursive;
+            font-family: 'Parisienne', cursive;
+            font-family: 'Averia+Serif+Libre', cursive;
+            font-family: 'Courgette', cursive;
+            font-family: 'Inconsolata:italic', cursive;
+            text-shadow: 2px 2px 2px #9ea016 ;
+
+                       
+          }
+    </style>
+          
+       <%= csrf_meta_tags %>
+     
+       
+</head>
+<body>
+
+
+<div class="container">
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+  <div class="{alert alert-#{name == :notice ? "success" : "error"}">
+
+    &times;
+   <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+
+   <% end %>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- End of Splash Screen -->
+
+
+
+<!-- Header -->
+<header>
+    <div class="sticky-nav">
+      <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+        
+        <div id="logo">
+
+          <a id="goUp" href="#slider" title="Baffup | Load Anything ... ">Baffup Template</a>
+        </div>
+        
+        <nav id="menu">
+          <ul id="menu-nav">
+
+            <div class="buttons"><%= link_to 'Home', root_path  %></div>
+
+              <li class="current"></li>
+   
+
+            </ul>
+        </nav>
+        
+    </header>
+
+
+
+
+
+
+
+<!-- Contact Section -->
+<div id="contact" class="well">
+<div class="container">
+    <!-- Title Page -->
+    <div class="row">
+        <div class="span12">
+            <div class="title-page">
+                <h2 class="title">We are here to Serve You!</h2>
+                <h3 class="title-description">Please contact us for any help or queries at all.</h3>
+
+        
+              <%= yield %>   
+
+
+            </div>
+          
+          </div>
+       
+       </div>
+
+   </div>
+
+ </div>
+
+
+   
+    <!-- End Title Page -->
+    
+    <!-- Contact Form -->
+  
+<!-- End Contact Section -->
+
+<!-- Twitter Feed -->
+
+<!-- End Twitter Feed -->
+
+<!-- Footer -->
+<footer>
+  <p class="credits">&copy;2016 Baffup.com, Crafted by <a href="http://designscrazed.org/" title="Baffup | Load Anything ...">Dev Team</a></p>
+
+
+
+
+</a>
+<!-- End Back to Top -->
+</footer>
+<!-- End Footer -->
+
+
+<!-- Back To Top -->
+<%= javascript_include_tag "application", 'data-turbolinks-track': true %>
+
+
+</body>
+</html>
+
+
+

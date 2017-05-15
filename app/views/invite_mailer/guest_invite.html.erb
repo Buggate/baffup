@@ -241,7 +241,7 @@
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: "Lucida Console", Courier, monospace;font-style: oblique;">
-            BAFFUP for this Occassion, you are welcome !!!
+            You have been invited to an Occasion by <%= @party.user.name %>
         </div>
         <!-- Visually Hidden Preheader Text : END -->
 
@@ -250,7 +250,7 @@
       <tr>
         <td style="padding: 20px 0; text-align: center">
           
-          <%= image_tag attachments['cool_logo3.jpg'].url, alt: '', width: '100', height: '37', border: '0' %>
+          <%= image_tag attachments['logo_one.png'].url, alt: '', width: '100', height: '37', border: '0' %>
 
         </td>
       </tr>
@@ -305,15 +305,14 @@
                         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td valign="middle" style="text-align: center; padding: 40px; mso-height-rule: exactly; line-height: 15px; color: #ffffff;">
-                                    <%= image_tag @party.user.profile.image.url(:large), :width => "50", :height => "60", :style => "border-width:0; max-width:50px;height:auto; max-height:60px;", :alt => "", align: "left" %>&nbsp;<h2 align="left" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%= @party.user.name %></h2><br />
 
-                                     <h3 style="font-family: 'Courgette', serif; font-size: 38px; font-weight: bold; color: red">Welcome to this occassion Lets have some fun !!! </h3><br />
+                                   
 
                                 <h3 style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;">Date:&nbsp; <%= localize(@party.date, format: :long) %><br /><br /><br /> Venue:&nbsp; <%= @party.venue %></h3>
 
                                     <br>
 
-                                   <h3 style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%= @party.message %><br />
+                                   <h3 style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%= @party.message %><br /><br /><br /><br />
                                       <br />R S V P-BY:&nbsp; <%= localize(@party.rsvp_by, format: :long) %></h3>
 
                                 </td>
@@ -343,7 +342,7 @@
                                                 <tr class="hot-container">
                                                    <h2><strong style="color:#111111;" align="center">R S V P</strong></h2>
 
-                                                   <p>Reserve a space for this occasion by click the botton below. Intimate your intention of either attending or not.</p><br />
+                                                   <p>Reserve a space for this occasion by clicking the botton below</p><br />
 
                                                    <%= link_to "Reserve A Space", @new_user_registration_url, :class => "btn btn-blue" %>
 
@@ -371,8 +370,8 @@
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
                                         <td dir="ltr" valign="top" style="font-family: "Lucida Console", Courier, monospace; font-size: 25px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 0; text-align: right;" class="center-on-narrow">
-                                            <h2><strong style="color:#111111;">SOCIALIZE WITH OTHER GUESTS</strong></h2>
-                                             <p>Share all pre and post occasion pictures or even general post. Interact with other guest and the host with regards to the occasion and other things as the case may be.</p><br />
+                                            <h2><strong style="color:#111111;">MEET A FRIEND</strong></h2>
+                                             <p>Share all pre, post occasion pictures and general posts. Meet other guests.</p><br />
 
                                             <%= link_to "Post A Picture", @new_user_registration_url, :class => "btn btn-red" %>
 
@@ -397,10 +396,9 @@
         <!-- Email Footer : BEGIN -->
         <table cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
             <tr>
-                <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #888888;">
-                    <webversion style="color:#cccccc; text-decoration:underline; font-weight: bold;">View as a Web Page</webversion>
+                <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #
                     <br><br>
-                    Baffup Inc.<br><span class="mobile-link--footer">We provide the best social service and entertainment </span><br><span class="mobile-link--footer">00 44 07419818334 </span>
+                    Baffsup.com<br><span class="mobile-link--footer">We provide the best social service and entertainment </span><br><span class="mobile-link--footer">00 44 07419818334 </span>
                     <br><br> 
                     <unsubscribe style="color:#888888; text-decoration:underline;">Have a lot of fun !!!</unsubscribe>
                 </td>

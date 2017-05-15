@@ -16,7 +16,7 @@ class InvitesController < ApplicationController
 def create
 
 
-  emails = params[:invite][:email].split(', ')
+  emails = params[:invite][:email].split(',')
 
 
    emails.each do |email|
