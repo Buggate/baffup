@@ -1,7 +1,7 @@
 class RequestMailer < ApplicationMailer
 
 
-	default from: "Baffsup"
+	default from: "invitation@baffsup.com"
 
 
 	def friend_request(request, party,  visitor_url)

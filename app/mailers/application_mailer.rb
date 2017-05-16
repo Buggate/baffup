@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
 	
-  default from: "Baffsup"
+  default from: "invitation@baffsup.com"
   layout 'mailer'
   
 end

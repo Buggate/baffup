@@ -1,7 +1,7 @@
 class InviteMailer < ApplicationMailer
 
 
-	default from: "Baffsup"
+	default from: "invitation@baffsup.com"
 
 
     def existing_user_invite(invite, party, visitor_url)
