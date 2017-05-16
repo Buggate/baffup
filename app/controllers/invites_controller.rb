@@ -38,7 +38,7 @@ def create
                   create_notification @invite, @party, @visitor, @user
                 
 
-                 InviteMailer.existing_user_invite(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
+                 InviteMailer.baffsup_user_invite(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
 
                  create_friend @user, @buddy, @invite
 
@@ -51,7 +51,7 @@ def create
 
             else 
           
-                InviteMailer.guest_invite(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now 
+                InviteMailer.baffsup_guest_invite(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now 
 
                   
 
