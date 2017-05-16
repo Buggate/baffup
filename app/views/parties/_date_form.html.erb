@@ -2,10 +2,13 @@
 
   <div class="field" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: red">
 
-              <%= f.input :date, :label => 'Change Date', start_year: Date.today.year - 90,
-                              end_year: Date.today.year, order: [:day, :month, :year] %>
+            <%= f.input :date, :label => 'Change Date & Time', wrappers: :horizontal_select_date, as: :datetime, start_year: Date.today.year,
+	                              end_year: Date.today.year + 12,
+	                              order: [:day, :month, :year] %>
 
               </div><br />
+
+
 
 
 

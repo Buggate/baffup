@@ -4,7 +4,7 @@ class InviteMailer < ApplicationMailer
 	default from: "invitation@baffsup.com"
 
 
-    def existing_user_invite(invite, party, visitor_url)
+    def baffsup_user_invite(invite, party, visitor_url)
 
 
         @invite = invite
@@ -31,7 +31,7 @@ class InviteMailer < ApplicationMailer
 
     end
 
-    def guest_invite(invite, party, new_user_registration_url)
+    def baffsup_guest_invite(invite, party, new_user_registration_url)
 
 
       @invite = invite
