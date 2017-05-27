@@ -4,23 +4,23 @@
       <html itemscope itemtype="http://schema.org/Article">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><%= content_for?(:title) ? yield(:title) : "Baffup" %></title>
+        <title><%= content_for?(:title) ? yield(:title) : "Baffsup" %></title>
         <meta name="description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Keep records of guests, photos, and comments" />
-        <meta itemprop="name" content="Baffup for your occassion">
-        <meta itemprop="description" content="Baffup for your occassion">
+        <meta itemprop="name" content="Baffsup for your occassion">
+        <meta itemprop="description" content="Baffsup for your occassion">
         <meta itemprop="image" content="http://www.example.com/image.jpg">
         <meta name="twitter:card" content="organize, your guests, get them to RSVP">
         <meta name="twitter:site" content="@publisher_handle">
-        <meta name="twitter:title" content="Baffup for your occassion">
-        <meta name="twitter:description" content="Baffup for your occassion">
+        <meta name="twitter:title" content="Baffsup for your occassion">
+        <meta name="twitter:description" content="Baffsup for your occassion">
         <meta name="twitter:creator" content="@author_handle">
         <meta name="twitter:image:src" content="http://www.example.com/image.jpg">
-        <meta property="og:title" content="Baffup for your occassion" />
-        <meta property="og:type" content="Baffup" />
+        <meta property="og:title" content="Baffsup for your occassion" />
+        <meta property="og:type" content="Baffsup" />
         <meta property="og:url" content="http://www.example.com/" />
         <meta property="og:image" content="http://example.com/image.jpg" />
-        <meta property="og:description" content="Baffup for your occassion" />
-        <meta property="og:site_name" content="baffup" />
+        <meta property="og:description" content="Baffsup for your occassion" />
+        <meta property="og:site_name" content="Baffsup" />
         <meta property="article:published_time" content="2017-04-19T05:59:00+01:00" />
         <meta property="article:modified_time" content="2017-04-19T19:08:47+01:00" />
         <meta property="article:section" content="Article Section" />
@@ -38,23 +38,41 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-     <link href="https://fonts.googleapis.com/css?family=Oswald|Inconsolata:italic|Averia+Serif+Libre|Courgette|Handlee|Parisienne|Sacramento" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Ewert|Julius+Sans+One|Lily+Script+One|Petit+Formal+Script|Playball|Ravi+Prakash|Rye|Raleway|Tangerine|Inconsolata:italic|Droid+Sans|Amatic+SC|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico" rel="stylesheet">
 
-      <style>
-      
+     <style>
       body {
+             font-family: 'Pacifico', serif;
+             font-family: 'Tangerine', serif;
+             font-family: 'Inconsolata:italic', serif;
+             font-family: 'Droid+Sans', serif;
+             font-family: 'Amatic+SC', serif;
+             font-family: 'Josefin+Slab', serif;
+             font-family: 'Open+Sans', serif;
+             font-family: 'Open+Sans+Condensed:300', serif;
+             font-family: 'Oswald', serif;
+
+            font-family: 'Ravi Prakash', cursive;
+
+            font-family: 'Playball', cursive;
+
+            font-family: 'Julius Sans One', sans-serif;
+
+            font-family: 'Petit Formal Script', cursive;
+
+            font-family: 'Lily Script One', cursive;
+
+            font-family: 'Rye', cursive;
+
+            font-family: 'Ewert', cursive;
+
+            font-family: 'Raleway', sans-serif;
+
              
-            font-family: 'Handlee', cursive;
-            font-family: 'Sacramento', cursive;
-            font-family: 'Parisienne', cursive;
-            font-family: 'Averia+Serif+Libre', cursive;
-            font-family: 'Courgette', cursive;
-            font-family: 'Inconsolata:italic', cursive;
-            font-family: 'Oswald', cursive;
-            text-shadow: 2px 2px 2px #9ea016 ;
-                       
-          }
+           
+      }
     </style>
+
 
          <%= csrf_meta_tags %>
     
@@ -73,18 +91,18 @@
 
 	      <div class="dropdown">
 			                            
-			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
+			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Handlee', serif; font-size: 18px; "><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
 
 				     <ul class="dropdown-menu">
 
-				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"  %></li>
+				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px; "  %></li>
 
 				     
 				     <li><%= link_to "" %></li>
 
 
 
-				       <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></li>
+				       <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px;" %></li>
 				      
 
 				     </ul>
@@ -114,7 +132,7 @@
 					<ul class="icons">
 
 		
-                        <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></strong></h2><br>
+                        <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Handlee', serif; font-size: 18px; " %></strong></h2><br>
 
 							<br />
 							<br />
@@ -150,7 +168,7 @@
 					 <br />
 					
 
-						<p style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;">&copy; Baffup 2017</p>
+						<p style="font-family: 'Handlee', serif; font-size: 18px; ">&copy; Baffsup 2017</p>
 
 		</aside>
 
@@ -166,18 +184,23 @@
   <section id="one">
 
 		    <header class="major">
-							<h2 style="font-family: 'Averia+Serif+Libres', serif; font-size: 38px; font-weight: bold;">Create and manage your occassions. Keep records of your most important moments and share with your loved ones.<br />
+							<h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 30px;">Create and manage your occassions. Keep records of your most important moments and share with your loved ones.<br />
 							Its easy and free !!!</h2>
 			</header>
 
   </section>
 
 
-  <section>
+  <section style="background-image: url(pub_back4.jpeg); background-size: 1200px 620px;">
 
-        <div>
+
+        <div >
+
+
 
             <%= yield %>
+
+            
 
         </div>
 
@@ -186,7 +209,7 @@
 
 	<section id="two">
 
-       <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</p>
+       <div style="font-family: 'Raleway', sans-serif; font-size: 22px; color: black"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</div>
 
 			<div class="row">
 			

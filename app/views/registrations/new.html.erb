@@ -4,45 +4,43 @@
     <div class="login-form">
 
     <div class="lock"></div>
-          <div class="clr"></div>
+         
          
     <div class="login-options" style="font-family: 'Handlee', serif; font-size: 38px; font-weight: bold; color: red "><%= t('.sign_up', :default => "Sign up") %></div>
- 
- 
+
      
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f| %>
 
 
-       <% if @token != nil %>
-        <%= hidden_field_tag :invite_token, @token %>
-    <% end %>
 
     <div class="group">
-          <label for="user-name" class="label" style="font-size: 16px;">NAME</label>
+          <label for="user-name" class="label" style="font-size: 18px;">NAME</label>
 
-          <%= f.text_field :name, autofocus: true, class: "input", :placeholder => "Name" %>
+          <%= f.text_field :name, class: "input" %>
     </div><br />
 
     <div class="group">
-          <label for="user-email" class="label" style="font-size: 16px;">Email</label>
+          <label for="user-email" class="label" style="font-size: 18px;">Email</label>
         
-           <%= f.email_field :email, :value => @email, autofocus: true, class: "input", :placeholder => "Email" %>
+           <%= f.email_field :email, :value => @email, class: "input", :placeholder => "Email" %>
     </div><br />
 
     <div class="group">
-          <label for="user-password" class="label" style="font-size: 16px;">Password</label>
+          <label for="user-password" class="label" style="font-size: 18px;">Password</label>
 
           <%= f.password_field :password, class: "input" %>
           
     </div><br />
 
         <div class="group">
-          <label for="user-password_confirmation" class="label" style="font-size: 16px;">Confirm Password</label>
+          <label for="user-password_confirmation" class="label" style="font-size: 18px;">Confirm Password</label>
 
           <%= f.password_field :password_confirmation, class: "input" %>
           
         </div><br />
+
+
 
         <div class="group" style="font-family: 'Handlee', serif; font-size: 18px;" >
         <%= f.submit t('.sign_up', :default => "Sign up"), class: "button" %>
@@ -51,9 +49,6 @@
         </div>
 
     <% end %>
-
-   
-
 
     </div>
 

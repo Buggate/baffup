@@ -80,6 +80,24 @@ class ApplicationController < ActionController::Base
                   })
 
       end
+
+
+       def badd_slug?(object)
+        params[:party_id] != object.to_param
+      end
+
+      ##
+      # 301 redirect to canonical slug.
+      def redirect_to_goodd_slug(object)
+      
+          redirect_to params.permit.merge({
+                    :controller => controller_name,
+                    :action => params[:action],
+                    
+                    status: 301
+                  })
+
+      end
            
 end
 

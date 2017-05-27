@@ -1,0 +1,1 @@
+jQuery("#backtotop").click(function(){jQuery("body,html").animate({scrollTop:0},600)}),jQuery(window).scroll(function(){jQuery(window).scrollTop()>150?jQuery("#backtotop").addClass("visible"):jQuery("#backtotop").removeClass("visible")});

@@ -1,6 +1,4 @@
 <div id="page_wrapper">
-  
-  <section id="middle">
 
     <div class="container">
 
@@ -10,17 +8,20 @@
 
                  <div class="skill">
 
+                  <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 30px; font-weight: bold; color: red">My memorable Occassions</h2>
+                  <div style="font-family: 'Raleways', sans-serif; font-size: 22px; color: black">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed-load of fun.</div>
 
-                  <h2 style="font-family: 'Courgette', serif; font-size: 38px; font-weight: bold; color: red">My memorable Occassions</h2>
-                  <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed-load of fun.</p>
+                 </div>   <br /><br />
 
-                 </div>   
+                 <div align="center"><%= link_to "All Occassions", parties_path(:user_id => @profile.user.id), :type => "button", :class => "btn btn-danger", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 23px; font-weight: bold; color: black" %></div>
 
+
+                
             </div><!--/.col-sm-6-->
 
         <div class="col-sm-6">
 
-                  <h2 align="center" style="font-family: 'Averia+Serif+Libre', serif; font-size: 38px;">My Occassions</h2>
+                  <h2 align="center" style="font-family: 'Averia+Serif+Libre', serif; font-size: 30px;"></h2>
 
                   <% @profile.user.parties.sorted.each_with_index do |party, index| %>
 
@@ -34,7 +35,7 @@
                                   <div class="panel-heading active">
 
                                              <h3 class="panel-title">
-                                                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index.to_s %>"  aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">
+                                                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index.to_s %>"  aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: white; ">
                                                     <%= party.title %>
                                                     <i class="fa fa-angle-right pull-right"></i>
                                                   </a>
@@ -55,9 +56,9 @@
                                                   </div>
 
                                                   <div class="media-body">
-                                                    <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;") %><br>
+                                                    <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Handlee', serif; font-size: 18px;") %><br>
                                                     <i class="fa fa-picture-o" aria-hidden="true"></i>
-&nbsp;<%= link_to("Upload Album", catalogues_path(:party_id => party.id),:style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" )%></p>
+&nbsp;<%= link_to("Upload Album", catalogues_path(:party_id => party.id),:style => "font-family: 'Handlee', serif; font-size: 18px;" )%></p>
                                                   </div>
 
                                             </div>
@@ -81,7 +82,7 @@
                 </div>
 
 
-                <p><%= link_to "All Occassions", parties_path(:user_id => @profile.user.id), :style => "font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black" %></p>
+                
 
 
                 
@@ -94,6 +95,4 @@
 
 
 
-            </section>
-
-            </div>
+                     </div>

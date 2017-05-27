@@ -1,15 +1,57 @@
-<% if @party != current_user.parties.first %>
+<div id="page_wrapper">
 
- <%= link_to 'DATE', :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %>&nbsp;&nbsp;<%= localize(@party.created_at, format: :long) %><br /><br />
- <%= link_to 'VENUE', :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %>&nbsp;&nbsp;<%= @party.venue %><br /><br />
+    <div class="container">
+
+		<% if @party != current_user.parties.first %>
+
+		 
+
+<section id="features">
+        <div class="container" style="font-family: 'Julius Sans One', sans-serif; font-size: 30px";>
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Occassion Details</h2>
+                <p class="text-center wow fadeInDown" style="font-family: 'Raleway', sans-serif; font-size: 30px;" >These are the full details of your planned occassion as completed by you. Monitor changes to the details from here.</p>
 
 
+            </div>
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <img class="img-responsive" src="/occa1.jpeg", width="300" height="300" alt="">
+                    
+                </div>
+                <div class="col-sm-6">
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading" >Date &amp; Time</h4>
+                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">This Occasion is scheduled for the &nbsp;<strong style="color: red"><%= localize(@party.created_at, format: :long) %></strong></p>
+                        </div>
+                     
+                    </div>
 
-							<br />
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Occassion Venue</h4>
+                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">It is going to be held at the <br /><strong style="color: red"><%= @party.venue %></p></strong>
+                        </div>
+                    </div>
 
-							<p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">Pick and check from your friends list to invite for this occassion.</p>
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Guest RSVP BY</h4>
+                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">Expecting all RSVP back by the <br /><strong style="color: red"><%= localize(@party.rsvp_by, format: :long) %></p></strong>
+                        </div>
+                    </div>
 
-<a href="" class="btn btn-primary" data-toggle="modal" data-target="#new_request_modal" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">Friends Request</a>
+                      <a href="" class="btn btn-primary" data-toggle="modal" data-target="#new_request_modal" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">Friends Request</a>
 
 	    <div class="modal fade" id="new_request_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">      
 
@@ -43,39 +85,76 @@
 		                          
 		        </div>
 	                        
-	    </div><br>
+	    </div>
 
-	    <br>
+                  </div>
+            </div>
+        </div>
+    </section>
+<br />
 
-
-
-                    
-						
-
-
-<br>
-
-<p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">
-           
-           Your guests are an email and a click away from invitation to your occassion. 
-  </p>
-
+<br />
 <%= render 'invites/form' %>
 
 <% else %>
 
- <%= link_to 'DATE', :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %>&nbsp;&nbsp;<%= localize(@party.created_at, format: :long) %><br /><br /><br />
- <%= link_to 'VENUE', :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %>&nbsp;&nbsp;<%= @party.venue %><br /><br />
+<section id="features">
+        <div class="container" style="font-family: 'Julius Sans One', sans-serif; font-size: 30px";>
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Occassion Details</h2>
+                <p class="text-center wow fadeInDown" style="font-family: 'Raleway', sans-serif; font-size: 30px;" >These are the full details of your planned occassion as completed by you. Monitor changes to the details from here.</p>
 
 
-  <p style="font-family: 'Oswald', serif; font-size: 22px; font-weight: italic; color: green">
-           
-           Your guests are an email and a click away from invitation to your occassion. 
-  </p>
- 
+            </div>
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <img class="img-responsive" src="/occa1.jpeg", width="300" height="300" alt="">
+                    
+                </div>
+                <div class="col-sm-6">
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading" >Date &amp; Time</h4>
+                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">This Occasion is scheduled for the &nbsp;<strong style="color: red"><%= localize(@party.created_at, format: :long) %></strong></p>
+                        </div>
+                     
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Occassion Venue</h4>
+                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">It is going to be held at the <br /><strong style="color: red"><%= @party.venue %></p></strong>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Guest RSVP BY</h4>
+                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">Expecting all RSVP back by the <br /><strong style="color: red"><%= localize(@party.rsvp_by, format: :long) %></p></strong>
+                        </div>
+                    </div>
+
+                      </div>
+            </div>
+        </div>
+    </section>
+ <br /><br />
 
 
 <%= render 'invites/form' %>
 
 <% end %>
 
+
+</div>
+
+</div>

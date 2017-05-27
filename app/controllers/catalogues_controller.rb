@@ -6,8 +6,8 @@ class CataloguesController < ApplicationController
 
 
   def index
-
-    @catalogues = Catalogue.where(:party_id => @party)
+ 
+    @catalogues = @party.catalogues
 
    
 
@@ -93,6 +93,7 @@ end
          @party = Party.find(params[:party_id])
 
       end
+
   end
 
 

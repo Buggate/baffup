@@ -75,6 +75,10 @@
         <!-- Header -->
           <header id="header">
 
+          <%= link_to "mYCatalog", profiles_path(:profile_id => @visitor.user.profile.id), :type => "button", :class => "btn btn-danger"  %>
+
+
+
           <%= link_to @party.title, visitor_path(@visitor), :type => "button", :class => "btn btn-success"  %><br />
 
           <br />

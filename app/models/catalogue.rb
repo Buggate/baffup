@@ -5,6 +5,9 @@ class Catalogue < ApplicationRecord
 
 	mount_uploader :file_name, CatalogueUploader
 
+     custom_slugs_with(@title)
+	 
+
 
 
 
