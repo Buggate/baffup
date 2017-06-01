@@ -11,14 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
 //= require jquery.purr
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require jquery-ui
 //= require turbolinks
 //= require tether
 //= require dropzone
-//= require catalogues
+//= require active_admin/base
 
 
 
@@ -34,3 +34,7 @@
 
 
 
+
+
+
+i

@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#gem "jquery-rails", "~> 2.3.0"
+
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -124,7 +126,12 @@ end
   gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
   # active admin integration
-  gem 'activeadmin', github: 'gdpelican/activeadmin'
+
+  #gem 'activeadmin', github: 'gdpelican/activeadmin'
+
+  gem 'activeadmin', github: 'activeadmin' #refer https://github.com/activeadmin/activeadmin/issues/3926
+  gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 
   # gem 'activeadmin', '~> 0.6.6'
 

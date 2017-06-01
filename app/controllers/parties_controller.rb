@@ -9,7 +9,7 @@ class PartiesController < ApplicationController
 
   	 def index
 
-          @parties = current_user.parties
+          @parties = Party.all.where(:user_id => current_user.id)
   
      end
 

@@ -7,7 +7,7 @@ class CataloguesController < ApplicationController
 
   def index
  
-    @catalogues = @party.catalogues
+    @catalogues = Catalogue.all.where(:party_id => @party.id)
 
    
 

@@ -1,0 +1,98 @@
+ActiveAdmin.register_page "Dashboard" do
+
+  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
+
+  content title: proc{ I18n.t("active_admin.dashboard") } do
+    div class: "blank_slate_container", id: "dashboard_default_message" do
+      span class: "blank_slate" do
+        span I18n.t("active_admin.dashboard_welcome.welcome")
+        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+
+
+
+      end
+    end
+
+    columns do
+
+
+      column do
+        panel "Platform Users" do
+
+
+            table_for User.order('id desc').limit(10).each do |user|
+            column(:id)    {|user| user.id }
+            column(:name)    {|user| user.profile.name }
+            column(:email)    {|user| user.email }
+            column(:provider)    {|user| user.provider }
+            column(:age)    {|user| user.profile.age }
+            column(:gender)    {|user| user.profile.gender }
+            column(:telephone)    {|user| user.profile.telephone  }
+            column(:photo)    {|user| user.profile.image  }
+
+          end
+          
+
+          end
+        end
+
+
+    end # columns
+
+    columns do
+
+      column do
+        div do
+          br
+          text_node %{<iframe src="https://rpm.newrelic.com/public/charts/6VooNO2hKWB" width="500" height="300" scrolling="no" frameborder="no"></iframe>}.html_safe
+        end
+      end
+
+      column do
+        panel "ActiveAdmin Demo" do
+          div do
+           
+          end
+        end
+      end
+
+    end # columns
+
+
+
+    # Define your dashboard sections here. Each block will be
+    # rendered on the dashboard in the context of the view. So just
+    # return the content which you would like to display.
+
+    # The dashboard is organized in rows and columns, where each row
+    # divides the space for its child columns equally.
+
+    # To start a new row, open a new 'columns' block, and to start a
+    # new column, open a new 'colum' block. That way, you can exactly
+    # define the position for each content div.
+
+    # == Simple Dashboard Column
+    # Here is an example of a simple dashboard column
+    #
+    #   column do
+    #     panel "Recent Posts" do
+    #       content_tag :ul do
+    #         Post.recent(5).collect do |post|
+    #           content_tag(:li, link_to(post.title, admin_post_path(post)))
+    #         end.join.html_safe
+    #       end
+    #     end
+    #   end
+
+    # == Render Partials
+    # The block is rendererd within the context of the view, so you can
+    # easily render a partial rather than build content in ruby.
+    #
+    #   column do
+    #     panel "Recent Posts" do
+    #       render 'recent_posts' # => this will render /app/views/admin/dashboard/_recent_posts.html.erb
+    #     end
+    #   end
+
+  end # content
+end

@@ -26,6 +26,8 @@ Rails.application.config.assets.precompile += %w( email.css )
 
 Rails.application.config.assets.precompile += %w( publec_main.css )
 
+Rails.application.config.assets.precompile += %w( jquery.datetimepicker.css )
+
 
 
 Rails.application.config.assets.precompile += %w( partyform.js )
@@ -47,3 +49,5 @@ Rails.application.config.assets.precompile += %w( jquery.backtotop.js )
 Rails.application.config.assets.precompile += %w( jquery.flexslider-min.js )
 
 Rails.application.config.assets.precompile += %w( jquery.mobilemenu.js )
+
+Rails.application.config.assets.precompile += %w( jquery.datetimepicker.js )

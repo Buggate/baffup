@@ -116,18 +116,13 @@
 
       <div class="row">
 
-        <div class="col-sm-6 ">
-
-            
+        <div class="col-sm-4 ">
 
              <%= render 'albums/visit_form' %>
 
-
-             
-
         </div><!--/.col-sm-6-->
 
-        <div class="col-sm-6 ">
+        <div class="col-sm-4 ">
 
          <% if @visitor != nil %>  
 
@@ -155,6 +150,50 @@
 
         
         </div>
+
+        <div class="col-sm-4 ">
+
+        <section id="features">
+        <div class="container" style="font-family: 'Julius Sans One', sans-serif; font-size: 30px";>
+                      
+            <div class="media service-box wow fadeInRight">
+                  <div class="pull-left">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading" >Date &amp; Time</h4>
+                      <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">This Occasion is scheduled for the &nbsp;<strong style="color: red"><%= localize(@party.created_at, format: :long) %></strong></p>
+                  </div>
+                     
+                  </div>
+
+                  <div class="media service-box wow fadeInRight">
+                    <div class="pull-left">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">Occassion Venue</h4>
+                       <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">It is going to be held at the <br /><strong style="color: red"><%= @party.venue %></p></strong>
+                    </div>
+                  </div>
+
+                  <div class="media service-box wow fadeInRight">
+                    <div class="pull-left">
+                     <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">Guest RSVP BY</h4>
+                      <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">Expecting all RSVP back by the <br /><strong style="color: red"><%= localize(@party.rsvp_by, format: :long) %></p></strong>
+                    </div>
+                  </div>
+
+                      
+              </div>
+        </div>
+        
+    </section>
+
+    </div>
    
    </div><!--/.row-->
 
