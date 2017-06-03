@@ -7,9 +7,9 @@
 
       <div class="span6">
 
-          <form id="contact-form" class="contact-form" >
+         
 
-           <%= simple_form_for @message, url: create_message_url do |f| %>
+           <%= simple_form_for @message, url: create_message_path do |f| %>
 
             <%= notice %>
 
@@ -22,12 +22,12 @@
 
            <%= f.input :body, as: :text, :placeholder => "Your Message", :rows => "8", :cols => "15"  %>
 
-          <%= f.submit 'Send' %>
+          <%= f.button :submit %>
 
 
              <% end %>
 
-        </form>
+    
          
     </div>
 

@@ -97,10 +97,8 @@ end
   resources :contacts, only: [:new, :create, :show]
 
   
-  resources :messages, only: [:show] 
 
-
-     get 'contact-me', to: 'messages#new', as: 'new_message'
+  get 'contact-me', to: 'messages#new', as: 'new_message'
   post 'contact-me', to: 'messages#create', as: 'create_message'
 
 
