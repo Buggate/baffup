@@ -15,6 +15,19 @@ class ApplicationController < ActionController::Base
             
         end
 
+        def after_sign_in_path_for(user)
+
+         profiles_path(:profile_id => current_user.profile.id)
+
+        end
+
+
+        def after_sign_up_path_for(user)
+
+          after_sign_in_path_for(resource)
+          
+        end
+
 
         
           

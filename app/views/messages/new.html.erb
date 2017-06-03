@@ -1,0 +1,37 @@
+
+<h1>Say Hello!</h1>
+
+<div>
+
+<div class="row">
+
+      <div class="span6">
+
+          <form id="contact-form" class="contact-form" >
+
+           <%= simple_form_for @message, url: create_message_url do |f| %>
+
+            <%= notice %>
+
+            <%= @message.errors.full_messages.join(', ') %>
+
+
+           <%= f.input :name, as: :text, :placeholder => "Full Name"  %>
+
+           <%= f.input :email, as: :text, :placeholder => "Email Address" %>
+
+           <%= f.input :body, as: :text, :placeholder => "Your Message", :rows => "8", :cols => "15"  %>
+
+          <%= f.submit 'Send' %>
+
+
+             <% end %>
+
+        </form>
+         
+    </div>
+
+  </div>
+
+
+
