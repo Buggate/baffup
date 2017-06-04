@@ -15,14 +15,13 @@ class ApplicationController < ActionController::Base
             
         end
 
-        def after_sign_in_path_for(user)
+      def after_sign_in_path_for(resource)
+        return admin_root_path  if resource.class == AdminUser
+        return profiles_path(:profile_id => current_user.profile.id)
+      end
 
-         profiles_path(:profile_id => current_user.profile.id)
 
-        end
-
-
-        def after_sign_up_path_for(user)
+        def after_sign_up_path_for(resource)
 
           after_sign_in_path_for(resource)
           
@@ -101,4 +100,3 @@ class ApplicationController < ActionController::Base
       end
            
 end
-

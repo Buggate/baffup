@@ -21,6 +21,8 @@ class User < ApplicationRecord
  
          has_many :notifications
 
+
+
    private
 
          def create_profile
@@ -33,6 +35,10 @@ class User < ApplicationRecord
 
 
          end
+
+
+        
+
 
 
          def self.from_omniauth(auth)
