@@ -17,6 +17,8 @@
 
          <%= hidden_field_tag :party_id, @party.id %>
 
+         <%= hidden_field_tag :user_id, @party.user.id %>
+
           <div class="fallback" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;">
 
             <%= file_field_tag 'catalogue', multiple: true %>

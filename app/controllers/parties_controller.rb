@@ -5,7 +5,7 @@ class PartiesController < ApplicationController
   layout :resolve_layout
 
 
-   before_action :authenticate_user!, except: [:index, :show]
+   before_action :authenticate_user!
 
   	 def index
 

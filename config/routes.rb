@@ -78,7 +78,12 @@ end
 
    resources :reservations
 
-   resources :catalogues, only: [:create, :index]
+  
+      
+   get 'photo-album', to: 'catalogues#index', as: 'catalogues'
+   get 'photo-album', to: 'catalogues#create', as: 'create_catalogue'
+
+
   
     delete 'delete_catalogue', to: "catalogues#delete_catalogue"
 

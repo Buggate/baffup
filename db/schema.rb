@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504201604) do
+ActiveRecord::Schema.define(version: 20170605000147) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -62,7 +62,9 @@ ActiveRecord::Schema.define(version: 20170504201604) do
     t.integer  "party_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
     t.index ["party_id"], name: "index_catalogues_on_party_id", using: :btree
+    t.index ["user_id"], name: "index_catalogues_on_user_id", using: :btree
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -287,6 +289,7 @@ ActiveRecord::Schema.define(version: 20170504201604) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
+  add_foreign_key "catalogues", "users"
   add_foreign_key "comments", "parties"
   add_foreign_key "friends", "users"
   add_foreign_key "invites", "parties"

@@ -4,12 +4,17 @@ class CataloguesController < ApplicationController
 
      before_action :find_party
 
+    # before_action :find_user
+
+        before_action :authenticate_user! 
+
 
   def index
- 
-    @catalogues = Catalogue.all.where(:party_id => @party.id)
+    
 
-   
+    @user = User.find(params[:user_id])
+    
+    @catalogues = Catalogue.all.where({:party_id => @party.id, :user_id => @party.user.id}) 
 
   end
 
@@ -18,12 +23,16 @@ def register
 
   @visitor = Visitor.find(params[:visitor_id])
 
+  @user = @visitor.user
+  
+  @catalogues = Catalogue.all.where({:party_id => @party.id, :user_id => @visitor.id})
+
   
 end
 
   def create
 
-    @catalogue = @party.catalogues.build({:party_id => @party.id, file_name: params[:file] })
+    @catalogue = @party.catalogues.build({:party_id => @party.id, :user_id => @party.user.id, file_name: params[:file] })
 
     if @catalogue.save!
 
@@ -79,7 +88,7 @@ end
 
   def catalogue_params
 
-    params.require(:catalogue).permit(:file_name, :party_id,)
+    params.require(:catalogue).permit(:file_name, :party_id, :user_id)
 
   end
 
@@ -95,6 +104,17 @@ end
       end
 
   end
+
+   def find_user
+
+      if params[:user_id]
+
+         @user = User.find(params[:user_id])
+
+      end
+
+  end
+
 
 
     def initialize_party

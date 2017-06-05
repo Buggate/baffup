@@ -21,6 +21,8 @@ class User < ApplicationRecord
  
          has_many :notifications
 
+         has_many :catalogues
+
 
 
    private
