@@ -7,7 +7,7 @@
 
            
              
-        <div class="login-options" style="font-family: 'Handlee', serif; font-size: 38px; font-weight: bold; color: red "><%= t('.sign_in', :default => "Sign in") %></div>
+        <div class="login-options" style="font-family: 'Mogra',  cursive; font-size: 24px; color: red "><%= t('.sign_in', :default => "Sign ISn") %></div>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
 
@@ -47,7 +47,7 @@
           
         <div class="account">
 
-          <div align="center" style="font-family: 'Handlee', serif; font-size: 28px; font-weight: bold; " ><%= link_to "Not Registered yet? SIGN UP! ", new_user_registration_path %></div><br /><br />
+          <div align="center" style="font-size: 28px; " ><%= link_to "Not Registered yet? SIGN UP! ", new_user_registration_path %></div><br /><br />
           
           <div align="center" style="font-weight: bold;" ><a href="/users/auth/facebook" type="button" class="btn btn-primary" ><img src="/facebook.png" alt=""/>&nbsp;&nbsp;&nbsp;<i>Sign In with Facebook</i><div class="clear"></div></a></div><br />
 
@@ -59,7 +59,7 @@
         </div>
        
 
-          <div align="center"><%= render "devise/shared/links", :style => "font-family: 'Sacramento', serif; font-size: 28px; font-weight: bold; color: black " %></div>
+          <div align="center"><%= render "devise/shared/links", :style => "font-size: 28px; color: black " %></div>
 
 
 </div>

@@ -4,15 +4,15 @@
     <li id="comment_<%= comment.id %>" class="comment">
  
       <small>
-       <a class="pull-left" href="#" style="font-family: 'Handlee', serif; font-size: 15px; font-weight: bold;">
+       <a class="pull-left" href="#" style="font-size: 12px; font-weight: bold;">
              <%= image_tag(comment.visitor.user.profile.image.url(:large), :weight => "40", :height => "30") %>
              <%= comment.name %>&nbsp;&#x2605;&nbsp;&nbsp;<%= localize(comment.created_at, format: :long) %>
         </a> 
       </small><br /><br />
-      <div class="pull-left" style="font-size: 20px;">
+      <div class="pull-left" style="font-size: 12px; font-weight: bold; color: black;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= comment.body %>
       </div><br /><br />
-      <div class="comment-info" style="font-family: 'Courgette', serif; font-size: 15px; font-weight: bold; color: black;">
+      <div class="comment-info" style=" font-size: 12px; color: black;">
       <p class="pull-left" >
       
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&spades;&nbsp;&nbsp;&nbsp;<%= link_to "reply", polymorphic_path([:reply, @visitor, comment]), class: 'reply-comment-link', remote: true  %>

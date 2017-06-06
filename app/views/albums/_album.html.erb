@@ -1,12 +1,12 @@
- <div class="col-sm-4 ">
+ <div class="col-xs-4 ">
         <div class="box">
           <a href="<%= album.picture %>" class="gall_item" ><%=  image_tag(album.picture.url(:medium), alt: '') %><span></span></a>
        
             <div class="box_bot">
             
-               <div class="box_bot_title" style ="font-family: 'Handlee', serif; font-size: 18px; color: green;" >Posted By:  <%= album.visitor.user.name %></div>
+               <div class="box_bot_title" style ="font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: green;" >Posted By:  <%= album.visitor.user.name %></div>
 
-                  <p style ="font-family: 'Handlee', serif; font-size: 18px; color: green;">Caption:  <%= album.caption %></p>
+                  <p style ="font-family: 'Julius Sans One', sans-serif; font-size: 10px; color: green;">Caption:  <%= album.caption %></p>
 
 
                  
