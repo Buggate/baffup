@@ -38,10 +38,12 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-     <link href="https://fonts.googleapis.com/css?family=Ewert|Julius+Sans+One|Lily+Script+One|Petit+Formal+Script|Playball|Ravi+Prakash|Rye|Raleway|Tangerine|Inconsolata:italic|Droid+Sans|Amatic+SC|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Mogra|Ewert|Julius+Sans+One|Lily+Script+One|Petit+Formal+Script|Playball|Ravi+Prakash|Rye|Raleway|Tangerine|Inconsolata:italic|Droid+Sans|Amatic+SC|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico" rel="stylesheet">
 
      <style>
       body {
+
+      	     font-family: 'Annie Use Your Telescope', cursive;
              font-family: 'Pacifico', serif;
              font-family: 'Tangerine', serif;
              font-family: 'Inconsolata:italic', serif;
@@ -51,6 +53,8 @@
              font-family: 'Open+Sans', serif;
              font-family: 'Open+Sans+Condensed:300', serif;
              font-family: 'Oswald', serif;
+
+             font-family: 'Mogra', cursive;
 
             font-family: 'Ravi Prakash', cursive;
 
@@ -91,18 +95,18 @@
 
 	      <div class="dropdown">
 			                            
-			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Handlee', serif; font-size: 18px; "><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
+			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; "><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
 
 				     <ul class="dropdown-menu">
 
-				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px; "  %></li>
+				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 16px; "  %></li>
 
 				     
 				     <li><%= link_to "" %></li>
 
 
 
-				       <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Handlee', serif; font-size: 18px;" %></li>
+				       <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 16px;" %></li>
 				      
 
 				     </ul>
@@ -132,7 +136,7 @@
 					<ul class="icons">
 
 		
-                        <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Handlee', serif; font-size: 18px; " %></strong></h2><br>
+                        <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Mogra', cursive; font-size: 16px; color: black" %></strong></h2><br>
 
 							<br />
 							<br />
@@ -142,7 +146,7 @@
 						  <span class="badge bg-important badge-success" >
 
 
-						       <h4 id="notice" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;"><%=link_to "#{@profile.user.notifications.count}", notifications_path, :title => "Occassion | Invitations ... " %>
+						       <h4 id="notice" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black;"><%=link_to "#{@profile.user.notifications.count}", notifications_path, :title => "Occassion | Invitations ... " %>
 						       	
 						       <h4>
 
@@ -160,7 +164,7 @@
 				
 
 
-					 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :style => "font-family: 'Inconsolata:italic', serif;" %>
+					 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :style => "font-family: 'Mogra', cursive;" %>
 
 					
 					 <br />
@@ -168,7 +172,7 @@
 					 <br />
 					
 
-						<p style="font-family: 'Handlee', serif; font-size: 18px; ">&copy; Baffsup 2017</p>
+						<p style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; ">&copy; Baffsup 2017</p>
 
 		</aside>
 
@@ -209,7 +213,7 @@
 
 	<section id="two">
 
-       <div style="font-family: 'Raleway', sans-serif; font-size: 22px; color: black"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</div>
+       <div style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: black"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</div>
 
 			<div class="row">
 			

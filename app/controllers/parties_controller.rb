@@ -135,6 +135,8 @@ class PartiesController < ApplicationController
 
  end
 
+
+
     def party_params
 
       return params unless params[:party]

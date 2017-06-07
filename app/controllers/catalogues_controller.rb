@@ -25,7 +25,7 @@ def register
 
   @user = @visitor.user
   
-  @catalogues = Catalogue.all.where({:party_id => @party.id, :user_id => @visitor.id})
+  @catalogues = Catalogue.all.where({:party_id => @party.id, :user_id => @party.user.id})
 
   
 end

@@ -8,12 +8,12 @@
 
                  <div class="skill">
 
-                  <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 30px; font-weight: bold; color: red">My memorable Occassions</h2>
-                  <div style="font-family: 'Raleways', sans-serif; font-size: 22px; color: black">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed-load of fun.</div>
+                  <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; font-weight: bold; color: red">My memorable Occassions</h2>
+                  <div style="font-family: 'Annie Use Your Telescope', cursive; font-size: 18px; font-weight: bold;color: black">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed-load of fun.</div>
 
                  </div>   <br /><br />
 
-                 <div align="center"><%= link_to "All Occassions", parties_path(:user_id => @profile.user.id), :type => "button", :class => "btn btn-danger", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 23px; font-weight: bold; color: black" %></div>
+                 <div align="center"><%= link_to "All Occassions", parties_path(:user_id => @profile.user.id), :type => "button", :class => "btn btn-danger", :style => "font-family: 'Mogra', cursive; font-size: 18px; color: black" %></div>
 
 
                 
@@ -35,7 +35,7 @@
                                                 <div class="panel-heading active">
 
                                                            <h3 class="panel-title">
-                                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index.to_s %>"  aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: white; ">
+                                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index.to_s %>"  aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold; ">
                                                                   <%= party.title %>
                                                                   <i class="fa fa-angle-right pull-right"></i>
                                                                 </a>
@@ -56,9 +56,9 @@
                                                                 </div>
 
                                                                 <div class="media-body">
-                                                                  <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Handlee', serif; font-size: 18px;") %><br>
+                                                                  <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;") %><br>
                                                                   <i class="fa fa-picture-o" aria-hidden="true"></i>
-              &nbsp;<%= link_to "Upload Album", catalogues_path(:party_id => party.id, :user_id => party.user.id), :style => "font-family: 'Handlee', serif; font-size: 18px;" %></p>
+              &nbsp;<%= link_to "Upload Album", catalogues_path(:party_id => party.id, :user_id => party.user.id), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;" %></p>
 
 
 

@@ -10,16 +10,43 @@
 		 
 
 <section id="features">
-        <div class="container" style="font-family: 'Julius Sans One', sans-serif; font-size: 30px";>
+        <div class="container" style="font-family: 'Julius Sans One', sans-serif; font-size: 18px";>
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Occassion Details</h2>
-                <p class="text-center wow fadeInDown" style="font-family: 'Raleway', sans-serif; font-size: 30px;" >These are the full details of your planned occassion as completed by you. Monitor changes to the details from here.</p>
+            <p class="text-center wow fadeInDown" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 22px; color: black; font-weight: bold;" >These are the full details of your planned occassion as completed by you.<br /> Monitor changes to the details from here.</p>
 
 
             </div>
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                    <img class="img-responsive" src="/occa1.jpeg", width="300" height="300" alt="">
+                                
+            <% if @party.category != nil %>
+
+               <% case #{"@party.category"} %>
+
+                <%  when "parties" %>
+
+                          <img class="img-responsive" src="/new_back7.jpg", width="200" height="200" alt="">
+
+                  <%  when "get_together" %>
+
+                           <img class="img-responsive" src="/occa1.jpeg", width="200" height="200" alt="">
+
+                  <%  when "events" %>
+
+                         <img class="img-responsive" src="/new_back7.jpg", width="200" height="200" alt="">
+
+                   <% when "ceremonies" %>
+
+                          <img class="img-responsive" src="/occa1.jpeg", width="200" height="200" alt="">
+
+                   <% else %>
+
+                          <img class="img-responsive" src="/occa1.jpeg", width="200" height="200" alt="">
+
+                    <% end %>
+
+               <% end %>
                     
                 </div>
                 <div class="col-sm-6">
@@ -29,7 +56,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading" >Date &amp; Time</h4>
-                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">This Occasion is scheduled for the &nbsp;<strong style="color: red"><%= localize(@party.created_at, format: :long) %></strong></p>
+                            <p style="font-family: 'Julius Sans One', sans-serif; font-size: 16px">This Occasion is scheduled for the &nbsp;<strong style="color: red"><%= localize(@party.created_at, format: :long) %></strong></p>
                         </div>
                      
                     </div>
@@ -40,7 +67,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Occassion Venue</h4>
-                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">It is going to be held at the <br /><strong style="color: red"><%= @party.venue %></p></strong>
+                            <p style="font-family: 'Julius Sans One', sans-serif; font-size: 16px">It is going to be held at the <br /><strong style="color: red"><%= @party.venue %></p></strong>
                         </div>
                     </div>
 
@@ -50,11 +77,11 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Guest RSVP BY</h4>
-                            <p style="font-family: 'Raleway', sans-serif; font-size: 22px;">Expecting all RSVP back by the <br /><strong style="color: red"><%= localize(@party.rsvp_by, format: :long) %></p></strong>
+                            <p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px">Expecting all RSVP back by the <br /><strong style="color: red"><%= localize(@party.rsvp_by, format: :long) %></p></strong>
                         </div>
                     </div>
 
-                      <a href="" class="btn btn-primary" data-toggle="modal" data-target="#new_request_modal" style="font-family: 'Handlee', serif; font-size: 23px; font-weight: bold; color: black">Friends Request</a>
+                      <a href="" class="btn btn-primary" data-toggle="modal" data-target="#new_request_modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 18px; color: black; font-weight: bold;">Friends Request</a>
 
 	    <div class="modal fade" id="new_request_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">      
 
@@ -62,7 +89,7 @@
 
 				           <div class="modal-content">
 
-											  <div class="modal-header" style="font-family: 'Courgette', serif; font-size: 28px; font-weight: bold; color: red">
+											  <div class="modal-header" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 22px; color: red">
 
 											    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                 
 
@@ -74,7 +101,7 @@
 								                                                <%# Render the new person form (passing modal => true to enable remote => true) %>
 									       <%= render 'requests/form', modal: true %> 
 
-									                <div class="modal-footer" style="font-family: 'Courgette', serif; font-size: 28px; font-weight: bold; color: red">
+									                <div class="modal-footer" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 22px; color: red">
 
 									                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       														
@@ -114,7 +141,35 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                    <img class="img-responsive" src="/occa1.jpeg", width="300" height="300" alt="">
+                <% if @party.category != nil %>
+
+                   <% case #{"@party.category"} %>
+
+                    <%    when "parties" %>
+
+                              <img class="img-responsive" src="/occa1.jpeg", width="200" height="200" alt="">
+
+                      <%  when "get_together" %>
+
+                               <img class="img-responsive" src="/occa1.jpeg", width="200" height="200" alt="">
+
+                      <%  when "events" %>
+
+                              <img class="img-responsive" src="/new_back7.jpg", width="200" height="200" alt="">
+
+                       <% when "ceremonies" %>
+
+                              <img class="img-responsive" src="/occa1.jpeg", width="200" height="200" alt="">
+
+                       <% else %>
+                   
+
+                              <img class="img-responsive" src="/occa1.jpeg", width="200" height="200" alt="">
+
+                        <% end %>
+
+               <% end %>
+                    
                     
                 </div>
                 <div class="col-sm-6">
@@ -164,3 +219,5 @@
 </div>
 
 </div>
+
+

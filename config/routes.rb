@@ -81,7 +81,7 @@ end
   
       
    get 'photo-album', to: 'catalogues#index', as: 'catalogues'
-   get 'photo-album', to: 'catalogues#create', as: 'create_catalogue'
+   post 'photo-album', to: 'catalogues#create', as: 'create_catalogue'
 
 
   

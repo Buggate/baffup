@@ -13,7 +13,7 @@
       </div>
       <div class="modal-body">
        
-        <%= form_tag '/catalogues', method: :post, class: 'dropzone form', id: 'media-dropzone' do %>
+        <%= form_tag '/photo-album', method: :post, class: 'dropzone form', id: 'media-dropzone' do %>
 
          <%= hidden_field_tag :party_id, @party.id %>
 
