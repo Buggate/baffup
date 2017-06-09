@@ -35,78 +35,74 @@
       
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-       <link href="https://fonts.googleapis.com/css?family=Oswald|Inconsolata:italic|Averia+Serif+Libre|Courgette|Handlee|Parisienne|Sacramento|Julius+Sans+One|Raleway" rel="stylesheet"> 
-
-      <style>
       
+    <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Permanent+Marker|Patrick+Hand+SC|Cormorant+SC|Mogra|Tangerine|Pacifico|Julius+Sans+One" rel="stylesheet">
+
+     <style>
       body {
-             
-            font-family: 'Handlee', cursive;
-            font-family: 'Sacramento', cursive;
-            font-family: 'Parisienne', cursive;
-            font-family: 'Averia+Serif+Libre', cursive;
-            font-family: 'Courgette', cursive;
-            font-family: 'Inconsolata:italic', cursive;
-            font-family: 'Oswald', cursive;
+            
+            font-family: 'Annie Use Your Telescope', cursive;
+            font-family: 'Permanent Marker', cursive;
+            font-family: 'Cormorant SC', serif;
+            font-family: 'Tangerine', serif;
+            font-family: 'Pacifico', serif;
+            font-family: 'Mogra', cursive;
+            font-family: 'Patrick Hand SC', cursive;
             font-family: 'Julius Sans One', sans-serif;
-            font-family: 'Raleway', sans-serif;
-          
-                       
-          }
-    </style>
     
+      }
+    </style>
        <%= csrf_meta_tags %>
     
 </head>
 
     <body>
-		
-		<!-- Top menu -->
-	
         
-        <!-- Description -->
-		<div class="description-container">
-	        <div class="container">
-	        	<div class="row">
-	                <div class="col-sm-12 description-title"><br /><br /><br /><br /><br /><br />
-	                    <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 38px; color: red">Your Fun Starts!!! Loading Your Occassions</h2>
-	                </div>
-	            </div>
-	            
-	        </div>
+        <!-- Top menu -->
+    
+            <!-- Description -->
+        <div class="description-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 description-title">
+                        <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 28px; color: black">Your Fun Starts!!! Loading Your Occassions</h2>
+                    </div>
+                </div>
+                
+            </div>
 
-       </div>
-	
+       </div
+    
 
-		<div>
+        <div>
 
-		   <%= yield %>
+           <%= yield %>
 
-		</div>
+        </div>
 
-		
+        
 
 
-		
-		<!-- Multi Step Form -->
-		<div class="msf-container">
-	        <div class="container">
-	        	<div class="row">
-	                <div class="col-sm-12 msf-title">
+        
+        <!-- Multi Step Form -->
+        <div class="msf-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 msf-title">
 
-	                    <h3 style="font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: italic; color: black">ENJOY YOUR TIME HERE</h3>
-	                    <p style="font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: italic; color: black">A trial will convince you, its features will make you go gaga</p>
+                        <h3 style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black">ENJOY YOUR TIME HERE</h3>
+                        <p style="font-family: 'Annie Use Your Telescope', cursive; font-size: 16px; color: black; font-weight: bold;">A trial will convince you, its features will make you go gaga</p>
                         <br />
                         <br />
 
-                        <strong><%= link_to 'Back', profiles_path(:profile_id => current_user.profile.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px;" %></strong>
-	                </div>
-	            </div>
-	        
-	            				
-	            
-			</div>
-		</div>
+                        <strong><%= link_to 'Back', profiles_path(:profile_id => current_user.profile.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Patrick Hand SC', cursive; sans-serif; font-size: 18px;" %></strong>
+                    </div>
+                </div>
+            
+                                
+                
+            </div>
+        </div>
 
         <!-- Javascript -->
          <%= javascript_include_tag "application", 'data-turbolinks-track': true %>

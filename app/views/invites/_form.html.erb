@@ -1,5 +1,5 @@
      
-   <div class="well" align="center">   
+   <div class="well well-sm">   
 
        <%= simple_form_for([@party, @invite, @party.invites.build({:party_id => @party.id, :host_id => @party.user_id })]) do |f| %>
 
@@ -21,8 +21,8 @@
            <div><label for="invite-emails"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight:  bold; color: black">Invite Guests</span></label></div>
            <br />
 
-       
-        <%= f.input :email, :input_html => { :style=> 'width: 520px', :rows => 5, label: :false}, :placeholder => "guest_one@example.com, guest_two@example.com, etc" %>
+       <label for="user-email" class="label" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black" >Email</label>
+        <%= f.input :email, label: false, :placeholder => "guest_one@example.com, guest_two@example.com, etc" %>
 
 
 </div><br>

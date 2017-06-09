@@ -1,5 +1,5 @@
 
-<div class="well">
+<div >
 
   <%= simple_form_for(@profile, :url => {:action => 'update', :id => @profile.id, :user_id => current_user.id}) do |f| %>
 
@@ -9,7 +9,7 @@
 				 
 	 <% end %>
 
-	 <strong><%= link_to 'Back', profiles_path(:profile_id => @profile.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;" %></strong><br>
+	 <strong><%= link_to 'Back', profiles_path(:profile_id => @profile.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold;" %></strong><br>
 
 </div>	 
 

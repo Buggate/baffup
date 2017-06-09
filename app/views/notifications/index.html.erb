@@ -6,13 +6,13 @@
 
            <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
 
-                <h4 class="guest"><%= notice.visitor.user.name  %></h4>
+                <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black; font-weight: bold;"><%= notice.visitor.user.name  %></h4>
 
-                <h4 class="host">Host:-<%= notice.party.user.name %> Sents you an I.V </h4>
+                <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black; font-weight: bold;">Host:-<%= notice.party.user.name %> Sents you an I.V </h4>
           	   	
-          	   	<h4 class="party">to his Party - (<%= notice.party.title  %>)</h4>
+          	   	<h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black; font-weight: bold;">to the occassion - (<%= notice.party.title  %>)</h4>
 
-                <div class="btn btn-success"><h5> <%= link_to "Accept", visitor_path(:id => notice.visitor.id, :group_id => notice.party.id) %> </h5></div>
+                <div class="btn btn-danger"><%= link_to "Accept", visitor_path(:id => notice.visitor.id), :style =>"font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black" %></div>
 
           	   
       	   	 

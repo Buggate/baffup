@@ -93,26 +93,26 @@
 	     <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:large)) %></a>
 
 
-	      <div class="dropdown">
-			                            
-			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; "><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
+    	      <div class="dropdown">
+    			                            
+    			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; "><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
 
-				     <ul class="dropdown-menu">
+    				     <ul class="dropdown-menu">
 
-				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 16px; "  %></li>
+    				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;"  %></li>
 
-				     
-				     <li><%= link_to "" %></li>
+    				     
+    				     <li><%= link_to "" %></li>
 
 
 
-				       <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 16px;" %></li>
-				      
+    				       <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %></li>
+    				      
 
-				     </ul>
-			         
+    				     </ul>
+    			         
 
-			 </div>
+    			 </div>
 
 
 
@@ -146,7 +146,7 @@
 						  <span class="badge bg-important badge-success" >
 
 
-						       <h4 id="notice" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black;"><%=link_to "#{@profile.user.notifications.count}", notifications_path, :title => "Occassion | Invitations ... " %>
+						       <h4 id="notice" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black"><%=link_to "#{@profile.user.notifications.count}", notifications_path, :title => "Occassion | Invitations ... " %>
 						       	
 						       <h4>
 
@@ -164,7 +164,7 @@
 				
 
 
-					 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :style => "font-family: 'Mogra', cursive;" %>
+					 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :style => "font-family: 'Mogra', cursive;"  %>
 
 					
 					 <br />
@@ -172,7 +172,7 @@
 					 <br />
 					
 
-						<p style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; ">&copy; Baffsup 2017</p>
+						<p style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;">&copy; Baffsup 2017</p>
 
 		</aside>
 
@@ -187,10 +187,11 @@
 
   <section id="one">
 
-		    <header class="major">
-							<h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 30px;">Create and manage your occassions. Keep records of your most important moments and share with your loved ones.<br />
+		    <div class="major">
+
+			   <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 30px;">Create and manage your occassions. Keep records of your most important moments and share with your loved ones.<br />
 							Its easy and free !!!</h2>
-			</header>
+			</div>
 
   </section>
 
@@ -213,7 +214,7 @@
 
 	<section id="two">
 
-       <div style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: black"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</div>
+       <div style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: black"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</div><br /><br />
 
 			<div class="row">
 			
@@ -230,14 +231,10 @@
 
 			</section>
 
-			</div>
+		
 
 
-			<section id="footer">
-				<div class="inner">
-					
-					
-			</section>
+		
 
        
 

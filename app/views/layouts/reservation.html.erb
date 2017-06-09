@@ -37,22 +37,21 @@
     
 
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-        <link href="https://fonts.googleapis.com/css?family=Oswald|Inconsolata:italic|Averia+Serif+Libre|Courgette|Handlee|Parisienne|Sacramento" rel="stylesheet"> 
 
-      <style>
-      
+       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Mogra|Julius+Sans+One|Permanent+Marker" rel="stylesheet">
+
+     <style>
       body {
-             
-            font-family: 'Handlee', cursive;
-            font-family: 'Sacramento', cursive;
-            font-family: 'Parisienne', cursive;
-            font-family: 'Averia+Serif+Libre', cursive;
-            font-family: 'Courgette', cursive;
-            font-family: 'Inconsolata:italic', cursive;
-            text-shadow: 1px 1px 1px #9ea016 ;
 
-                       
-          }
+        font-family: 'Patrick Hand SC', cursive;
+
+           font-family: 'Permanent Marker', cursive;
+  
+            font-family: 'Mogra', cursive;
+            
+            font-family: 'Julius Sans One', sans-serif;
+    
+      }
     </style>
      
        <%= csrf_meta_tags %>
@@ -83,18 +82,18 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                       
-                        <li class="active"><%= link_to 'mYCATLOG', profiles_path(:profile_id => @visitor.user.profile.id), :style => "font-family: 'Inconsolata:italic', serif; font-size: 18px;"  %></li>
+                        <li class="active"><%= link_to 'mYCATLOG', profiles_path(:profile_id => @visitor.user.profile.id), :style => "font-family: 'Permanent Marker', cursive; font-size: 16px;"  %></li>
                         <li><a href=""></a></li>
 
                         <li><a href="about-us.html"></a></li>
                         <li><a href="services.html"></a></li>
                         
-                        <li><%= link_to 'ALBUMS', visitor_catalogues_register_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id), :style => "font-size: 15px;" %></li>
+                        <li><%= link_to 'ALBUMS', visitor_catalogues_register_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id), :style => "font-family: 'Permanent Marker', cursive; font-size: 16px;" %></li>
 
 
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style ="font-size: 15px; text-shadow: 1px 1px 1px #aaa;" ><%= @visitor.party.title %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style ="font-family: 'Permanent Marker', cursive; font-size: 15px;" ><%= @visitor.party.title %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="" style ="font-family: 'Handlee', serif; font-size: 15px; font-weight: bold;" >Host: <%= @visitor.party.user.name %></a></li>
                                 <li><a href="" style ="font-family: 'Handlee', serif; font-size: 15px; font-weight: bold;" >Venue : <%= @visitor.party.venue %></a></li>

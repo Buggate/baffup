@@ -14,18 +14,18 @@
 
                    <%= f.input :name, as: :hidden, input_html: {value: @visitor.user.name} %>
 
-              <h3 style ="font-family: 'Handlee', serif; font-size: 38px; font-weight: bold; color: red;" > Are you attending? </h3><br>
+              <h3 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;" > Are you attending? </h3><br>
 
-                      <div style ="font-size: 28px; color: black;">
+                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black;">
                         <%= label :accept, "Accept With Pleasure", value: true %>
                         <%= f.radio_button :accept, true, :checked => true, :value => true %>
                       </div><br />
-                      <div style ="font-size: 28px; color: black;">
+                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black;">
                         <%= label :accept, "Decline With Regards", value: false %>
                         <%= f.radio_button :accept, false, :value => false%>
                       </div><br /><br />
 
-                         <div class="form-group" class="group" style="font-family: 'Courgette', serif; font-size: 18px;">
+                         <div class="form-group" class="group" style="font-family: 'Patrick Hand SC', cursive; font-size: 14px;  color: black;">
 
                           <%= f.submit %>
                           
