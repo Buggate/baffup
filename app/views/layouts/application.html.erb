@@ -35,7 +35,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-   <link href="https://fonts.googleapis.com/css?family=Mogra|Julius+Sans+One" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Mogra|Julius+Sans+One|Patrick+Hand+SC" rel="stylesheet">
 
      <style>
       body {
@@ -43,12 +43,40 @@
             font-family: 'Mogra', cursive;
             
             font-family: 'Julius Sans One', sans-serif;
+
+            font-family: 'Patrick Hand SC', cursive;
     
       }
     </style>
     
     <%= csrf_meta_tags %>
   </head>
+
+  <header>
+    <div class="sticky-nav">
+
+      <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+        
+        <div id="logo">
+
+          <a id="goUp" href="#slider" title="BaffSup | Load Anything ... ">Baffsup Template</a>
+        </div>
+        
+        <nav id="menu">
+          <ul id="menu-nav">
+
+                <li class="active"><div class="buttons"><%= link_to 'Home', root_path, :style => "font-family: 'Patrick Hand SC', cursive; color: black;" %></div></li>
+
+               
+                        
+ 
+            </ul>
+        </nav>
+
+
+    </div>
+
+     </header>
 
   <body>
 
@@ -60,6 +88,27 @@
      <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
 
   </body>
+
+
+  <footer >
+
+  <p class="credits" style="color: black;" >&copy;&nbsp;&nbsp;2017 Baffsup.com, Crafted by <a href="http://designscrazed.org/" title="Baffsup | Load Anything ...">&nbsp;&nbsp;Dev Team</a></p>
+
+
+      <a class="btn-slide animation animated-item-3" href="/abouts/1">About</a>&nbsp | &nbsp
+
+      <a class="btn-slide animation animated-item-3" href="/how_it_works/1">How It Works</a>&nbsp | &nbsp
+
+      <a class="btn-slide animation animated-item-3" href="/term_and_conditions/1">Terms & Conditions</a>&nbsp | &nbsp
+
+      <a class="btn-slide animation animated-item-3" href="/privacies/1">Privacy</a>&nbsp | &nbsp
+
+      <%= link_to "Contact Us...", new_message_path, :class => "btn-slide animation animated-item-3" %>
+
+
+
+
+</footer>    
 </html>
 
 

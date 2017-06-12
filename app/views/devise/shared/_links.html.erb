@@ -7,7 +7,7 @@
 <% end %>
 
 <% if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <h3><strong><%= link_to t(".forgot_your_password", :default => "Forgot your password?"), new_password_path(resource_name) %></strong></h3><br />
+  <h3 style="font-family: 'Julius Sans One', sans-serif; font-weight: bold; font-size: 16px;"><%= link_to t(".forgot_your_password", :default => "Forgot your password?"), new_password_path(resource_name) %></h3><br />
 <% end %>
 
 <% if devise_mapping.confirmable? && controller_name != 'confirmations' %>

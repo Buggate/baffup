@@ -123,20 +123,20 @@
 
             <% if @visitor.reservation.present? %>
 
-               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;" >You have been reserved for this party</h1>
+               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; " aria-hidden="true">You have been reserved for this party</h1>
 
                   <i class="fa fa-check fa-5x" aria-hidden="true"></i>
 
 
             <% elsif @visitor != @party.visitors.first  %>
 
-                <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;">Reserve a space on this Occassion</h1><br/> <h3> Click RSVP button the bar above </h3>
+          <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1><br/> <h3> Click RSVP button the bar above </h3>
 
             <% end %>
 
                <% else @visitor = @party.visitors.first %>  
 
-               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;">Check your R S V P List in your Occasion Page</h1>
+               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;"  aria-hidden="true">Check your R S V P List in your Occasion Page</h1>
 
               
 
@@ -157,7 +157,7 @@
                   </div>
                   <div class="media-body">
                   <h4 class="media-heading" style="font-family: 'Mogra', cursive; font-size: 16px; font-weight: bold; ">&nbsp;&nbsp;Date &amp; Time</h4>
-                      <p >This Occasion is scheduled for the &nbsp;<br /><strong style="color: #915b05;"><%= localize(@party.created_at, format: :long) %></strong></p>
+                      <p aria-hidden="true" >This Occasion is scheduled for the &nbsp;<br /><strong style="color: #915b05;"><%= localize(@party.created_at, format: :long) %></strong></p>
                   </div>
                      
                 </div><br />
@@ -168,7 +168,7 @@
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading" style="font-family: 'Mogra', cursive; font-size: 16px";>&nbsp;&nbsp;Occassion Venue</h4>
-                       <p>It is going to be held at the <br /><strong style="color: #915b05;"><%= @party.venue %></p></strong>
+                       <p >It is going to be held at the <br /><strong style="color: #915b05; overflow:hidden;"><%= @party.venue %></p></strong>
                     </div>
                   </div><br />
 
@@ -178,7 +178,7 @@
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading" style="font-family: 'Mogra', cursive; font-size: 16px";>&nbsp;&nbsp;Guest RSVP BY</h4>
-                      <p>Expecting all RSVP back by the <br /><strong style="color: #915b05;"><%= localize(@party.rsvp_by, format: :long) %></p></strong>
+                      <p aria-hidden="true">Expecting all RSVP back by the <br /><strong style="color: #915b05;"><%= localize(@party.rsvp_by, format: :long) %></p></strong>
                     </div>
                   </div>
 
