@@ -44,6 +44,7 @@ class PartiesController < ApplicationController
 
           create_visitor @party, @user
 
+         
           flash[:notice] = "Party created successfully."
 
 
@@ -62,18 +63,21 @@ class PartiesController < ApplicationController
     def edit
 
             @party ||= Party.find(params[:id])
+            redirect_to_good_slug(@party) and return if bad_slug?(@party)
   
      end
 
      def edit_venue
 
             @party ||= Party.find(params[:id])
+            redirect_to_good_slug(@party) and return if bad_slug?(@party)
   
      end
 
      def edit_date
 
             @party ||= Party.find(params[:id])
+            redirect_to_good_slug(@party) and return if bad_slug?(@party)
   
      end
           
@@ -190,15 +194,17 @@ class PartiesController < ApplicationController
 
 
 
-     def create_photo(visitor, party)  
 
-    
-               @photo = @visitor.photos.build(party_id: @party.id, visitor_id: @visitor.id)
-
-               @photo.save  
+         def create_catalogue(party, user) 
 
 
-    end 
+          Catalogue.create(party_id: @party.id,
+
+                        :user_id => current_user.id)
+
+
+         end
+
 
 
 

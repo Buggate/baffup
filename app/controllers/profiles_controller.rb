@@ -20,12 +20,14 @@ class ProfilesController < ApplicationController
        def show
 
         @profile = current_user.profile
+        redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
 
        end
 
       	 def edit
 
             @profile = Profile.find(params[:id])
+            redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
 
             
             
@@ -34,6 +36,7 @@ class ProfilesController < ApplicationController
            def edit_picture
 
             @profile ||= Profile.find(params[:id])
+            redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
   
          end
           

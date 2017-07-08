@@ -1,38 +1,37 @@
 class CataloguesController < ApplicationController
 
-	 layout :resolve_layout
+   layout :resolve_layout
 
-     before_action :find_party
+    # before_action :find_party
 
-    # before_action :find_user
 
-        before_action :authenticate_user! 
-
+before_action :find_title
 
   def index
-    
 
-    @user = User.find(params[:user_id])
-    
-    @catalogues = Catalogue.all.where({:party_id => @party.id, :user_id => @party.user.id}) 
+    @party = Party.find_by_title(@title)
+
+    @catalogues = Catalogue.where(:party_id => @party)
+
+   
 
   end
 
 
 def register
 
-  @visitor = Visitor.find(params[:visitor_id])
+  @party = Party.find_by_title(@title)
 
-  @user = @visitor.user
-  
-  @catalogues = Catalogue.all.where({:party_id => @party.id, :user_id => @party.user.id})
+  @visitor = Visitor.find(params[:visitor_id])
 
   
 end
 
   def create
 
-    @catalogue = @party.catalogues.build({:party_id => @party.id, :user_id => @party.user.id, file_name: params[:file] })
+    @party = Party.find_by_title(@title)
+
+    @catalogue = @party.catalogues.build({:party_id => @party.id, :title => @party.title, file_name: params[:file] })
 
     if @catalogue.save!
 
@@ -88,7 +87,7 @@ end
 
   def catalogue_params
 
-    params.require(:catalogue).permit(:file_name, :party_id, :user_id)
+    params.require(:catalogue).permit(:file_name, :party_id, :title)
 
   end
 
@@ -97,23 +96,30 @@ end
 
   def find_party
 
-      if params[:party_id]
+    id = params[:user_id]
 
-         @party = Party.find(params[:party_id])
+    @user = User.find(id)
 
-      end
+      if params[:party_id] 
 
-  end
-
-   def find_user
-
-      if params[:user_id]
-
-         @user = User.find(params[:user_id])
+         @party = Party.find_by_user_id(@user)
 
       end
-
   end
+
+
+
+  def find_title
+
+    @title = params[:title]
+
+      
+  end
+
+
+
+
+
 
 
 

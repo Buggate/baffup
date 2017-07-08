@@ -6,37 +6,41 @@
     <div class="lock"></div>
          
          
-    <div class="login-options" style="font-family: 'Mogra',  cursive; font-size: 18px; color: red "><%= t('.sign_up', :default => "Sign Up") %></div>
+     <div class="login-options" ><img src="/b_logo1.png" width="120" height="100" border="5" ></div>
 
      
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f| %>
+
+       <% if @token != nil %>
+        <%= hidden_field_tag :invite_token, @token %>
+    <% end %>
 
 
 
     <div class="group">
           <label for="user-name" class="label" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; ">NAME</label>
 
-          <%= f.text_field :name, class: "input" %>
+          <%= f.text_field :name, class: "input", style: "font-family: 'Mogra', cursive;" %>
     </div><br />
 
     <div class="group">
           <label for="user-email" class="label" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; ">Email</label>
         
-           <%= f.email_field :email, :value => @email, class: "input", :placeholder => "Email" %>
+           <%= f.email_field :email, :value => @email, class: "input", style: "font-family: 'Mogra', cursive;" %>
     </div><br />
 
     <div class="group">
           <label for="user-password" class="label" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px;">Password</label>
 
-          <%= f.password_field :password, class: "input" %>
+          <%= f.password_field :password, class: "input", style: "font-family: 'Mogra', cursive;" %>
           
     </div><br />
 
         <div class="group">
           <label for="user-password_confirmation" class="label" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px;">Confirm Password</label>
 
-          <%= f.password_field :password_confirmation, class: "input" %>
+          <%= f.password_field :password_confirmation, class: "input", style: "font-family: 'Mogra', cursive;" %>
           
         </div><br />
 
@@ -52,7 +56,7 @@
 
     </div><br /><br />
 
-       <div align="center" style="font-size: 28px; " ><%= link_to "Already have an account? SIGN IN! ", new_user_session_path %></div><br /><br />
+       <div align="center" style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: black"" ><%= link_to "Already have an account? SIGN IN! ", new_user_session_path %></div><br /><br />
 
   </div>
 

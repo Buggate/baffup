@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row" style="margin-top: 50px;">
-    <div class="col-xs-4 col-xs-offset-1">
+    <div class="col-xs-4 ">
       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #913612; font-weight: bold;">Upload Images</button>
     </div>
   </div>
@@ -17,9 +17,10 @@
 
          <%= hidden_field_tag :party_id, @party.id %>
 
-         <%= hidden_field_tag :user_id, @party.user.id %>
+         <%= hidden_field_tag :title, @party.title %>
 
-          <div class="fallback" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;">
+    
+            <div class="fallback" style="font-family: 'Handlee', serif; font-size: 18px; font-weight: bold;">
 
             <%= file_field_tag 'catalogue', multiple: true %>
 

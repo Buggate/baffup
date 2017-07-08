@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605000147) do
+ActiveRecord::Schema.define(version: 20170704001637) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170605000147) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "title"
     t.index ["party_id"], name: "index_catalogues_on_party_id", using: :btree
     t.index ["user_id"], name: "index_catalogues_on_user_id", using: :btree
   end
@@ -232,6 +233,8 @@ ActiveRecord::Schema.define(version: 20170605000147) do
     t.boolean  "accept",     default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "title"
+    t.string   "string"
     t.index ["party_id"], name: "index_reservations_on_party_id", using: :btree
     t.index ["visitor_id"], name: "index_reservations_on_visitor_id", using: :btree
   end

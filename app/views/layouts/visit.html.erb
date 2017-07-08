@@ -66,24 +66,22 @@
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div id="logo">
-
-                      <a title="Baffsup | Load Anything ... ">Baffsup Template</a>
-                    </div>
-
+                  
+                   <div><img src="/b_logo1.png" width="120" height="100"></div>
 
                 </div>
         
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                       
-                        <li class="active"><%= link_to 'mYCATLOG', profiles_path(:profile_id => @visitor.user.profile.id), :style => "font-family: 'Permanent Marker', cursive;"  %></li>
+                        <li class="active"><%= link_to 'mYCATLOG', profiles_path, :style => "font-family: 'Permanent Marker', cursive;"  %></li>
                         <li><a href=""></a></li>
                         <% if @visitor != @party.visitors.first  %> 
                         <li><%= link_to 'R S V P', new_reservation_path(:visitor_id => @visitor.id), :style => "font-family: 'Permanent Marker', cursive;" %></li>
@@ -91,7 +89,7 @@
                         <% else @visitor = @party.visitors.first %>
                         <li><%= link_to 'OCCASSION', party_path(@party), :style => "font-family: 'Permanent Marker', cursive;"  %></li>
                         <% end %> 
-                        <li><%= link_to 'ALBUMS', visitor_catalogues_register_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id), :style => "font-family: 'Permanent Marker', cursive;"  %></li>
+                        <li><%= link_to 'ALBUMS', visitor_catalogues_register_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id,  :title => @party.title), :style => "font-family: 'Permanent Marker', cursive;"  %></li>
 
                         
                                               
@@ -101,6 +99,7 @@
         </nav><!--/nav-->
     
     </header><!--/header-->
+
 
 
    
@@ -116,37 +115,8 @@
 
             </div><!--/.col-sm-6-->
 
-            <div class="col-xs-3 ">
 
-
-         <% if @visitor != nil %>  
-
-            <% if @visitor.reservation.present? %>
-
-               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; " aria-hidden="true">You have been reserved for this party</h1>
-
-                  <i class="fa fa-check fa-5x" aria-hidden="true"></i>
-
-
-            <% elsif @visitor != @party.visitors.first  %>
-
-          <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1><br/> <h3> Click RSVP button the bar above </h3>
-
-            <% end %>
-
-               <% else @visitor = @party.visitors.first %>  
-
-               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;"  aria-hidden="true">Check your R S V P List in your Occasion Page</h1>
-
-              
-
-
-          <% end %>
-
-
-    </div>
-
-        <div class="col-xs-3 ">
+        <div class="col-xs-6 ">
 
         <div class="container" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px";>
                       
@@ -183,7 +153,36 @@
                   </div>
 
                       
-              </div>
+              </div><br />
+
+              <div class="container">
+
+
+         <% if @visitor != nil %>  
+
+            <% if @visitor.reservation.present? %>
+
+               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; " aria-hidden="true">You have been reserved for this party</h1>
+
+                  <i class="fa fa-check fa-5x" aria-hidden="true"></i>
+
+
+            <% elsif @visitor != @party.visitors.first  %>
+
+          <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1><br/> <h3> Click RSVP button the bar above </h3>
+
+            <% end %>
+
+               <% else @visitor = @party.visitors.first %>  
+
+               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;"  aria-hidden="true">Check your R S V P List in your Occasion Page</h1>
+
+              
+
+
+          <% end %>
+
+          </div>
         </div>
 
 

@@ -1,7 +1,7 @@
 class Visitor < ApplicationRecord
 
 
-before_save :generate_token
+     before_save :generate_token
 
 	 acts_as_voter
 
@@ -35,8 +35,8 @@ before_save :generate_token
 
 	def generate_token
 
-      self.token = Digest::SHA1.hexdigest([self.party_id, rand].join)
+      self.token = SecureRandom.hex(3)
 
-  end
+    end
 	
 end

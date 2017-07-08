@@ -4,9 +4,9 @@
     
     <div class="login-form">
 
-           
+           <div class="login-options" ><img src="/b_logo1.png" width="120" height="100" border="5" ></div>
              
-        <div class="login-options" align="center" style="font-family: 'Mogra',  cursive; font-size: 24px; color: red "><%= t('.forgot_your_password', :default => 'Forgot your password?') %></div><br /><br /><br />
+        <div class="login-options" align="center" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; "><%= t('.forgot_your_password', :default => 'Forgot your password?') %></div><br /><br /><br />
 
             <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, role: "form" }) do |f| %>
 

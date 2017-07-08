@@ -9,27 +9,26 @@ class ApplicationController < ActionController::Base
 
     protected
 
-        def configure_permitted_parameters
+    def configure_permitted_parameters
 
-            devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :provider, :uid ) }
+        devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :provider, :uid ) }
             
-        end
+    end
 
-      def after_sign_in_path_for(resource)
+    def after_sign_in_path_for(resource)
+
         return admin_root_path  if resource.class == AdminUser
-        return profiles_path(:profile_id => current_user.profile.id)
-      end
+        return profiles_path
+
+    end
 
 
-        def after_sign_up_path_for(resource)
+    def after_sign_up_path_for(resource)
 
-          after_sign_in_path_for(resource)
+        after_sign_in_path_for(resource)
           
-        end
-
-
-        
-          
+    end
+     
     def create_friend(user, buddy, invite) 
 
         current_user = @party.user
@@ -42,7 +41,7 @@ class ApplicationController < ActionController::Base
 
         @friend.save
 
-      end  
+   end  
 
 
     def redirect_url
@@ -53,7 +52,7 @@ class ApplicationController < ActionController::Base
 
           when User
 
-            profiles_path(:profile_id => current_user.profile.id)
+            profile_path(:id => current_user.profile.id)
 
           when Admin_User
 
@@ -70,7 +69,7 @@ class ApplicationController < ActionController::Base
 
       ##
       # 301 redirect to canonical slug.
-      def redirect_to_good_slug(object)
+      def redirect_to_goodd_slug(object)
       
           redirect_to params.permit.merge({
                     :controller => controller_name,
@@ -80,23 +79,28 @@ class ApplicationController < ActionController::Base
                   })
 
       end
-
-
-       def badd_slug?(object)
-        params[:party_id] != object.to_param
+   def redirect_to_good_slug(object)
+          redirect_to ({
+                        
+                        status: 301
+                      })
       end
+
+      # def badd_slug?(object)
+     #   params[:party_id] != object.to_param
+      #end
 
       ##
       # 301 redirect to canonical slug.
-      def redirect_to_goodd_slug(object)
+      #def redirect_to_goodd_slug(object)
       
-          redirect_to params.permit.merge({
-                    :controller => controller_name,
-                    :action => params[:action],
+       #   redirect_to params.permit.merge({
+         #           :controller => controller_name,
+       #             :action => params[:action],
                     
-                    status: 301
-                  })
+        #            status: 301
+        #          })
 
-      end
+      #end
            
 end

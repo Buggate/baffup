@@ -13,7 +13,7 @@
 
                  </div>   <br /><br />
 
-                 <div align="center"><%= link_to "All Occassions", parties_path(:user_id => @profile.user.id), :type => "button", :class => "btn btn-danger", :style => "font-family: 'Mogra', cursive; font-size: 18px; color: black" %></div>
+                 <div align="center"><%= link_to "All Occassions", parties_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Mogra', cursive; font-size: 18px; color: black" %></div>
 
 
                 
@@ -58,8 +58,9 @@
                                                                 <div class="media-body">
                                                                   <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;") %><br>
                                                                   <i class="fa fa-picture-o" aria-hidden="true"></i>
-              &nbsp;<%= link_to "Upload Album", catalogues_path(:party_id => party.id, :user_id => party.user.id), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;" %></p>
+              &nbsp;<%= link_to("Upload Album", {:controller => 'catalogues', :party_id => party.id, :title => party.title}, :class => 'action index', :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;") %></p>
 
+            
 
 
                
@@ -85,9 +86,6 @@
 
 
                 </div>
-
-
-                
 
 
                 

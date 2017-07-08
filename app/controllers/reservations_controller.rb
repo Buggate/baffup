@@ -5,10 +5,14 @@ class ReservationsController < ApplicationController
 
 	before_action :find_visitor
 
-  before_action :find_party
+  #before_action :find_party
+
+  before_action :find_title
 
 
   def index
+
+    @party = Party.find_by_title(@title)
     
     @reservations = @party.reservations
 
@@ -18,6 +22,8 @@ class ReservationsController < ApplicationController
 
 
    def new 
+
+    @party = Party.find_by_title(@title)
      
       @reservation = Reservation.new(:visitor_id => @visitor.id, :party_id => @visitor.party.id) 
 
@@ -37,7 +43,7 @@ class ReservationsController < ApplicationController
 
         
   
-  	  redirect_to visitor_path(:id => @visitor.id, :party_id => @visitor.party.id)
+  	  redirect_to visitor_path(@visitor)
 
     else
 
@@ -46,6 +52,8 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+
+    @party = Party.find_by_title(@title)
     
 
     @reservation = @vistor.reservations.find(params[:id])
@@ -77,7 +85,7 @@ class ReservationsController < ApplicationController
 
   def reservation_params
 
-    params.require(:reservation).permit(:name, :visitor_id, :party_id, :accept)
+    params.require(:reservation).permit(:name, :visitor_id, :party_id, :accept, :title)
 
   end
 
@@ -93,14 +101,9 @@ class ReservationsController < ApplicationController
   end
 
 
-  def find_party
+  def find_title
 
-      if params[:party_id]
-
-         @party = Party.find(params[:party_id])
-
-      end
-  
+     @title = params[:title]
 
   end
 

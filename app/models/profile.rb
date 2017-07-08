@@ -8,5 +8,7 @@ class Profile < ApplicationRecord
 
         validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+        custom_slugs_with(:name)
+
        
 end

@@ -7,7 +7,7 @@
       <div class="well">
         <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 28px; font-weight: bold; color: black">Occassion Album</h4><hr>
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-sm-12">
             <%= form_tag '/delete_catalogue', method: :delete do %>
               <%= submit_tag 'Delete', id: 'delete', class: 'btn btn-danger', disabled: @catalogues.empty? %>
               <br><br>
@@ -17,7 +17,7 @@
                     <h5 id="no-media" style="font-family: 'Julius Sans One', sans-serif; font-size: 28px; font-weight: bold; color: black">Empty Catalogue </h5>
                   <% else %>
                     <% @catalogues.each do |catalogue| %>
-                      <div class="col-lg-3">
+                      <div class="col-sm-3">
                         <div class="thumbnail">
                           <%= image_tag catalogue.file_name.url %>
                           <div class="caption">
@@ -33,7 +33,7 @@
               </div>
             <% end %>
           </div>
-          <div class="col-lg-1">
+          <div class="col-sm-1">
             <%= link_to 'Delete All', delete_all_path, method: :delete, id: 'delete-all', class: 'btn btn-danger', :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold; color: black", disabled: @catalogues.empty? %>
           </div>
         </div>
@@ -44,4 +44,5 @@
 <br />
 <br />
 
-<%= link_to 'View Your Occasion Album', visitor_catalogues_register_path(:visitor_id => @party.visitors.first.id, :party_id => @party.id), :type => "button", :class => "btn btn-success", :style => "font-family: 'Handlee', serif; font-size: 18px; font-weight: bold; color: black"  %>
+<%= link_to 'View Your Occasion Album', visitor_catalogues_register_path(:visitor_id => @party.visitors.first.id, :party_id => @party.id), :type => "button", :class => "btn btn-danger", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 28px; font-weight: bold; color: black"  %>
+

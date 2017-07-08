@@ -33,32 +33,25 @@ def create
 
      if @invite.guest != nil
 
-        create_visitor @invite, @party, @user
+       create_visitor @invite, @party, @user
 
-                  create_notification @invite, @party, @visitor, @user
+       create_notification @invite, @party, @visitor, @user
                 
 
-                 InviteMailer.baffsup_user_invite(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
+       InviteMailer.baffsup_user_invite(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
 
-                 create_friend @user, @buddy, @invite
-
-
-                
-           
-                 flash[:notice] = "Invitation Sent successfully."
-
+       create_friend @user, @buddy, @invite
+             
+       flash[:notice] = "Invitation Sent successfully."
                 
 
-            else 
+     else 
           
-                InviteMailer.baffsup_guest_invite(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now 
+       InviteMailer.baffsup_guest_invite(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now 
 
-                  
+       flash[:notice] = "Invitation Sent successfully."
 
-
-                 flash[:notice] = "Invitation Sent successfully."
-
-            end     
+     end     
          
           
             end
@@ -72,11 +65,13 @@ end
 
  private
 
-  def find_party
+   def find_party
+
       if params[:party_id]
          @party = Party.find(params[:party_id])
       end
-  end
+      
+   end
 
    def create_visitor(user, party, invite)  
     
@@ -86,7 +81,7 @@ end
 
     @visitor.save
 
-end  
+  end  
 
   def create_notification(invite, party, visitor, user)  
     
@@ -97,7 +92,7 @@ end
   end  
 
 
-def invite_params
+  def invite_params
 
          params.require(:invite).permit(:email, :token, :group_id, :host_id, :guest_id, :party_id)
 

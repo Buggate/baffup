@@ -19,13 +19,6 @@ class InviteMailer < ApplicationMailer
 
         attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
   
-
-
-   
-
-      
-
-
         mail(to: @invite.email)
 
 
@@ -41,16 +34,12 @@ class InviteMailer < ApplicationMailer
 
 
       @party = party
-
-      
+  
 
       @url = 'https://secret-castle-41003.herokuapp.com'
-
-
-     
-        attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
-    
-
+      
+ 
+      attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
 
 
       mail(to: @invite.email)

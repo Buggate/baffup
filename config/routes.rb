@@ -78,18 +78,6 @@ end
 
    resources :reservations
 
-  
-      
-   get 'photo-album', to: 'catalogues#index', as: 'catalogues'
-   post 'photo-album', to: 'catalogues#create', as: 'create_catalogue'
-
-
-  
-    delete 'delete_catalogue', to: "catalogues#delete_catalogue"
-
-    delete 'delete_all', to: 'catalogues#delete_all'
-
-  root 'public#index'
 
   resources :abouts, only: :show
 
@@ -106,6 +94,16 @@ end
   get 'contact-me', to: 'messages#new', as: 'new_message'
   post 'contact-me', to: 'messages#create', as: 'create_message'
 
+ get 'photo-album', to: 'catalogues#index', as: 'catalogues'
+ 
+ post 'photo-album', to: 'catalogues#create', as: 'create_catalogue'
+
+
+ delete 'delete_catalogue', to: "catalogues#delete_catalogue"
+
+ delete 'delete_all', to: 'catalogues#delete_all'
+
+  root 'public#index'
 
 
 
