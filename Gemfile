@@ -48,6 +48,8 @@ gem 'modernizr-rails', '~> 2.7', '>= 2.7.1'
 
    gem 'rails_12factor', '~> 0.0.3'
 
+   gem 'newrelic_rpm'
+
 end
 
 group :development, :test do
@@ -153,6 +155,8 @@ end
 
 
   gem 'meta-tags', '~> 2.1'
+
+
  
 
  
