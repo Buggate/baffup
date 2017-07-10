@@ -29,8 +29,8 @@ common: &default_settings
 # RAILS_ENV or RACK_ENV (as appropriate) is used to determine the environment.
 # If your application has other named environments, configure them here.
 development:
-  <<: *default_settings
-  app_name: baffup (Development)
+  monitor_mode: true
+  app_name: baffup
 
 test:
   <<: *default_settings
@@ -42,4 +42,5 @@ staging:
   app_name: baffup (Staging)
 
 production:
-  <<: *default_settings
+  monitor_mode: true
+  app_name: baffup
