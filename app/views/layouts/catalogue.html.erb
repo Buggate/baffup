@@ -67,7 +67,7 @@
 
        
 			
-        <b><a href="#" class="image gratar"><h2><%= image_tag(@party.picture.url(:large), :width => "200", :height => "200" )%></h2></a></b>
+        <b><a href="#" class="image gratar"><h2><%= image_tag(@party.picture.url(:large), :width => "200", :height => "200", cached: true  )%></h2></a></b>
 
 					 <div class="dropdown">
                                   
@@ -143,3 +143,8 @@
 
 	</body>
 </html>
+
+
+
+                      
+

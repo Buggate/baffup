@@ -21,6 +21,9 @@
                     <h5 id="no-media" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black">Empty Catalogue</h5>
                   <% else %>
                     <% @catalogues.each do |catalogue| %>
+
+                       <% cache catalogue do %>
+
                       <div class="col-xs-3">
                         <div class="thumbnail">
                           <%= image_tag catalogue.file_name.url %>
@@ -35,6 +38,8 @@
                   <% end %>
                 </div>
               </div>
+
+              <% end %>
             <% end %>
           </div>
           <div class="col-xs-1">
@@ -56,3 +61,5 @@
 </div>
 
 </div>
+
+

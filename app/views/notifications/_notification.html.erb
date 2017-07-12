@@ -10,12 +10,16 @@
 
 
          <p>
+
+         <% cache notification do %>
           
            <b><%= notification.host.email %></b> has invited you to a <b><%= notification.invite.group.party.title %></b><br>
 
-           <%= link_to "Accept Invitation", "" %>
-
            
+
+           <% end %>
+
+           <%= link_to "Accept Invitation", "" %>
          
         </p>
 
@@ -29,3 +33,4 @@
 </div>
 
 </div>
+

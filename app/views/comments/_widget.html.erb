@@ -12,7 +12,11 @@
   <br />
   <ul class="comments-list">
 
-    <%= render @visitor.party.comments.where(parent: nil) %>
+   
+
+    <%= render @visitor.party.comments.where(parent: nil), cached: true %>
+
+   
 
   </ul>
   <!-- comment-form -->
@@ -20,6 +24,4 @@
   
 </div>
 
-
-                      
 

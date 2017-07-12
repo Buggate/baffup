@@ -67,7 +67,7 @@
 
 	  <div class="inner">
 
-	     <a href="#" class="image avatar"><%= image_tag(current_user.profile.image.url(:large)) %></a>
+	     <a href="#" class="image avatar"><%= image_tag(current_user.profile.image.url(:large), cached: true ) %></a>
 
 			<div class="btn-group open">
 			  <a class="btn btn-default" href="/profiles/1" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05;"><i class="fa fa-user fa-fw"></i><%= "#{current_user.name}" %></a>
@@ -167,3 +167,5 @@
 
 	</body>
 </html>
+
+

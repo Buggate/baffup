@@ -101,6 +101,8 @@
 
           <% @party.catalogues.each do |catalogue| %> 
 
+           <% cache catalogue do %>
+
             <article>
 
               <a class="thumbnail" href="<%= catalogue.file_name.url %>" data-position="left center" >
@@ -114,6 +116,8 @@
             </article>
 
 
+
+             <% end %>
 
              <% end %>
 
@@ -135,3 +139,5 @@
 
   </body>
 </html>
+
+

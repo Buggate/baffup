@@ -2,6 +2,8 @@
   <div class="container">
     <% if @party != current_user.parties.first %>
 
+
+
     <section id="features">
       <div style="font-family: 'Julius Sans One', sans-serif; font-size: 18px";>
 
@@ -93,6 +95,8 @@
                   </div>
             </div>
         </div>
+
+        
     </section>
 <br />
 
@@ -102,7 +106,13 @@
 
 
 
-<% else %>
+<% else  %>
+
+  
+
+
+
+
 
 <section id="features">
         <div style="font-family: 'Julius Sans One', sans-serif; font-size: 18px";>
@@ -160,11 +170,11 @@
 
 <%= render 'invites/form' %>
 
+
 <% end %>
 
 
 </div>
 
 </div>
-
 

@@ -50,6 +50,8 @@ gem 'modernizr-rails', '~> 2.7', '>= 2.7.1'
 
    gem 'newrelic_rpm'
 
+   gem 'redis', '~> 3.3', '>= 3.3.1'
+
 end
 
 group :development, :test do

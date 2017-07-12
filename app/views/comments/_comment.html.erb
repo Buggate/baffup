@@ -5,7 +5,7 @@
  
       <small>
        <a class="pull-left" href="#" style ="font-family: 'Julius Sans One', sans-serif; font-size: 10px; font-weight: bold; color: #f25d07">
-             <%= image_tag(comment.visitor.user.profile.image.url(:large), :weight => "40", :height => "30") %>
+             <%= image_tag(comment.visitor.user.profile.image.url(:large), :weight => "40", :height => "30", cached: true) %>
              <%= comment.name %>&nbsp;&#x2605;&nbsp;&nbsp;<%= localize(comment.created_at, format: :long) %>
         </a> 
       </small><br /><br />
@@ -20,8 +20,12 @@
       </p></div><br /><br />
       <% if comment.replies.any? %>
         <ul style="list-style: none;">
+
+        <% cache comment do %>
           <%= render comment.replies %>
         </ul>
+      <% end %>
+
       <% end %>
 
     </li>

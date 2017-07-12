@@ -62,12 +62,14 @@
 				<div class="inner">
 
 
-				<b><a href="#" class="image gratar"><h2><%= image_tag(@party.picture.url(:large), :width => "200", :height => "200" )%></h2></a></b>
+				<b><a href="#" class="image gratar"><h2><%= image_tag(@party.picture.url(:large), :width => "200", :height => "200", cached: true )%></h2></a></b>
 				
            <br />
         
 			
 			  <div class="dropdown">
+
+        <% cache @party do %>
 			                            
 			        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Patrick Hand SC', cursive; font-size: 16px; font-weight: bold; color: #195c75; "><%= @party.title %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
@@ -80,6 +82,8 @@
 				       <li><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<%= link_to 'Date', edit_date_parties_path(@party), :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #195c75;" %></li>
 
 				     </ul>
+
+             <% end %>
 			         
 
 			 </div>
@@ -142,3 +146,8 @@
 
 </html>
 
+
+
+
+
+    

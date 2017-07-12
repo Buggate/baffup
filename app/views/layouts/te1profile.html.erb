@@ -90,7 +90,7 @@
 
 	  <div class="inner">
 
-	     <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:large)) %></a>
+	     <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:large), cached: true ) %></a>
 
 
     	      <div class="dropdown">
@@ -218,8 +218,11 @@
 
 			<div class="row">
 			
+            <% cache @profile do %>
 
 			<%= render @profile.user.visitors.all %> <br /> <br />
+
+            <% end %>
 
 
 						           
