@@ -235,13 +235,12 @@
 
     </style>
 </head>
-</head>
 <body bgcolor="#222222" width="100%" style="Margin: 0;">
     <center style="width: 100%; background: #f7f7f2;">
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: "Lucida Console", Courier, monospace;font-style: oblique;">
-            <%= @party.user.name %>, has sent you an Occasion Invitation
+            <%= @party.user.name %>, has requested your presence at an Occasion
         </div>
         <!-- Visually Hidden Preheader Text : END -->
 
@@ -250,7 +249,7 @@
       <tr>
         <td style="padding: 20px 0; text-align: center">
           
-          <%= image_tag attachments['logo_one.png'].url, alt: '', width: '100', height: '37', border: '0' %>
+          <%= image_tag attachments['logo_one.png'].url, alt: '', width: '200', height: '150', border: '0' %>
 
         </td>
       </tr>
@@ -281,7 +280,8 @@
                         <tr class="hot-container">
                             
 
-                                <%= link_to "Accept Invitation", @new_user_registration_url, :class => "btn btn-green" %>
+                                <%= link_to "Accept Invitation", @visitor_url, :class => "btn btn-green" %>
+
                             
 
                         </tr>
@@ -344,9 +344,7 @@
 
                                                    <p>Reserve a space for this occasion by clicking the botton below</p><br />
 
-                                                   <%= link_to "Reserve A Space", @new_user_registration_url, :class => "btn btn-blue" %>
-
-                                                  
+                                                   <%= link_to "Reserve A Space", @visitor_url, :class => "btn btn-blue" %>
                                                 </tr>
                                             </table>
                                         </td>
@@ -373,7 +371,8 @@
                                             <h2><strong style="color:#111111;">MEET A FRIEND</strong></h2>
                                              <p>Share all pre, post occasion pictures and general posts. Meet other guests.</p><br />
 
-                                            <%= link_to "Post A Picture", @new_user_registration_url, :class => "btn btn-red" %>
+                                            <%= link_to "Post A Picture", @visitor_url, :class => "btn btn-red" %>
+
 
                                            
                                             <!-- Button : Begin -->

@@ -6,11 +6,11 @@
            <%= simple_form_for Contact.new do |f| %>
 
 
-           <%= f.input :name, as: :text, :placeholder => "Full Name"  %>
+           <%= f.input :name, as: :text %>
 
-           <%= f.input :email, as: :text, :placeholder => "Email Address" %>
+           <%= f.input :email, as: :text %>
 
-           <%= f.input :message, as: :text, :placeholder => "Your Message", :rows => "8", :cols => "15"  %>
+           <%= f.input :message, as: :text, :rows => "8", :cols => "15"  %>
 
            <%= f.button :submit %>
 

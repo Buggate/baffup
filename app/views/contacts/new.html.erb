@@ -1,3 +1,7 @@
+<div class="title" style="font-family: 'Patrick Hand SC', cursive; font-size: 28px; color: #f25146; ">We are here to Serve You!</div>
+                <div class="title-description" style="font-family: 'Patrick Hand SC', cursive; font-size: 28px; color: #f25146; ">Please contact us for any help or queries at all.</div>
+
+
 <h1>Say Hello!</h1>
 
 <div>
@@ -11,11 +15,11 @@
            <%= simple_form_for @contact do |f| %>
 
 
-           <%= f.input :name, as: :text, :placeholder => "Full Name"  %>
+           <%= f.input :name, as: :text  %>
 
-           <%= f.input :email, as: :text, :placeholder => "Email Address" %>
+           <%= f.input :email, as: :text %>
 
-           <%= f.input :message, as: :text, :placeholder => "Your Message", :rows => "8", :cols => "15"  %>
+           <%= f.input :message, as: :text, :rows => "8", :cols => "15"  %>
 
            <%= f.button :submit %>
 

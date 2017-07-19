@@ -39,7 +39,7 @@ def create
 
        #create_notification @request, @party, @visitor, @user
                 
-       RequestMailer.baffsup_friend_request(@request, @party, visitor_url(:id => @request.visitor.id, :party_id => @request.party.id)).deliver_now
+       RequestMailer.baffsup_occasion_friend_request(@request, @party, visitor_url(:id => @request.visitor.id, :party_id => @request.party.id)).deliver_now
 
 
 

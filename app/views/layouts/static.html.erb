@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Load Anything, event nio, party nio, etc" /> 
-    <title><%= content_for?(:title) ? yield(:title) : "Baffup" %></title>
-     
+     <html itemscope itemtype="http://schema.org/Article">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= content_for?(:title) ? yield(:title) : "Baffsup" %></title>
+        <meta name="description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
+        <meta itemprop="name" content="Baffsup for your occassion">
+        <meta itemprop="description" content="Baffsup for your occassion">
+        <meta name="twitter:card" content="organize, your guests, get them to RSVP">
+        <meta name="twitter:site" content="@publisher_handle">
+        <meta name="twitter:title" content="Baffsup for your occassion">
+        <meta name="twitter:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments">
+        <meta name="twitter:creator" content="@author_handle">
+        <meta name="twitter:image:src" content="http://www.example.com/image.jpg">
+        <meta property="og:title" content="Baffsup for your occassion" />
+        <meta property="og:type" content="Baffsup" />
+        <meta property="og:url" content="http://www.example.com/" />
+        <meta property="og:image" content="http://example.com/image.jpg" />
+        <meta property="og:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
+        <meta property="og:site_name" content="baffsup" />
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %> 
        <%= stylesheet_link_tag    'main' %>
@@ -97,8 +112,7 @@
     <div class="row">
         <div class="span12">
             <div class="title-page">
-                <h2 class="title" style="font-family: 'Patrick Hand SC', cursive; font-size: 58px; color: #f25146; ">We are here to Serve You!</h2>
-                <h3 class="title-description" style="font-family: 'Patrick Hand SC', cursive; font-size: 58px; color: #f25146; ">Please contact us for any help or queries at all.</h3>
+                
 
         
               <%= yield %>   

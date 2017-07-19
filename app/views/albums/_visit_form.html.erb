@@ -1,3 +1,6 @@
+ 
+<div class="well">
+
   <%= simple_form_for([@visitor, @album, @visitor.albums.build]) do |f| %>
    
              <%= f.hidden_field :visitor_id, :value => @visitor.id %>
@@ -5,16 +8,9 @@
 
            <div class="form-group">
 
-             <a class="pull-left" href="#" >
+             
 
-                <%= image_tag(@visitor.user.profile.image.url(:large), :weight => "60", :height => "60") %><br /><br />
-
-                <p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; color: #915b05;"><%= @visitor.user.name %></p>
-
-              </a> <br /><br />&nbsp;&nbsp;&nbsp;
-              </div><br><br />
               
-              <br />
             <div class="form-group" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;" >
 
 
@@ -43,3 +39,5 @@
               
      
    <% end %>
+
+   </div>

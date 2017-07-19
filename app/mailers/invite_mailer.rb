@@ -4,7 +4,7 @@ class InviteMailer < ApplicationMailer
 	default from: "invitation@baffsup.com"
 
 
-    def baffsup_user_invite(invite, party, visitor_url)
+    def baffsup_occasion_invitation(invite, party, visitor_url)
 
 
         @invite = invite
@@ -17,14 +17,14 @@ class InviteMailer < ApplicationMailer
            
         @url = 'https://secret-castle-41003.herokuapp.com'
 
-        attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
+        attachments.inline['baffup_6.png'] = File.read('./public/baffup_6.png')
   
         mail(to: @invite.email)
 
 
     end
 
-    def baffsup_guest_invite(invite, party, new_user_registration_url)
+    def baffsup_occasion_request(invite, party, new_user_registration_url)
 
 
       @invite = invite
@@ -39,7 +39,7 @@ class InviteMailer < ApplicationMailer
       @url = 'https://secret-castle-41003.herokuapp.com'
       
  
-      attachments.inline['logo_one.png'] = File.read('./public/logo_one.png')
+      attachments.inline['baffup_6.png'] = File.read('./public/baffup_6.png')
 
 
       mail(to: @invite.email)
