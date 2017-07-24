@@ -3,16 +3,18 @@ class ReservationsController < ApplicationController
 
   layout :resolve_layout
 
-	before_action :find_visitor
+  before_action :find_visitor
 
-  #before_action :find_party
+  before_action :find_party
 
-  before_action :find_title
+  #before_action :find_title
 
 
   def index
 
-    @party = Party.find_by_title(@title)
+    @party = @visitor.party
+
+    
     
     @reservations = @party.reservations
 
@@ -21,35 +23,39 @@ class ReservationsController < ApplicationController
 
 
 
-   def new 
+def new
 
-    @party = Party.find_by_title(@title)
+    @reservation = Reservation.new(:visitor_id => @visitor.id, :party_id => @visitor.party.id)
+   
      
-      @reservation = Reservation.new(:visitor_id => @visitor.id, :party_id => @visitor.party.id) 
-
-   end
+end
 
 
-    def create
+def create
 
       
-      @reservation = Reservation.new(reservation_params)   
+   @reservation = Reservation.new(reservation_params) 
 
 
-     if @reservation.save
+    if @reservation.save
 
 
       flash[:notice] = "Reservations Saved." 
 
         
   
-  	  redirect_to visitor_path(@visitor)
+      redirect_to visitor_path(@visitor)
 
     else
 
     end
 
-  end
+end
+
+
+
+
+
 
   def destroy
 
@@ -85,7 +91,7 @@ class ReservationsController < ApplicationController
 
   def reservation_params
 
-    params.require(:reservation).permit(:name, :visitor_id, :party_id, :accept, :title)
+    params.require(:reservation).permit(:name, :visitor_id, :party_id, :accept)
 
   end
 
@@ -101,10 +107,17 @@ class ReservationsController < ApplicationController
   end
 
 
-  def find_title
+   def find_party
 
-     @title = params[:title]
+      if params[:party_id]
+
+         @party = Party.find(params[:party_id])
+
+      end
+  
 
   end
 
 end
+
+

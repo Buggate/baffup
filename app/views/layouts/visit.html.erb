@@ -86,7 +86,7 @@
                         <li class="active"><%= link_to 'mYCATLOG', profiles_path, :style => "font-family: 'Permanent Marker', cursive;"  %></li>
                         <li><a href=""></a></li>
                         <% if @visitor != @party.visitors.first  %> 
-                        <li><%= link_to 'R S V P', new_reservation_path(:visitor_id => @visitor.id), :style => "font-family: 'Permanent Marker', cursive;" %></li>
+                        <li></li>
                         <li><a href=""></a></li>
                         <% else @visitor = @party.visitors.first %>
                         <li><%= link_to 'OCCASSION', party_path(@party), :style => "font-family: 'Permanent Marker', cursive;"  %></li>
@@ -124,22 +124,22 @@
                   </div></br>
 
 
-                   <div class="media-body" align="center">
+              <div class="media-body" align="center">
 
                   <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; ">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o fa-1x"  aria-hidden="true"></i>&nbsp;&nbsp;Date &nbsp; &amp; &nbsp; Time</h4>
                     <p aria-hidden="true">&nbsp;&nbsp;&nbsp;&nbsp;This Occasion is scheduled for the <br /><strong style="color: #915b05; font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;<%= localize(@party.created_at, format: :long) %></strong></p>
 
 
 
-                  </div> 
+          </div> 
 
-                  <div class="media-body" align="right">
+          <div class="media-body" align="right">
 
                       <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px";><i class="fa fa-envelope" aria-hidden="true"></i>
 &nbsp;&nbsp;Occasion Message</h4>
                       <p aria-hidden="true" style="color: #915b05; font-size: 16px" ><%= @party.message %></strong></p>
 
-                  </div>
+         </div>
 
 
                   <div class="media-body" align="left">
@@ -173,7 +173,9 @@
             <% elsif @visitor != @party.visitors.first  %>
            ><br /><br /><br />
 
-          <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1><br/> <h3> Click RSVP button the bar above </h3>
+          <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true"> <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1><br/><%= link_to 'R S V P', new_reservation_path(:visitor_id => @visitor.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %>
+
+
 
             
 

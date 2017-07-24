@@ -4,14 +4,13 @@
     <div class="rsvp">
  
 			 <%= simple_form_for(:reservation, :url => {:action => 'create', :visitor_id => @visitor.id, :party_id => @visitor.party.id}) do |f| %>
+
 			 <%= render(:partial => "form", :locals => {:f => f}) %>
-
-
 
 			 <% end %>
 
 			 
 
-</div>
+     </div>
 
 </div>

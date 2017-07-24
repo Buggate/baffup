@@ -14,7 +14,9 @@
 
         <i><img src="/envelop.png", width="10" height="10" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 10px;") %><br />
                                                     
-            <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;<%= link_to("Photo_Album", catalogues_path(:party_id => party.id),  :style => "font-family: 'Julius Sans One', sans-serif; font-size: 10px;" )%>
+            <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp; <%= link_to("Upload Album", {:controller => 'catalogues', :party_id => party.id, :title => party.title}, :class => 'action index', :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;") %>
+
+
 
       </div>
 

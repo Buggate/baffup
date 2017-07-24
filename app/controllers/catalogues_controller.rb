@@ -5,7 +5,7 @@ class CataloguesController < ApplicationController
     # before_action :find_party
 
 
-before_action :find_title
+     before_action :find_title
 
   def index
 

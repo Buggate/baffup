@@ -38,7 +38,7 @@ def create
          create_notification @invite, @party, @visitor, @user
                   
 
-         InviteMailer.baffsup_occasion_invitation(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
+         InviteMailer.baffsup_occasion_request(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
 
          create_friend @user, @buddy, @invite
                
@@ -47,21 +47,19 @@ def create
 
        else 
             
-         InviteMailer.baffsup_occasion_request(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now 
+         InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now 
 
          flash[:notice] = "Invitation Sent successfully."
 
        end     
          
-          
+         
    end
   
   end 
    
     redirect_to party_path(@party)
 end 
-
-
 
 
  private
@@ -76,7 +74,7 @@ end
 
    def create_visitor(user, party, invite)  
     
-    @visitor = @party.visitors.build(party_id: @invite.party.id, user_id: @invite.guest.id, invite_id: @invite.id)
+    @visitor = @party.visitors.build(party_id: @invite.party.id, name: @invite.guest.name, user_id: @invite.guest.id, invite_id: @invite.id)
 
      @visitor.party_id = @visitor.party.id
 
