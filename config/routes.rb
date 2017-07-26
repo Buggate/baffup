@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :visitors do 
 
-    resources :reservations
+   
     resources :albums do
       member do
         put "like", to: "albums#upvote"
@@ -35,11 +35,11 @@ Rails.application.routes.draw do
      end
     end
 
-    get 'notice', to: 'notifications#index', as: 'notifications'
     get 'catalogues/register'
     
   end
 
+   get 'notice', to: 'notifications#index', as: 'notifications'
    get 'parties/:id/edit_venue' => 'parties#edit_venue', :as => :edit_venue_parties
    get 'parties/:id/edit_date' => 'parties#edit_date', :as => :edit_date_parties
    get 'notifications/:id/link_through', to: 'notifications#link_through', as: :link_through

@@ -140,18 +140,14 @@
 		
 						  <span class="badge bg-important badge-success" >
 
-                           <% if current_user.name != nil %>
-
-                              <% @visitor = Visitor.find_by_name(current_user.name) %>
 
 
 
-						       <h4 id="notice" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black"><%=link_to "#{@profile.user.notifications.count}", visitor_notifications_path(:visitor_id => @visitor.id), :title => "Occassion | Invitations ... " %>
+						       <h4 id="notice" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black"><%=link_to "#{@profile.user.notifications.count}", notifications_path, :title => "Occassion | Invitations ... " %>
 
 
 						       <h4>
 
-                               <% end %>
 
 						       <li><i class="fa fa-bell " aria-hidden="true"></i></li>
 

@@ -25,17 +25,16 @@ class ReservationsController < ApplicationController
 
 def new
 
-    @reservation = Reservation.new(:visitor_id => @visitor.id, :party_id => @visitor.party.id)
-   
-     
+    @reservation = @visitor.build_reservation(:visitor_id => @visitor.id, :party_id => @visitor.party.id)
+ 
 end
 
 
 def create
+   
 
+   @reservation = @visitor.build_reservation(reservation_params)
       
-   @reservation = Reservation.new(reservation_params) 
-
 
     if @reservation.save
 

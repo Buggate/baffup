@@ -112,44 +112,41 @@
 
         <div ><img src="/baffup_6.png" width="200" height="150"></div>
             
-          <div align="center" class="container" style="background-image: url(../new_ivcard4.jpg); height: 400px; width: 730px; border: 5px solid black;" ></br>
-          <p align="left" style="font-family: 'Bellefair', serif; color: #022126 font-weight: bold">HOST:-&nbsp;<%= @party.user.name %>&nbsp;requested your pleasure to celebrate OCCASION:-&nbsp;<%= @party.title %></p><br /></br>
+          <div align="center" class="container" style="background-image: url(../iv_card_latest2.png); height: 400px; width: 730px; border: 3px solid black;" >
+         
 
                 
-                  <div class="media-body" align="center">
-
-                      <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px";><i class="fa fa-map-marker fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Occasion Venue</h4>
-                      <p aria-hidden="true" style="color: #915b05; font-size: 16px"><%= @party.venue %></p>
-
-                  </div></br>
-
-
               <div class="media-body" align="center">
 
-                  <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; ">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o fa-1x"  aria-hidden="true"></i>&nbsp;&nbsp;Date &nbsp; &amp; &nbsp; Time</h4>
-                    <p aria-hidden="true">&nbsp;&nbsp;&nbsp;&nbsp;This Occasion is scheduled for the <br /><strong style="color: #915b05; font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;<%= localize(@party.created_at, format: :long) %></strong></p>
+                <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: red; font-weight: bold;"><i class="fa fa-map-marker fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Occasion Venue</h4>
+                  <p aria-hidden="true" style="color: black; font-size: 10px; font-weight: bold;"><%= @party.venue %></p>
+
+                  <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: red; ">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o fa-1x"  aria-hidden="true"></i>&nbsp;&nbsp;Date &nbsp; &amp; &nbsp; Time</h4>
+                    <p aria-hidden="true" style="color: black; font-size: 12px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;This Occasion is scheduled for the <br /><strong style="color: black; font-size: 10px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;<%= localize(@party.created_at, format: :long) %></strong></p>
 
 
-
-          </div> 
-
-          <div class="media-body" align="right">
-
-                      <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px";><i class="fa fa-envelope" aria-hidden="true"></i>
+                     <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: red; font-weight: bold;"><i class="fa fa-envelope" aria-hidden="true"></i>
 &nbsp;&nbsp;Occasion Message</h4>
-                      <p aria-hidden="true" style="color: #915b05; font-size: 16px" ><%= @party.message %></strong></p>
-
-         </div>
+                      <p aria-hidden="true" style="color: black; font-size: 10px; font-weight: bold;" ><%= @party.message %></strong></p>
 
 
-                  <div class="media-body" align="left">
+                        <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: red; font-weight: bold;"><i class="fa fa-calendar fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Guest RSVP BY</h4>
+                      <p aria-hidden="true" style="color: black;  font-size: 14px; font-weight: bold;">Expecting all RSVP back by the <br /><strong style="color: black;  font-size: 10px; font-weight: bold;"><%= localize(@party.rsvp_by, format: :long) %></strong></p><br />
 
-                      <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px";><i class="fa fa-calendar fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Guest RSVP BY</h4>
-                      <p aria-hidden="true">Expecting all RSVP back by the <br /><strong style="color: #915b05;"><%= localize(@party.rsvp_by, format: :long) %></strong></p>
+
+                       <p align="left" style="font-family: 'Bellefair', serif; color: black; font-weight: bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOST:-&nbsp;<%= @party.user.name %>&nbsp;requested your pleasure to celebrate OCCASION:-&nbsp;<%= @party.title %></p>
+
 
                   </div>
 
-          </div>
+
+             </div>
+          
+
+                 
+
+
+         
 
       </div>
 
@@ -173,7 +170,7 @@
             <% elsif @visitor != @party.visitors.first  %>
            ><br /><br /><br />
 
-          <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true"> <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1><br/><%= link_to 'R S V P', new_reservation_path(:visitor_id => @visitor.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %>
+          <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true"> <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1><br/><%= link_to 'R S V P', new_reservation_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %>
 
 
 
@@ -207,8 +204,23 @@
 
 <section id="content" class="gallery">
 
+  <div class="row">
 
-<h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true" align="center" >Check Out the occasion Posts</h1><br /><br />
+      <div class="col-xs-8 ">
+
+
+<h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true" align="center" >Check Out the occasion Posts</h1>
+
+  </div>
+
+  <div class="col-xs-4 ">
+
+
+<%= link_to "#{@visitor.party.albums.count}-Post(s)" , new_reservation_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %>
+
+</div>
+
+</div><br /> <br />
   
   <div class="container">
     

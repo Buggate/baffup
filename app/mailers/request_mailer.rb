@@ -1,7 +1,7 @@
 class RequestMailer < ApplicationMailer
 
 
-	default from: "invitation@baffsup.com"
+	default from: "<b>#{invitation@baffsup.com}</b>"
 
 
 	def baffsup_occasion_friend_request(request, party,  visitor_url)
