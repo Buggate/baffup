@@ -1,7 +1,7 @@
 class InviteMailer < ApplicationMailer
 
 
-	default from: "<b>#{Iinvitation@baffsup.com}</b>"
+	default from: "invitation@baffsup.com"
 
 
 
