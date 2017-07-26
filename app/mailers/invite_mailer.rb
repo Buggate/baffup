@@ -14,7 +14,7 @@ class InviteMailer < ApplicationMailer
 
         @party = party
 
-        @visitor = visitor
+        @visitor = @invite.visitor
 
      
         @visitor_url = visitor_url(@visitor)
@@ -28,6 +28,8 @@ class InviteMailer < ApplicationMailer
 
 
     end
+
+
 
     def baffsup_occasion_invitation(invite, party, new_user_registration_url)
 

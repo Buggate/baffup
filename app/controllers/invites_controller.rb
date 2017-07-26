@@ -38,7 +38,7 @@ def create
          create_notification @invite, @party, @visitor, @user
                   
 
-         InviteMailer.baffsup_occasion_request(@invite, @party, @visitor, visitor_url(@visitor)).deliver_now
+         InviteMailer.baffsup_occasion_request(@invite, @party, @visitor, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
 
          create_friend @user, @buddy, @invite
                
