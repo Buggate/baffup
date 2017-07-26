@@ -7,15 +7,17 @@ class InviteMailer < ApplicationMailer
 
 
 
-    def baffsup_occasion_request(invite, party, visitor_url)
+    def baffsup_occasion_request(invite, visitor, party, visitor_url)
 
 
         @invite = invite
 
         @party = party
 
+        @visitor = visitor
+
      
-        @visitor_url = visitor_url(:id => @invite.visitor.id, :party_id => @invite.visitor.party.id )
+        @visitor_url = visitor_url(@visitor)
 
            
         @url = 'https://secret-castle-41003.herokuapp.com'
