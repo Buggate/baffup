@@ -4,7 +4,7 @@ class RequestMailer < ApplicationMailer
 	default from: "invitation@baffsup.com"
 
 
-	def baffsup_occasion_friend_request(request, party,  visitor_url)
+	def baffsup_occasion_friend_request(request, party, visitor_url)
 
 
 
@@ -12,8 +12,10 @@ class RequestMailer < ApplicationMailer
 
       @party = party
 
+      @visitor = @request.visitor
+
    
-      @visitor_url = visitor_url(:id => @request.visitor.id, :party_id => @request.visitor.party.id )
+      @visitor_url = visitor_url(@visitor)
 
       @url = 'https://secret-castle-41003.herokuapp.com'
 
