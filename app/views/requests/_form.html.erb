@@ -22,11 +22,16 @@
 
        <div class="col-xs-3 ">
 
-           <div style="font-family: 'Julius Sans One', sans-serif; font-size: 10px; color: black">
+           <div style="font-family: 'Julius Sans One', sans-serif; font-size: 8px; color: black; font-weight: bold;">
 
-			       <%= label_tag "request[email][][#{friend.email}]", "#{image_tag(friend.buddy.profile.image.url(:large), :width => "40", :height => "40" )}".html_safe + friend.name %>&nbsp;
+			       <%= label_tag "request[email][][#{friend.email}]", "#{image_tag(friend.buddy.profile.image.url(:large), :width => "40", :height => "40" )}".html_safe + friend.name %><br />
 			   
-		          <%= check_box_tag "request[email][]", friend.email, (checked = true if current_user.friends.include?(friend.email)), :email => friend.email %></div>
+		          <%= check_box_tag "request[email][]", friend.email, (checked = true if current_user.friends.include?(friend.email)), :email => friend.email %></div><br />
+
+     <br />
+<br />
+
+     <br />
 
               </div>
 
@@ -36,12 +41,7 @@
               <% end %>
 
 
-     <% end %><br />
-
-     <br />
-<br />
-
-     <br />
+     <% end %>
 
 
 

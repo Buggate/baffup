@@ -70,7 +70,7 @@ end
 
     when "index", "create", "delete_catalogue", "delete_all"
 
-      "catalogue"
+      "party_form"
 
     when "register"
 
