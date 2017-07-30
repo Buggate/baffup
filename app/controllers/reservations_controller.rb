@@ -12,9 +12,7 @@ class ReservationsController < ApplicationController
 
   def index
 
-    @party = @visitor.party
-
-    
+      
     
     @reservations = @party.reservations
 
@@ -25,7 +23,7 @@ class ReservationsController < ApplicationController
 
 def new
 
-    @reservation = @visitor.build_reservation(:visitor_id => @visitor.id, :party_id => @visitor.party.id)
+    @reservation = @visitor.build_reservation(:visitor_id => @visitor.id)
  
 end
 
@@ -36,7 +34,7 @@ def create
    @reservation = @visitor.build_reservation(reservation_params)
       
 
-    if @reservation.save
+    if @reservation.save!
 
 
       flash[:notice] = "Reservations Saved." 

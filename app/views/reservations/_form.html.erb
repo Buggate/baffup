@@ -1,11 +1,6 @@
- <div class="well well-sm">
 
-      <div class="media">
 
-  
-        <div class="media-body">
-
-            <%= simple_form_for Reservation.new do |f| %>
+        <%= simple_form_for(:reservation, :url => {:action => 'create', :visitor_id => @visitor.id}) do |f| %>
              
 
                    <%= f.input :party_id, as: :hidden, input_html: {value: @visitor.party.id } %>
@@ -16,18 +11,17 @@
 
                  
 
-              <h3 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;" > Are you attending? </h3><br>
+     
 
-                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black;">
+                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 9px; color: black;">
                         <%= label :accept, "Accept With Pleasure", value: true %>
-                        <%= f.radio_button :accept, true, :checked => true, :value => true %>
-                      </div><br />
-                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black;">
+                        <%= f.radio_button :accept, true, :value => true %>&nbsp;&nbsp;&nbsp;&nbsp;
+
                         <%= label :accept, "Decline With Regards", value: false %>
                         <%= f.radio_button :accept, false, :value => false%>
-                      </div><br /><br />
+                      </div><br />
 
-                         <div class="form-group" class="group" style="font-family: 'Patrick Hand SC', cursive; font-size: 14px;  color: black;">
+                         <div class="form-group" class="group" style="font-family: 'Patrick Hand SC', cursive; font-size: 10px;  color: black;">
 
                           <%= f.submit %>
                           
@@ -36,11 +30,8 @@
             <% end %>
 
 
-     </div>
 
-    </div>
 
-  </div>
 
 
 
