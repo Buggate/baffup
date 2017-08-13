@@ -26,7 +26,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %> 
 
-    <%= stylesheet_link_tag    'partyform' %>
+   
+
+    <%= stylesheet_link_tag    'datepicker' %>
     
       
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -102,6 +104,22 @@
 
         <!-- Javascript -->
          <%= javascript_include_tag "application", 'data-turbolinks-track': true %>
+
+          <%= javascript_include_tag   'datepicker' %>
+
+
+         <script type="text/javascript">
+                    // When the document is ready
+                    $(document).ready(function () {
+                        
+                        $('#party_date').datepicker({
+                            format: "dd/mm/yyyy"
+                        });  
+                    
+                    });
+                </script>
+
+
 
  
         <!--[if lt IE 10]>

@@ -1,38 +1,44 @@
  
 <div class="well">
 
-  <%= simple_form_for([@visitor, @album, @visitor.albums.build]) do |f| %>
+  <%= form_for([@visitor, @album, @visitor.albums.build], html: { multipart: true }) do |f| %>
+
    
              <%= f.hidden_field :visitor_id, :value => @visitor.id %>
              <%= f.hidden_field :party_id, :value => @visitor.party.id %>
 
            <div class="form-group">
 
-             
+            <div class="fileUpload btn btn-primary">
+                <span>Post an Image</span>
 
-              
+                <input id="album_picture" type="file" class="upload" name="album[picture]" />
+
+                
+            </div>
+
+            <input id="album-picture" placeholder="Choose File" disabled="disabled" />
+          <br /><br />
+
+
+
             <div class="form-group" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;" >
 
-
-                 <%= f.input :picture, as: :file, label: false %>
-
-            </div><br />
-
-            <div class="form-group" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;" >
+           &nbsp;&nbsp; <label for="caption"> Put a Caption </label>
 
 
-                <%= f.input :caption, label: 'Tell us about this Picture', wrapper_html: { class: 'username' } %>
+              &nbsp;&nbsp;  <%= f.text_field :caption %>
 
-            </div><br />
-
+            </div>
 
               <div class="group" style="font-family: 'Mogra', cursive; font-size: 14px;">
 
-                <%= f.submit "Post Pictures" %>
+             &nbsp;&nbsp;   <%= f.submit "Post Pictures" %>
 
                            
 
           </div><br />
+    
 
        
  
@@ -41,3 +47,5 @@
    <% end %>
 
    </div>
+
+

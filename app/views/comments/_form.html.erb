@@ -9,7 +9,7 @@
   <%= f.input :name, as: :hidden, input_html: {value: @visitor.user.name } %>
 
 
-  <%= f.input :body, label: false, placeholder: (f.object.parent_id.nil? ? 'What is the plan? Lets make this an unforgetable occasion.' : 'I got ya!!!.'), input_html: { rows: 5, data:{ 'comment-id': (comment.persisted? ? comment.id : 'new') }} %>
+  <%= f.input :body, label: false, placeholder: (f.object.parent_id.nil? ? 'What is the plan? Lets make this an unforgetable occasion.' : 'I got ya!!!.'), input_html: { rows: 3, data:{ 'comment-id': (comment.persisted? ? comment.id : 'new') }} %>
     <span id="comment_<%= comment.persisted? ? comment.id : 'new' %>_chars_counter" class="comment_chars_counter"></span>
      <%= f.submit class: 'btn btn-primary btn-sm float-xs-right', :style => "font-size: 12px; font-weight: bold;" %>
     <div class="clearfix"></div>

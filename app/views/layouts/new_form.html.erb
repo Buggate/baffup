@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" >
+<head>
+      
+
+       <html itemscope itemtype="http://schema.org/Article">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= content_for?(:title) ? yield(:title) : "Baffsup" %></title>
+        <meta name="description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
+        <meta itemprop="name" content="Baffsup for your occassion">
+        <meta itemprop="description" content="Baffsup for your occassion">
+        <meta name="twitter:card" content="organize, your guests, get them to RSVP">
+        <meta name="twitter:site" content="@publisher_handle">
+        <meta name="twitter:title" content="Baffsup for your occassion">
+        <meta name="twitter:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments">
+        <meta name="twitter:creator" content="@author_handle">
+        <meta name="twitter:image:src" content="http://www.example.com/image.jpg">
+        <meta property="og:title" content="Baffsup for your occassion" />
+        <meta property="og:type" content="Baffsup" />
+        <meta property="og:url" content="http://www.example.com/" />
+        <meta property="og:image" content="http://example.com/image.jpg" />
+        <meta property="og:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
+        <meta property="og:site_name" content="baffsup" />
+
+    
+
+    <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
+
+
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': :reload %> 
+
+    <%= stylesheet_link_tag    'new_form' %>
+    
+
+
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Mogra|Ewert|Julius+Sans+One|Lily+Script+One|Petit+Formal+Script|Playball|Ravi+Prakash|Rye|Raleway|Tangerine|Inconsolata:italic|Droid+Sans|Amatic+SC|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico" rel="stylesheet">
+
+     <style>
+      body {
+
+      	     font-family: 'Annie Use Your Telescope', cursive;
+             font-family: 'Pacifico', serif;
+             font-family: 'Tangerine', serif;
+             font-family: 'Inconsolata:italic', serif;
+             font-family: 'Droid+Sans', serif;
+             font-family: 'Amatic+SC', serif;
+             font-family: 'Josefin+Slab', serif;
+             font-family: 'Open+Sans', serif;
+             font-family: 'Open+Sans+Condensed:300', serif;
+             font-family: 'Oswald', serif;
+
+             font-family: 'Mogra', cursive;
+
+            font-family: 'Ravi Prakash', cursive;
+
+            font-family: 'Playball', cursive;
+
+            font-family: 'Julius Sans One', sans-serif;
+
+            font-family: 'Petit Formal Script', cursive;
+
+            font-family: 'Lily Script One', cursive;
+
+            font-family: 'Rye', cursive;
+
+            font-family: 'Ewert', cursive;
+
+            font-family: 'Raleway', sans-serif;
+
+             
+           
+      }
+    </style>
+
+
+
+
+         <%= csrf_meta_tags %>
+    
+</head>
+<body>
+
+  <div >
+
+
+
+            <%= yield %>
+
+            
+
+        </div>
+
+
+</body>
+</html>

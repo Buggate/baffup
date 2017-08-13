@@ -18,7 +18,7 @@ class AlbumsController < ApplicationController
 
         @album.save    
 
-        redirect_to visitor_path(@visitor.id) 
+        redirect_to visitor_path(@visitor) 
 
 
 

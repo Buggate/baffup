@@ -2,7 +2,7 @@
 <div class="6u 12u$(xsmall)" >
 
 <div><label for="party-venue"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">VENUE</span></label></div>						
-   <%= f.input :venue, :label => 'VENUE', placeholder: 'Party Venue', label: false %>
+   <%= f.text_field :venue,  placeholder: 'Party Venue' %>
  </div>
 
  <br />
@@ -11,7 +11,7 @@
 	 <div class="6u 12u$(xsmall)" >
 
 	   <div><label for="party-rsvp_by"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">RSVP BY</span></label></div>
-	  <%= f.input :rsvp_by, :label => 'R S V P  BY', wrappers: :horizontal_select_date, as: :date, start_year: Date.today.year,
+	  <%= f.date_select :rsvp_by, :label => 'R S V P  BY', wrappers: :horizontal_select_date, as: :date, start_year: Date.today.year,
 	                              end_year: Date.today.year + 12,
 	                              order: [:day, :month, :year], label: false %>
 

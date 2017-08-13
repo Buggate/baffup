@@ -1,17 +1,12 @@
- 
- <div class="col-xs-4 ">
-        <div class="box">
-          <a href="<%= album.picture %>" class="gall_item" ><%=  image_tag(album.picture.url(:medium), alt: '', cached: true) %><span></span></a>
+ <div class="item">
+
+        <div class="animate-box">
+          <a href="<%= album.picture %>" class="image-popup fh5co-board-img" ><%=  image_tag(album.picture.url(:medium), alt: '', cached: true) %></a>
        
-            <div class="box_bot">
-            
-               <div class="box_bot_title" style ="font-family: 'Julius Sans One', sans-serif; font-size: 10px; font-weight: bold; color: #915b05;" >Posted By:  <%= album.visitor.user.name %></div>
+          
+         </div>
 
-                  <p style ="font-family: 'Julius Sans One', sans-serif; font-size: 10px; color: #915b05;">Caption:  <%= album.caption %></p>
-
-
-                 
-                    <div class="btn-group pull-left" >
+         <div class="fh5co-desc">Posted By:  <%= album.visitor.user.name %><br />Caption:  <%= album.caption %><br /> <div class="btn-group pull-left" >
 
                     <%= link_to like_visitor_album_path(:visitor_id => @visitor.id, :album_id => album.id), class: "like", method: :put do %>
 
@@ -20,18 +15,18 @@
 
                      <%= album.get_upvotes.size %>&nbsp  &nbsp
 
-                      <i class="fa fa-thumbs-up" aria-hidden="true" style ="color: #915b05;"></i>
+                    <i class="fa fa-thumbs-up" aria-hidden="true" style ="color: #915b05;"></i>
 
                          
                 <% end %>
 
                 </div>
-  
+
+              </div>
 
 
-           
-           </div>
-      </div>
+    </div>     
 
-      </div>
+
+ 
 

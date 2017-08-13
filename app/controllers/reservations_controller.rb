@@ -1,8 +1,6 @@
 class ReservationsController < ApplicationController
 
 
-  layout :resolve_layout
-
   before_action :find_visitor
 
   before_action :find_party
@@ -20,18 +18,10 @@ class ReservationsController < ApplicationController
   end
 
 
-
-def new
-
-    @reservation = @visitor.build_reservation(:visitor_id => @visitor.id)
- 
-end
-
-
 def create
    
 
-   @reservation = @visitor.build_reservation(reservation_params)
+   @reservation = Reservation.new(reservation_params)
       
 
     if @reservation.save!
@@ -48,10 +38,6 @@ def create
     end
 
 end
-
-
-
-
 
 
   def destroy

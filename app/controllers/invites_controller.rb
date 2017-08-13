@@ -76,7 +76,9 @@ end
 
    def create_visitor(user, party, invite)  
     
-    @visitor = @party.visitors.build(party_id: @invite.party.id, name: @invite.guest.name, user_id: @invite.guest.id, invite_id: @invite.id)
+    @visitor = @party.visitors.build(party_id: @invite.party.id, name: @invite.guest.name, 
+                                     user_id: @invite.guest.id, invite_id: @invite.id, 
+                                     attend_party: @invite.party.date)
 
      @visitor.party_id = @visitor.party.id
 

@@ -4,37 +4,59 @@
                 
 <h1 style="font-family: 'Patrick Hand SC', cursive; font-size: 38px; color: green; ">Say Hello!</h1>
 
-<div>
 
-<div class="row">
+<div id="fh5co-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>Contact</h2>
+          <div class="fh5co-spacer fh5co-spacer-sm"></div>
+          <form action="#">
+            <div class="row">
+              <div class="col-md-6">
 
-      <div class="span6">
 
-         
-
-           <%= simple_form_for @message, url: create_message_path do |f| %>
+               <%= simple_form_for @message, url: create_message_path do |f| %>
 
             <%= notice %>
 
             <%= @message.errors.full_messages.join(', ') %>
 
 
-           <%= f.input :name, as: :text %>
-
-           <%= f.input :email, as: :text %>
-
-           <%= f.input :body, as: :text, :rows => "8", :cols => "15"  %>
-
-          <%= f.button :submit %>
 
 
-             <% end %>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="First Name"> 
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                  <textarea name="message" id="message" cols="30" class="form-control" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-primary" value="Send Message">
+                </div>
 
-    
-         
-    </div>
 
+                <% end %>
+
+
+              </div>
+            </div>
+          </form>
+          
+        </div>
+            
+          </div>
+       </div>
   </div>
-
 
 

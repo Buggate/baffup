@@ -1,7 +1,7 @@
 <div >
 
 
-   <%= f.input :current_step, as: :hidden, input_html: {value: f.object.current_step}  %>
+   <%= f.hidden_field :current_step, input_html: {value: f.object.current_step}  %>
 
    <%= render "parties/steps/page#{f.object.current_step + 1}", f: f %><br>
 

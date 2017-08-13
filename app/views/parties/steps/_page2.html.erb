@@ -5,27 +5,31 @@
 	  <div class="6u 12u$(xsmall)">
 
 	      <div><label for="party-title"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">TITLE</span></label></div>
-	       <%= f.input :title, placeholder: 'eg: John Bull Birthday Party.', label: false %>
+	       <%= f.text_field :title, placeholder: 'eg: John Bull Birthday Party.' %>
 	  </div>   
   <br /> 
 
-	 <div class="6u 12u$(xsmall)" >
+   <div class="6u 12u$(xsmall)" >
 
 	   <div><label for="party-date"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">DATE & TIME</span></label></div>
-	   <%= f.input :date, wrappers: :horizontal_select_date, as: :datetime, start_year: Date.today.year,
-	                              end_year: Date.today.year + 12,
-	                              order: [:day, :month, :year], label: false %>
+	  
+
+	   <%= f.text_field :date %>
+
+	   
+
 
 	</div>
 
+	<br />
 
-<br /> 
+
 
 	 <div class="6u 12u$(xsmall)">
 
 	   <div><label for="party-message"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">MESSAGE</span></label></div>
 	 
-	   <%= f.input :message, :input_html => { rows: 10}, label: false %>
+	   <%= f.text_area :message, :input_html => { rows: 10} %>
 
 	</div>
 

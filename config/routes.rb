@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :profiles
-  resources :reservations
+  
   resources :abouts, only: :show
   resources :how_it_works, only: :show
   resources :term_and_conditions, only: :show
@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   end
 
   resources :visitors do 
+   
 
+   resources :reservations
    
     resources :albums do
       member do

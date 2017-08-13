@@ -22,15 +22,26 @@ Rails.application.config.assets.precompile += %w( partyform.css )
 
 Rails.application.config.assets.precompile += %w( stratamain.css )
 
-Rails.application.config.assets.precompile += %w( email.css )
-
-Rails.application.config.assets.precompile += %w( publec_main.css )
-
-Rails.application.config.assets.precompile += %w( jquery.datetimepicker.css )
+Rails.application.config.assets.precompile += %w( datepicker.css )
 
 
+Rails.application.config.assets.precompile += %w( animate.css )
 
-Rails.application.config.assets.precompile += %w( partyform.js )
+Rails.application.config.assets.precompile += %w( icomoon.css )
+
+Rails.application.config.assets.precompile += %w( magnific-popup.css )
+
+Rails.application.config.assets.precompile += %w( salvattore.css )
+
+Rails.application.config.assets.precompile += %w( style.css )
+
+
+
+  
+
+
+
+#Rails.application.config.assets.precompile += %w( partyform.js )
 
 Rails.application.config.assets.precompile += %w( main.js )
 
@@ -42,12 +53,36 @@ Rails.application.config.assets.precompile += %w( skel.min.js )
 
 Rails.application.config.assets.precompile += %w( stratamain.js )
 
-Rails.application.config.assets.precompile += %w( comments.js )
+Rails.application.config.assets.precompile += %w( profiles.js)
 
-Rails.application.config.assets.precompile += %w( jquery.backtotop.js )
+#SRails.application.config.assets.precompile += %w( comments.js )
 
-Rails.application.config.assets.precompile += %w( jquery.flexslider-min.js )
+#Rails.application.config.assets.precompile += %w( jquery.backtotop.js )
 
-Rails.application.config.assets.precompile += %w( jquery.mobilemenu.js )
+#Rails.application.config.assets.precompile += %w( jquery.flexslider-min.js )
 
-Rails.application.config.assets.precompile += %w( jquery.datetimepicker.js )
+#Rails.application.config.assets.precompile += %w( jquery.mobilemenu.js )
+
+Rails.application.config.assets.precompile += %w( jquery.min.js )
+
+Rails.application.config.assets.precompile += %w( bootstrap.min.js)
+
+Rails.application.config.assets.precompile += %w( datepicker.js )
+
+
+Rails.application.config.assets.precompile += %w( jquery.easing.1.3.js )
+
+Rails.application.config.assets.precompile += %w( jquery.waypoints.min.js )
+
+Rails.application.config.assets.precompile += %w( jquery.magnific-popup.min.js )
+
+Rails.application.config.assets.precompile += %w( salvattore.min.js )
+
+Rails.application.config.assets.precompile += %w( main.js)
+
+Rails.application.config.assets.precompile += %w( modernizr-2.6.2.min.js)
+
+
+
+
+

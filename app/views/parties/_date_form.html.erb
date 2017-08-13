@@ -2,9 +2,8 @@
 
   <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black;">
 
-            <%= f.input :date, :label => 'Change Date & Time', wrappers: :horizontal_select_date, as: :datetime, start_year: Date.today.year,
-	                              end_year: Date.today.year + 12,
-	                              order: [:day, :month, :year] %>
+
+	                              <%= f.text_field :date %>
 
               </div><br />
 
@@ -21,4 +20,7 @@
 
 
 </div>
+
+
+
 

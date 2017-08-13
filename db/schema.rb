@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722221656) do
+ActiveRecord::Schema.define(version: 20170805110752) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -267,11 +267,12 @@ ActiveRecord::Schema.define(version: 20170722221656) do
     t.integer  "group_id"
     t.integer  "invite_id"
     t.integer  "party_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "request_id"
     t.string   "token"
     t.string   "name"
+    t.date     "attend_party"
     t.index ["group_id", "invite_id"], name: "index_visitors_on_group_id_and_invite_id", using: :btree
     t.index ["request_id"], name: "index_visitors_on_request_id", using: :btree
     t.index ["user_id", "party_id"], name: "index_visitors_on_user_id_and_party_id", using: :btree

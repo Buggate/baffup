@@ -146,7 +146,7 @@ class PartiesController < ApplicationController
       return params unless params[:party]
 
       params.require(:party).permit(:current_step,
-                                     :title,
+                                    :title,
                                     :venue,
                                     :date, 
                                     :user_id, 
@@ -186,7 +186,8 @@ class PartiesController < ApplicationController
 
     def create_visitor(user, party)  
     
-             @visitor = @party.visitors.build(party_id: @party.id, user_id: current_user.id)
+             @visitor = @party.visitors.build(party_id: @party.id, user_id: current_user.id, name: current_user.name,
+                                              attend_party: @party.date)
 
               @visitor.save
 

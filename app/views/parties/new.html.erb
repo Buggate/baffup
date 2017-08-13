@@ -7,7 +7,7 @@
 
 	             
 
-	          <%= simple_form_for(:party, :html => {:multipart => true}, :url => {:action => 'create', :user_id => current_user.id}) do |f| %>
+	 <%= form_for(:party, :html => {:multipart => true}, :url => {:action => 'create', :user_id => current_user.id}) do |f| %>
 
 	           <%= render(:partial => "form", :locals => {:f => f}) %>
 

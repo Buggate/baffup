@@ -23,9 +23,12 @@
         <meta property="og:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
         <meta property="og:site_name" content="baffup" />
 
-    <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
+    
+       <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
 
-    <%= javascript_include_tag "stratamain" %>
+    <%= javascript_include_tag   'datepicker' %>
+
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -59,32 +62,22 @@
 
 
 				<a href="#" class="image gratar"><h2><%= image_tag(@party.picture.url(:large), :width => "200", :height => "200", cached: true )%></h2></a>
-				
-           <br />
+        <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"><i class="fa fa-glass fa-2x" aria-hidden="true"></i>
+&nbsp;&nbsp;<strong style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @party.title %></strong></p>			
+
+
+         <div class="actions">
+         <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"><i class="fa fa-refresh fa fa-2x" aria-hidden="true"></i>
+
+        <%= link_to "Photo/IV", edit_party_path(@party), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"  %> </p>
+
+
         
-			
-			  <div class="dropdown">
+       
+      </div>
 
-        <% cache @party do %>
-			                            
-			        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Patrick Hand SC', cursive; font-size: 16px; font-weight: bold; color: #195c75; "><%= @party.title %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-
-				     <ul class="dropdown-menu">
-
-				       <li><%= link_to 'Upload photo', edit_party_path(@party), :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #195c75; " %></li>
-
-				       <li><%= link_to 'Venue', edit_venue_parties_path(@party), :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #195c75;" %></li>
-
-				       <li><%= link_to 'Date', edit_date_parties_path(@party), :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #195c75;" %></li>
-
-				     </ul>
-
-             <% end %>
-			         
-
-			 </div>
-
-
+      
+        
       
       <div class="media service-box wow fadeInRight">
                         
@@ -122,11 +115,36 @@
       
       </div>
 
+  <div class="dropdown">
+                                      
+  <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; "><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Change IV Details&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
+
+   <ul class="dropdown-menu">
+
+                  
+        <li><%= link_to "" %></li>
+
+
+
+      <li><%= link_to 'Venue', edit_venue_parties_path(@party), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %></li>
+
+        <li><%= link_to "" %></li>
+
+
+      <li><%= link_to 'Date', edit_date_parties_path(@party), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;"  %></li>
+                  
+
+    </ul>
+                   
+
+  </div><br>
 
 
 
 
-			<strong><%= link_to 'mY Catlog', profiles_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 16px; color: black;" %></strong><br>
+
+
+			<strong><%= link_to 'mY Catlog', profiles_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 16px; color: black;" %></strong>
             
 
 
@@ -151,16 +169,29 @@
                            
 	</section>
          
- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': :reload %> 
 
-    <%= stylesheet_link_tag    'stratamain' %>          
-                           
 
-		
-		
+ <script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('#party_date').datepicker({
+                    format: "dd/mm/yyyy"
+                });  
+            
+            });
+        </script>
+
 
 
 	</body>
+
+
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': :reload %> 
+
+        <%= stylesheet_link_tag    'stratamain' %>
+
+        <%= stylesheet_link_tag    'datepicker' %>
 
 </html>
 

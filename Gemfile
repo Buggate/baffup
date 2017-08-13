@@ -84,6 +84,8 @@ end
 
   gem 'fancybox-rails', '~> 0.2.1'
 
+  gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.1.1'
+
 
 
 
@@ -158,6 +160,8 @@ end
 
   gem 'meta-tags', '~> 2.1'
 
+
+  gem 'railroady', '~> 1.5', '>= 1.5.2'
 
  
 

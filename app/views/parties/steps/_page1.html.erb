@@ -63,12 +63,11 @@
 		
 		 
 			 <br />
+			 <br />
 <br />
-<br />
 
 
-
-  <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id } %>
+  <%= f.hidden_field :user_id, {value: current_user.id } %>
 
 
   </fieldset>

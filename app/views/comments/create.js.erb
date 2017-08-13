@@ -14,7 +14,7 @@ $comments_count = $("#comments-count-of-visitor-<%= @visitor.id %>");
 <% if @comment.errors.empty?  # if no erros on creating a comment... %>
   $comments_count.html("<%= @visitor.party.comments.size %>").effect('highlight',{}, 1000);
   $comment_parent.append("<%=j render @comment %>").find('li').last().effect("highlight", {}, 1000);
-  $comment_form[0].reset();
+  $comment_form.get(0).reset();
   <% if @comment.parent %>
     $comment_form.remove();
     // console.log("start");
@@ -28,4 +28,5 @@ $comments_count = $("#comments-count-of-visitor-<%= @visitor.id %>");
 <% else # if some errors occurs on creating a comment... %>
   $comment_form.before("<div class='alert alert-warning alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><%= @comment.errors.full_messages.join('') %></div>").prev().delay(1500).slideUp();
 <% end %>
+
 

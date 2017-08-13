@@ -1,6 +1,6 @@
 
 
-        <%= simple_form_for(:reservation, :url => {:action => 'create', :visitor_id => @visitor.id}) do |f| %>
+        <%= simple_form_for([@visitor, @reservation, Reservation.new]) do |f| %>
              
 
                    <%= f.input :party_id, as: :hidden, input_html: {value: @visitor.party.id } %>
@@ -11,13 +11,13 @@
 
                  
 
-     
+        <p style ="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: green; font-weight: bold;">
+        R S V P</p>
+                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">
+                        <%= label :accept, "Accept With Pleasure", value: true %>&nbsp;&nbsp;
+                        <%= f.radio_button :accept, true, :value => true %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 9px; color: black;">
-                        <%= label :accept, "Accept With Pleasure", value: true %>
-                        <%= f.radio_button :accept, true, :value => true %>&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <%= label :accept, "Decline With Regards", value: false %>
+                        <%= label :accept, "Decline With Regards", value: false %>&nbsp;&nbsp;
                         <%= f.radio_button :accept, false, :value => false%>
                       </div><br />
 

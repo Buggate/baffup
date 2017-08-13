@@ -24,48 +24,23 @@
         <meta property="og:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
         <meta property="og:site_name" content="baffsup" />
 
-    
+  <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
 
-    <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
-
-    <%= javascript_include_tag "statamain" %>
-    
+  <%= javascript_include_tag   'datepicker' %>
 
 
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-     <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Mogra|Ewert|Julius+Sans+One|Lily+Script+One|Petit+Formal+Script|Playball|Ravi+Prakash|Rye|Raleway|Tangerine|Inconsolata:italic|Droid+Sans|Amatic+SC|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Mogra|Ewert|Julius+Sans+One|Lily+Script+One|Petit+Formal+Script|Playball|Ravi+Prakash|Rye|Raleway|Tangerine|Inconsolata:italic|Droid+Sans|Amatic+SC|Josefin+Slab|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico" rel="stylesheet">
 
-     <style>
+  <style>
       body {
 
       	     font-family: 'Annie Use Your Telescope', cursive;
-             font-family: 'Pacifico', serif;
-             font-family: 'Tangerine', serif;
-             font-family: 'Inconsolata:italic', serif;
-             font-family: 'Droid+Sans', serif;
-             font-family: 'Amatic+SC', serif;
-             font-family: 'Josefin+Slab', serif;
-             font-family: 'Open+Sans', serif;
-             font-family: 'Open+Sans+Condensed:300', serif;
-             font-family: 'Oswald', serif;
-
+           
              font-family: 'Mogra', cursive;
 
-            font-family: 'Ravi Prakash', cursive;
-
-            font-family: 'Playball', cursive;
-
-            font-family: 'Julius Sans One', sans-serif;
-
-            font-family: 'Petit Formal Script', cursive;
-
-            font-family: 'Lily Script One', cursive;
-
-            font-family: 'Rye', cursive;
-
-            font-family: 'Ewert', cursive;
 
             font-family: 'Raleway', sans-serif;
 
@@ -80,7 +55,6 @@
 </head>
 
 
-
   <body id="top">
 
    <header id="header">
@@ -88,90 +62,84 @@
 	  <div class="inner">
 
 	     <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:large), cached: true ) %></a>
+       <div class="actions">
+        <%= link_to "Update Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"  %>
 
-
-    	      <div class="dropdown">
-    			                            
-    			      <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; "><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;<%= @profile.name %>&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
-
-    				     <ul class="dropdown-menu">
-
-    				     <li><%= link_to "Upload a Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;"  %></li>
-
-    				     
-    				     <li><%= link_to "" %></li>
-
-
-
-    				       <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %></li>
-    				      
-
-    				     </ul>
-    			         
-
-    			 </div>
-
-
-
-					
-    <aside>
-					
-					
         
-             <button"><h3><strong><%= link_to '', new_party_path %></strong></h3></botton><br>
-                                     
+       
+      </div><br />
 
-             <div></div>
-             
-         
+       <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"><i class="fa fa-user fa-fw fa-2x"></i>&nbsp;&nbsp;<strong style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @profile.name %></strong></p>
 
-            
-					
-					<br />
-					<br />
 
-					<ul class="icons">
+  <div class="dropdown">
+                                      
+  <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; "><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
 
+   <ul class="dropdown-menu">
+
+                  
+        <li><%= link_to "" %></li>
+
+
+
+      <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;" %></li>
+
+        <li><%= link_to "" %></li>
+
+
+      <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :type => "button", :class => "btn btn-default", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold;"  %></li>
+                  
+
+    </ul>
+                   
+
+  </div>
+    </div>
+
+
+    
+<aside>
+	         
+ <ul class="icons">
+    			       
+  <div class="media service-box wow fadeInRight">
+                            
+    <div class="media-body">
+
+      <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">Contact me through My Email: &nbsp;<strong style="color: red; font-weight: bold;"><%= @profile.email %></strong></p>
+      
+      </div>
+                     
+  </div>
+
+  <div class="media service-box wow fadeInRight">
+
+    <div class="media-body">
+      
+       <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">Gender<br /><strong style="color: red; font-weight: bold;"><%= @profile.gender %></strong></p>
+                  
+     </div>
+    
+  </div>
+
+    
+  <div class="media service-box wow fadeInRight">
+    
+      <div class="media-body">
+     
+      
+      <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">We can have fun together doing what i like to do. <br /><strong style="color: red; font-weight: bold;"><%= @profile.hobbies %></strong></p>
+      
+      </div>
+      
+  </div>
+								
+</ul>
 		
-                    <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Mogra', cursive; font-size: 16px; color: black" %></strong></h2><br>
+		 <img src="/b_logo1.png" width="120" height="100" border="5" >
 
-							<br />
-							<br />
-		
-						  <span class="badge bg-important badge-success" >
-
-
-
-
-						       <h4 id="notice" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black"><%=link_to "#{@profile.user.notifications.count}", notifications_path, :title => "Occassion | Invitations ... " %>
-
-
-						       <h4>
-
-
-						       <li><i class="fa fa-bell " aria-hidden="true"></i></li>
-
-
-						   </span>
-						  
-						  
-												
-					</ul>
-
-					<br />
-					
-				
-
-
-					 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :style => "font-family: 'Mogra', cursive;"  %>
-
-					
-					 <br />
-					 <br />
-					 <br />
-					   <img src="/b_logo1.png" width="120" height="100" border="5" >
-
-						<p style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;">&copy; Baffsup 2017</p>
+			<p style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;">&copy; Baffsup 2017</p>
 
 		</aside>
 
@@ -186,19 +154,74 @@
 
   <section id="one">
 
-		    <div class="major">
+    <div class="major">
 
-			   <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 30px;">Create and manage your occassions. Keep records of your most important moments and share with your loved ones.<br />
-							Its easy and free !!!</h2>
-			</div>
+     <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 20px;">Create and manage your occassions. Keep records of your most important moments and share with your loved ones.<br />Its easy and free !!!
+     </h2>
+
+
+
+      <p>
+
+       <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Mogra', cursive; font-size: 16px; color: black" %></strong></h2>
+
+       </p>
+
+       <p>
+
+ <a href="" data-toggle="modal" data-target="#index_notifications_modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 14px; color: black; font-weight: bold;" title="Occassion | Invitations ..." ><p><i class="fa fa-bell fa-3x " aria-hidden="true" style="color: red;" ></i></p></a>
+
+
+
+      <div class="modal fade" id="index_notifications_modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
+
+ 
+
+          <div class="modal-dialog">  
+
+                   <div class="modal-content">
+
+                        <div class="modal-header" >
+
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                 
+
+                             <h4 class="modal-title" id="myModalLabel" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 16px; color: black; font-weight: bold;">Invivitation Notifications</h4>
+                                                          
+                        </div>
+                                                
+                      <div class="modal-body" style="background-color: #e5f4f9; width: 100%; height: 100%; overflow: auto;">
+                                                       
+                         <%= render @profile.user.notifications, modal: true %> 
+
+                                  <div class="modal-footer">
+
+                                     <button type="button" class="btn btn-default" data-dismiss="modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 16px; color: black; font-weight: bold;">Close</button>
+
+                              </div>
+                                              
+                         </div>
+
+                  </div>
+                              
+            </div>
+                          
+      </div>
+      </p>
+            
+
+     </div>
+
+
+  
+       
+	    
 
   </section>
 
 
-  <section style="background-image: url(""); background-size: 1200px 620px;">
+  <section >
 
-
-        <div >
+    <div >
 
 
 
@@ -208,6 +231,10 @@
 
         </div>
 
+
+
+
+        
     </section>
 
 
@@ -229,26 +256,33 @@
 
 
 
+	</section>
 
-
-			</section>
-
-		
-
-
-		
-
-       
-
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': :reload %> 
-
-    <%= stylesheet_link_tag    'stratamain' %>
-       
-		
-
-
+  </div>
+   <script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('#profile_age').datepicker({
+                    format: "dd/mm/yyyy"
+                });  
+            
+            });
+        </script>
+  
 
 	</body>
-</html>
 
+
+
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': :reload %> 
+
+        <%= stylesheet_link_tag    'stratamain' %>
+
+        <%= stylesheet_link_tag    'datepicker' %>
+
+        
+
+</html>
 
