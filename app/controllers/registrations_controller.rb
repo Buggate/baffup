@@ -21,16 +21,19 @@ class RegistrationsController < Devise::RegistrationsController
        @token = params[:invite_token]
 
 
+
+
        if @newUser.save && @token != nil
+
+        @party = Invite.find_by_token(@token).party
         
           @invite = Invite.find_by_email(@newUser.email)
 
-          @party = Invite.find_by_token(@token).party
 
            
           @invite.guest_id = @newUser.id 
 
-          @invite.save 
+          @invite.save
 
           create_visitor @user, @party, @invite
 
@@ -38,9 +41,7 @@ class RegistrationsController < Devise::RegistrationsController
 
           redirect_to visitor_path(@visitor) if @visitor.party
 
-          
 
-              
       else
 
 
@@ -77,6 +78,8 @@ class RegistrationsController < Devise::RegistrationsController
 
 
     def create_visitor(user, party, invite)  
+
+
         
         @visitor = @party.visitors.build(party_id: @invite.party.id, user_id: @invite.guest.id, 
                                         invite_id: @invite.id, name: @invite.guest.name,
@@ -97,7 +100,6 @@ class RegistrationsController < Devise::RegistrationsController
 
 
 end
-
 
 
 

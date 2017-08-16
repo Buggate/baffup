@@ -24,7 +24,7 @@
         <meta property="og:site_name" content="baffup" />
 
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %> 
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
    
 
@@ -103,7 +103,7 @@
         </div>
 
         <!-- Javascript -->
-         <%= javascript_include_tag "application", 'data-turbolinks-track': true %>
+        <%= javascript_include_tag "application", 'data-turbolinks-track': :reload %>
 
           <%= javascript_include_tag   'datepicker' %>
 

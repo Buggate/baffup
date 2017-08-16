@@ -26,6 +26,9 @@
 
   <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
 
+
+   
+
   <%= javascript_include_tag   'datepicker' %>
 
 
@@ -63,7 +66,7 @@
 
 	     <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:large), cached: true ) %></a>
        <div class="actions">
-        <%= link_to "Update Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"  %>
+        <%= link_to "Update Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-primary", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"  %>
 
         
        
@@ -95,15 +98,14 @@
                    
 
   </div>
-    </div>
+  <br /><br />
 
 
     
 <aside>
 	         
- <ul class="icons">
-    			       
-  <div class="media service-box wow fadeInRight">
+
+
                             
     <div class="media-body">
 
@@ -111,20 +113,13 @@
       
       </div>
                      
-  </div>
-
-  <div class="media service-box wow fadeInRight">
 
     <div class="media-body">
       
        <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">Gender<br /><strong style="color: red; font-weight: bold;"><%= @profile.gender %></strong></p>
                   
      </div>
-    
-  </div>
 
-    
-  <div class="media service-box wow fadeInRight">
     
       <div class="media-body">
      
@@ -132,10 +127,8 @@
       <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">We can have fun together doing what i like to do. <br /><strong style="color: red; font-weight: bold;"><%= @profile.hobbies %></strong></p>
       
       </div>
-      
-  </div>
-								
-</ul>
+
+
 		
 		 <img src="/b_logo1.png" width="120" height="100" border="5" >
 
@@ -169,9 +162,8 @@
 
        <p>
 
- <a href="" data-toggle="modal" data-target="#index_notifications_modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 14px; color: black; font-weight: bold;" title="Occassion | Invitations ..." ><p><i class="fa fa-bell fa-3x " aria-hidden="true" style="color: red;" ></i></p></a>
 
-
+ <a href="" data-toggle="modal" data-target="#index_notifications_modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 14px; color: black; font-weight: bold;" title="Occassion | Invitations ..." ><span class="badge bg-important"><%= "#{@profile.user.notifications.count}" %></span><i class="fa fa-bell fa-3x " aria-hidden="true" style="color: red;" ></i></a>
 
       <div class="modal fade" id="index_notifications_modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
 
@@ -192,6 +184,8 @@
                       <div class="modal-body" style="background-color: #e5f4f9; width: 100%; height: 100%; overflow: auto;">
                                                        
                          <%= render @profile.user.notifications, modal: true %> 
+
+
 
                                   <div class="modal-footer">
 
@@ -276,7 +270,7 @@
 
 
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': :reload %> 
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': :reload %>
 
         <%= stylesheet_link_tag    'stratamain' %>
 

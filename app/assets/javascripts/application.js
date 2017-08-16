@@ -19,6 +19,6 @@
 //= require turbolinks
 //= require dropzone
 //= require active_admin/base
-//= require_tree .
+
 
 

@@ -16,7 +16,6 @@ class Request < ApplicationRecord
 
  private
 
-
 def create_visitor
    
    @email = self.email
@@ -29,9 +28,14 @@ def create_visitor
 
      @visitor.party_id = @visitor.party.id
 
+     @visitor.name = @visitor.user.name
+
+     @visitor.attend_party = @visitor.party.date
+
     @visitor.save
 
 
  end
+
 
 end

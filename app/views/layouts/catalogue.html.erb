@@ -23,7 +23,7 @@
         <meta property="og:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
         <meta property="og:site_name" content="baffup" />
 
-        <%= javascript_include_tag "application", 'data-turbolinks-track': true %>
+         <%= javascript_include_tag "application", 'data-turbolinks-track': :reload %>
   
       
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -108,7 +108,7 @@
     </body>
 
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %> 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': :reload %>
 
     <%= stylesheet_link_tag    'partyform' %>
 

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :visitors do 
    
-
+   resources :notifications
    resources :reservations
    
     resources :albums do

@@ -7,9 +7,9 @@
 
 
 
-			<%= f.submit "Back", class: "btn btn-previous", name: "back_button" unless f.object.first_step? %>
+			<%= f.submit "Back", class: "btn btn-warning", name: "back_button" unless f.object.first_step? %>
 
-			  <%= f.submit f.object.last_step? ? nil: "Next", class: "btn btn-next" %>
+			  <%= f.submit f.object.last_step? ? nil: "Next", class: "btn btn-success" %>
 
 
 </div>  

@@ -7,29 +7,34 @@
 
            <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
 
+
+
+
                 <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"><%= notification.visitor.user.name  %></h4>
 
                 <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">Host:-<%= notification.party.user.name %> Sents you an I.V </h4>
 
+
                 
                 
                 <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">to the occassion - (<%= notification.party.title  %>)</h4>
+                
 
-                <% @visitor = Visitor.find_by_name(current_user.name) %>
+                <% if notification != nil %>
 
-                 <% if @visitor == notification.visitor %>
-
-
+                   <% @visitor = notification.visitor %>
 
 
                 <div class="btn btn-danger"><%= link_to "Accept", visitor_path(@visitor), :style =>"font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black" %></div>
 
-                <% end %>
-
-             
-               
+              
+               <% end %>
              
          </div>
+
+
+
+         
       
     <% end %>
 

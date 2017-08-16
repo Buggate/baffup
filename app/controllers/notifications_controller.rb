@@ -5,9 +5,6 @@ before_action :authenticate_user!, except: [:index, :show]
 
 
 
-  layout 'party_form'
-
-
 
 	def link_through  
 
@@ -21,10 +18,12 @@ before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 
-		@visitor = Visitor.find_by_name(current_user.name)
+		
 
 	
 	   @notifications = current_user.notifications
+
+	   @visitor = Visitor.find_by_name(current_user.name)
 
 	  
 	       

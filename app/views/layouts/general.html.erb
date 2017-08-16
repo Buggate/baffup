@@ -24,7 +24,7 @@
         <meta property="og:site_name" content="baffup" />
 
     
-       <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
+        <%= javascript_include_tag "application", 'data-turbolinks-track': :reload %>
 
     <%= javascript_include_tag   'datepicker' %>
 
@@ -71,9 +71,6 @@
 
         <%= link_to "Photo/IV", edit_party_path(@party), :type => "button", :class => "btn btn-info", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;"  %> </p>
 
-
-        
-       
       </div>
 
       
@@ -187,7 +184,8 @@
 	</body>
 
 
-   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': :reload %> 
+   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': :reload %>
+
 
         <%= stylesheet_link_tag    'stratamain' %>
 

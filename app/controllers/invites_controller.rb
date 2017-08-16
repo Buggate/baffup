@@ -64,6 +64,7 @@ def create
 end 
 
 
+
  private
 
    def find_party
@@ -109,6 +110,14 @@ end
   end
 
   
+
+
+
+
+
+
+
+
 
 
   

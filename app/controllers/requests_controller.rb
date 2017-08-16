@@ -37,7 +37,7 @@ def create
        
        #create_visitor @request, @party, @friend
 
-       #create_notification @request, @party, @visitor, @user
+       create_notification @request, @party, @visitor, @user
                 
      
 
@@ -45,7 +45,7 @@ def create
 
       
 
-       create_notification @request, @party, @visitor, @user
+       #create_notification @request, @party, @visitor, @user
 
          flash[:notice] = "Request Sent successfully."
 
