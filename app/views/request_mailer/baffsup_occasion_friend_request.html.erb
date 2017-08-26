@@ -308,7 +308,7 @@
 
                                    
 
-                                <h3 style="font-size: 14px; font-weight: bold; color: #ffffff;">DATE:&nbsp; <%= localize(@party.date, format: :long) %><br /><br /><br /> VENUE:&nbsp; <%= @party.venue %></h3>
+                                <h3 style="font-size: 14px; font-weight: bold; color: #ffffff;">DATE:&nbsp; <%= @party.date.strftime("%B #{@party.date.day.ordinalize}, %Y") %><br />@&nbsp;&nbsp;<%= @party.time.strftime("%I:%M%p") %><br /><br /><br /> VENUE:&nbsp; <%= @party.venue %></h3>
 
 
 

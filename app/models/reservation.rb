@@ -7,6 +7,6 @@ class Reservation < ApplicationRecord
         belongs_to :visitor
 
 
-        validates_presence_of :accept
+        validates :accept, :inclusion => { :in => [true, false] }
         
 end

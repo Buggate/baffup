@@ -1,26 +1,25 @@
 
-<div class="title" style="font-family: 'Patrick Hand SC', cursive; font-size: 28px; color: #f25146; ">We are here to Serve You!</div>
-                <div class="title-description" style="font-family: 'Patrick Hand SC', cursive; font-size: 28px; color: #f25146; ">Please contact us for any help or queries at all.</div>
+<div class="title" style="font-family: 'Patrick Hand SC', cursive; font-size: 28px; color: black; ">We are here to Serve You!</div>
+                <div class="title-description" style="font-family: 'Patrick Hand SC', cursive; font-size: 28px; color: black; ">Please contact us for any help or queries at all.</div>
                 
-<h1 style="font-family: 'Patrick Hand SC', cursive; font-size: 38px; color: green; ">Say Hello!</h1>
+<h1 style="font-family: 'Patrick Hand SC', cursive; font-size: 38px; color: green; ">You can also Say Hello!!!</h1><br /><br />
 
 
 <div id="fh5co-main">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h2>Contact</h2>
+          
           <div class="fh5co-spacer fh5co-spacer-sm"></div>
-          <form action="#">
-            <div class="row">
+           <div class="row">
               <div class="col-md-6">
 
 
                <%= simple_form_for @message, url: create_message_path do |f| %>
 
-            <%= notice %>
+                  <%= notice %>
 
-            <%= @message.errors.full_messages.join(', ') %>
+                  <%= @message.errors.full_messages.join(', ') %>
 
 
 
@@ -42,7 +41,9 @@
                   <textarea name="message[body]" id="message-body" cols="30" class="form-control" rows="10"></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="submit" class="btn btn-primary" value="Send Message">
+                
+
+                  <%= f.submit "Send Message", class: "btn btn-primary" %>
                 </div>
 
 
@@ -51,8 +52,7 @@
 
               </div>
             </div>
-          </form>
-          
+                
         </div>
             
           </div>

@@ -2,8 +2,8 @@ class Message
 
 
   include ActiveModel::Model
-  attr_accessor :name, :email, :body
-  validates :name, :email, :body, presence: true
+  attr_accessor :first_name, :last_name, :email, :body
+  validates :first_name, :last_name, :email, :body, presence: true
 
 
 end

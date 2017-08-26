@@ -11,11 +11,24 @@
 
    <div class="6u 12u$(xsmall)" >
 
-	   <div><label for="party-date"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">DATE & TIME</span></label></div>
+	   <div><label for="party-date"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">CHOOSE DATE </span></label></div>
 	  
 
 	   <%= f.text_field :date %>
 
+	   
+
+
+	</div>
+
+	<br />
+
+	<div class="6u 12u$(xsmall)" >
+
+	  <div><label for="party-date"><span style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;">CHOOSE TIME</span></label></div>
+	  
+
+         <%= f.text_field :time, class: "timepicker" %>
 	   
 
 

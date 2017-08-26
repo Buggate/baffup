@@ -125,7 +125,7 @@
 
         <div ><img src="/baffup_6.png" width="200" height="150"></div>
             
-          <div align="center" class="container" style="background-image: url(../iv_card200.png); height: 350px; width: 700px; border: 3px solid black;" >
+          <div align="center" class="container" style="background-image: url(../iv_card200.png); height: 400px; width: 650px; border: 3px solid black;" >
          
 
                 
@@ -135,7 +135,9 @@
                   <p aria-hidden="true" style="color: black; font-size: 10px; font-weight: bold;"><%= @party.venue %></p>
 
                   <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: red; ">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o fa-1x"  aria-hidden="true"></i>&nbsp;&nbsp;Date &nbsp; &amp; &nbsp; Time</h4>
-                    <p aria-hidden="true" style="color: black; font-size: 12px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;This Occasion is scheduled for the <br /><strong style="color: black; font-size: 10px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;<%= localize(@party.created_at, format: :long) %></strong></p>
+                    <p aria-hidden="true" style="color: black; font-size: 12px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;This Occasion is scheduled for the <br /><strong style="color: black; font-size: 10px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;<%= @party.date.strftime("%B #{@party.date.day.ordinalize}, %Y") %><br />@&nbsp;&nbsp;<%= @party.time.strftime("%I:%M%p") %></strong></p>
+
+
 
 
                      <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: red; font-weight: bold;"><i class="fa fa-envelope" aria-hidden="true"></i>
@@ -146,10 +148,41 @@
                         <h4 class="media-heading" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: red; font-weight: bold;"><i class="fa fa-calendar fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Guest RSVP BY</h4>
                       <p aria-hidden="true" style="color: black;  font-size: 14px; font-weight: bold;">Expecting all RSVP back by the <br /><strong style="color: black;  font-size: 10px; font-weight: bold;"><%= localize(@party.rsvp_by, format: :long) %></strong></p><br /> <br /><br />
 
-                     
+                <% if @visitor != nil %>  
+
+                  <% if @visitor.reservation.present? %>
+                  <p style ="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: green; font-weight: bold;">
+        R S V P</p>
+
+                   <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #195c75; " aria-hidden="true">Your reservation information has been sent to <%= @party.visitors.first.name %></h1>
+
+                  <i class="fa fa-check fa-3x" aria-hidden="true" style="color: green;"></i>
 
 
-                      <%= render 'reservations/form' %>
+
+                  <% elsif @visitor != @party.visitors.first  %> 
+
+
+
+
+
+                     <%= render 'reservations/form' %>
+
+                     <% else @visitor = @party.visitors.first %> 
+
+                      
+
+
+
+
+
+                     <% end %>
+
+                     <% end %> 
+
+
+
+
 
                  
 
@@ -179,27 +212,21 @@
             <% if @visitor.reservation.present? %>
            <br /><br /><br />
 
-               <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; " aria-hidden="true">You have been reserved for this party</h1>
-
-                  <i class="fa fa-check fa-5x" aria-hidden="true" style="color: green;"></i>
-
-                  <p style="font-family: 'Bellefair', serif; font-size: 18px; color: black; font-weight: bold;"><%= @visitor.name %>, you are welcome to this occasion.<br /> Post all your relevant images for this occasion.<br />Also get involve in the planning. </p>
+              
+                  <p style="font-family: 'Bellefair', serif; font-size: 18px; color: black; font-weight: bold;"><%= @visitor.name %>, you are welcome to this occasion.<br /><br /> Post all your relevant images for this occasion.<br />Also get involve in the planning. </p><br /><br />
 
 
             <% elsif @visitor != @party.visitors.first  %>
-           ><br /><br /><br />
+           <br /><br /><br /><br /><br /><br />
 
           <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true"> <h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75; "  aria-hidden="true">Reserve a space on this Occassion</h1>
 
-          <p style="font-family: 'Bellefair', serif; font-size: 18px; color: black; font-weight: bold;"><%= @visitor.name %>, you are welcome to this occasion.<br /> Post all your relevant images for this occasion.<br />Also get involve in the planning. </p>
+          <p style="font-family: 'Bellefair', serif; font-size: 18px; color: black; font-weight: bold;">Inform <%= @party.visitors.first.name %>, whether you will <br />be attending or not.</p>
                <% else @visitor = @party.visitors.first %>  
 
-               <br /><br /><br /><br /><h1 style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;"  aria-hidden="true">Check your R S V P List in your Occasion Page</h1>
-               <%= link_to "#{@party.title}", party_path(@party), :type => "button", :class => "btn btn-danger", :style => "font-family: 'Permanent Marker', cursive;"  %>
-
-               <p style="font-family: 'Bellefair', serif; font-size: 18px; color: black; font-weight: bold;">
-
-              
+               <p style ="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #195c75;"  aria-hidden="true">Check your R S V P List by clicking the<br /> link below<br /><%= link_to "#{@party.title}", party_path(@party), :type => "button", :class => "btn btn-danger", :style => "font-family: 'Permanent Marker', cursive; font-size: 12px;"  %></p>
+               <p style="font-family: 'Bellefair', serif; font-size: 18px; color: black; font-weight: bold;">Post all your pre-occasion photos.</p>
+             
 
               
      <% end %>

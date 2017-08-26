@@ -1,12 +1,31 @@
-/*!
- * Datepicker for Bootstrap
- *
- * Copyright 2012 Stefan Petre
- * Improvements by Andrew Rowls
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- */
+
+.msf-container {
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.msf-title h3 {
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+
+.msf-title p {
+  opacity: 0.8;
+}
+.description-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.description-title {
+  padding-bottom: 10px;
+}
+
+.description-text {
+  opacity: 0.8;
+}
+
 .datepicker {
   padding: 4px;
   -webkit-border-radius: 4px;

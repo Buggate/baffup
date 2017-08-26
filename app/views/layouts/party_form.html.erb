@@ -29,6 +29,11 @@
    
 
     <%= stylesheet_link_tag    'datepicker' %>
+
+    <%= stylesheet_link_tag    'wickedpicker' %>
+
+
+
     
       
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,7 +41,9 @@
       
     <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Permanent+Marker|Patrick+Hand+SC|Cormorant+SC|Mogra|Tangerine|Pacifico|Julius+Sans+One" rel="stylesheet">
 
-     <style>
+   <style> 
+
+   <style>
       body {
             
             font-family: 'Annie Use Your Telescope', cursive;
@@ -63,22 +70,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 description-title">
-                        <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 28px; color: black">Your Fun Starts!!! Loading Your Occassions</h2>
+                        <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 28px; color: black">Your Fun Starts!!! Loading Your Occasion</h2>
                     </div>
                 </div>
                 
             </div>
 
-       </div
+       </div>
     
+         
 
-        <div>
+         <div>
 
            <%= yield %>
 
         </div>
-
-        
 
 
         
@@ -106,6 +112,7 @@
         <%= javascript_include_tag "application", 'data-turbolinks-track': :reload %>
 
           <%= javascript_include_tag   'datepicker' %>
+          <%= javascript_include_tag   'wickedpicker' %>
 
 
          <script type="text/javascript">
@@ -117,7 +124,10 @@
                         });  
                     
                     });
-                </script>
+
+                    $('.timepicker').wickedpicker();
+
+        </script>
 
 
 
@@ -129,4 +139,7 @@
     </body>
 
 </html>
+
+
+
 

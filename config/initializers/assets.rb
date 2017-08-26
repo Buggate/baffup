@@ -22,7 +22,7 @@ Rails.application.config.assets.precompile += %w( partyform.css )
 
 Rails.application.config.assets.precompile += %w( stratamain.css )
 
-Rails.application.config.assets.precompile += %w( datepicker.css )
+Rails.application.config.assets.precompile += %w( wickedpicker.css )
 
 
 Rails.application.config.assets.precompile += %w( animate.css )
@@ -35,9 +35,6 @@ Rails.application.config.assets.precompile += %w( salvattore.css )
 
 Rails.application.config.assets.precompile += %w( style.css )
 
-
-
-  
 
 
 
@@ -69,6 +66,7 @@ Rails.application.config.assets.precompile += %w( bootstrap.min.js)
 
 Rails.application.config.assets.precompile += %w( datepicker.js )
 
+Rails.application.config.assets.precompile += %w( wickedpicker.js )
 
 Rails.application.config.assets.precompile += %w( jquery.easing.1.3.js )
 

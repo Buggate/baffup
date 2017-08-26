@@ -67,6 +67,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
+  config.active_record.time_zone_aware_types = [:datetime, :time]
+
   
 
 

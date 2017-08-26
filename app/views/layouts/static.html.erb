@@ -22,7 +22,8 @@
         <meta property="og:description" content=" Load all your occassion and make them unforgettable. Your one-stop Occassion catalogue, Manage and  keep records of guests, photos, and comments" />
         <meta property="og:site_name" content="baffsup" />
 
-      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': :reload %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': :true %>
+      
        <%= stylesheet_link_tag    'main' %>
 
        
@@ -51,23 +52,6 @@
        
 </head>
 <body>
-
-
-<div class="container">
-  <% flash.each do |name, msg| %>
-    <% if msg.is_a?(String) %>
-  <div class="{alert alert-#{name == :notice ? "success" : "error"}">
-
-    &times;
-   <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-
-   <% end %>
-</div>
-
-</div>
-
-
 
 
 
@@ -142,7 +126,7 @@
 
 <!-- Footer -->
 <footer>
-  <p class="credits">&copy;2016 Baffup.com, Crafted by <a href="http://designscrazed.org/" title="Baffup | Load Anything ...">Dev Team</a></p>
+  <p class="credits">&copy;2017 Baffup.com, Crafted by <a href="http://designscrazed.org/" title="Baffup | Load Anything ...">Dev Team</a></p>
 
 
 
@@ -154,7 +138,7 @@
 
 
 <!-- Back To Top -->
-<%= javascript_include_tag "application", 'data-turbolinks-track': :reload %>
+<%= javascript_include_tag "application", 'data-turbolinks-track': :true %>
 
 
 
