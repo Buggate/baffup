@@ -22,6 +22,8 @@ Rails.application.config.assets.precompile += %w( partyform.css )
 
 Rails.application.config.assets.precompile += %w( stratamain.css )
 
+Rails.application.config.assets.precompile += %w( datepicker.css )
+
 Rails.application.config.assets.precompile += %w( wickedpicker.css )
 
 
