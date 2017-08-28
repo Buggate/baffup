@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-
+ 
  # before_action :set_visitor
    before_action :find_visitor
 

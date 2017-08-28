@@ -1,27 +1,20 @@
 <div id="comments-widget-of-visitor-<%= @visitor.id %>" class="comments-widget">
 
-  <h2 class="comments-header" >
+    <h2 class="comments-header" >
+       Comments&nbsp;<small id="comments-count-of-visitor-<%= @visitor.id %>" ><span class="badge bg-important badge-danger" style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: black;" ><%= @visitor.party.comments.size %></span></small>
+    </h2>
 
-   
+    <br />
+    <br />
+    <ul class="comments-list">
 
-    <span class="badge bg-important badge-success" style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #915b05;" ><strong id="comments-count-of-visitor-<%= @visitor.id %>" ><%= @visitor.party.comments.size %>&nbsp;&nbsp;Comments</strong></span>
+      <%= render @visitor.party.comments.where(parent: nil) %>
 
-  </h2>
-
-  <br />
-  <br />
-  <ul class="comments-list">
-
-   
-
-    <%= render @visitor.party.comments.where(parent: nil) %>
-
-   
-
-  </ul>
-  <!-- comment-form -->
-  <%= render "comments/form", comment: @visitor.comments.build  %>
+    </ul>
+    <!-- comment-form -->
+      <%= render "comments/form", comment: @visitor.comments.build  %>
   
 </div>
+
 
 
