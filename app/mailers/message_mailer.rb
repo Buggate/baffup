@@ -9,11 +9,23 @@ class MessageMailer < ApplicationMailer
 
  
   #
+
+  first_name = message.first_name
+
+  last_name = message.last_name
+
+
   def contact_me(message)
+
+  	first_name = message.first_name
+
+    last_name = message.last_name
+
+    full_name = "#{first_name} - $#{last_name}"
 
     @body = message.body
 
-    mail to: "kayurdesalawu@gmail.com", from: message."#{first_name + last_name}"
+    mail to: "kayurdesalawu@gmail.com", from: message.full_name
 
   end
   
