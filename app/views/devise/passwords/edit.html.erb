@@ -7,6 +7,8 @@
              
         <div class="login-options"><%= t('.forgot_your_password', :default => 'Forgot your password?') %></div>
 
+         <div class="login-options" ><img src="/b_logo1.png" width="120" height="100" border="5" ></div>
+
             <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, role: "form" }) do |f| %>
            <%= f.hidden_field :reset_password_token %>
 
