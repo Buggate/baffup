@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
     def create
 
-      @message = Message.new message_params
+      @message = Message.new(message_params)
 
       if @message.valid?
 
