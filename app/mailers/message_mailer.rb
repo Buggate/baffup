@@ -10,11 +10,6 @@ class MessageMailer < ApplicationMailer
  
   #
 
-  first_name = message.first_name
-
-  last_name = message.last_name
-
-
   def contact_me(message)
 
   	first_name = message.first_name
