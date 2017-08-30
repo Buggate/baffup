@@ -12,7 +12,7 @@ class MessageMailer < ApplicationMailer
 
     @body = message.body
 
-    mail to: "kayurdesalawu@gmail.com", from: message.full_name
+    mail to: "kayurdesalawu@gmail.com", from: message.first_name
 
   end
   

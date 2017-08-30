@@ -1,6 +1,6 @@
 class Message
 
-	after_create :full_name
+	#after_create :full_name
 
 
   include ActiveModel::Model
