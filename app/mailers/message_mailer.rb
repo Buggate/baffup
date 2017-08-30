@@ -5,9 +5,6 @@ class MessageMailer < ApplicationMailer
   #
   #   en.message_mailer.contact_me.subject
 
-
-
- 
   #
 
   def contact_me(message)
@@ -15,7 +12,7 @@ class MessageMailer < ApplicationMailer
 
     @body = message.body
 
-    mail to: "kayurdesalawu@gmail.com", from: message.first_name
+    mail to: "kayurdesalawu@gmail.com", from: message.full_name
 
   end
   
