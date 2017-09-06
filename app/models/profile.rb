@@ -1,5 +1,9 @@
 class Profile < ApplicationRecord
 
+
+include BaffupStepModel
+
+
 	belongs_to :user
 
 
@@ -9,6 +13,13 @@ class Profile < ApplicationRecord
         validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
         custom_slugs_with(:name)
+
+         def self.total_steps
+
+            3
+
+         end
+
 
        
 end

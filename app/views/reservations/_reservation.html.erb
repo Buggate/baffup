@@ -3,7 +3,7 @@
 
  <div class="container" id="team" name="team">
 
-      <h1 class="centered" style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; ">Guest Reservation Lists</h1>
+      <h1 class="centered" style="font-family: 'Montserrat'', sans-serif; font-size: 18px; font-weight: bold; ">Guest Reservation Lists</h1>
     <br>
       <div class="row white centered">
 
@@ -15,11 +15,11 @@
           <%= image_tag(reservation.visitor.user.profile.image.url(:large), :class => "img-circle", :alt => "") %>
          
           <br>
-          <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: black"><%= reservation.name %></h4>
+          <h4 style="font-family: 'Montserrat'', sans-serif; font-size: 16px; color: 915b05;"><%= reservation.name %></h4>
           <a href="https://www.facebook.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <a href="https://twitter.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <a href="https://plus.google.com/"><i class="fa fa-google-plus" aria-hidden="true"></i></a><br /><br />
-          <p style="font-family: 'Annie Use Your Telescope', cursive; font-size: 16px; color: black; font-weight: bold;">said: <%= human_boolean(reservation.accept) %></p>
+          <p style="font-family: 'Montserrat'', cursive; font-size: 16px; color: #00193a; font-weight: bold;">said: <%= human_boolean(reservation.accept) %></p>
         </div><!-- col-lg-3 -->
 
         <% end %>

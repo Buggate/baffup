@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817215831) do
+ActiveRecord::Schema.define(version: 20170901210307) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -208,6 +208,18 @@ ActiveRecord::Schema.define(version: 20170817215831) do
     t.date     "age"
     t.string   "telephone"
     t.text     "hobbies",            limit: 65535
+    t.string   "mobile"
+    t.text     "address",            limit: 65535
+    t.string   "city"
+    t.string   "post_code"
+    t.string   "country"
+    t.string   "state"
+    t.string   "nationality"
+    t.string   "work_place"
+    t.text     "work_address",       limit: 65535
+    t.string   "professional_skill"
+    t.string   "position"
+    t.string   "work_phone"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 

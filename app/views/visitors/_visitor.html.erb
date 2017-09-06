@@ -11,9 +11,9 @@
 
        <a href="" class="image fit thumb"><%= image_tag visitor.party.picture.url(:medium) if visitor.party %></a>
                                   
-       <h5 style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; color: red"><%= link_to (visitor.party.title), visitor_path(visitor) if visitor.party  %></h5>
+       <h5 style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; color: #915b05;"><%= link_to (visitor.party.title), visitor_path(visitor) if visitor.party  %></h5>
 
-        <div style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black"><%= visitor.party.comments.count %>&nbsp;-  &nbsp;Occassion Comments <br>
+        <div style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: #00193a;"><%= visitor.party.comments.count %>&nbsp;-  &nbsp;Occassion Comments <br>
 
          <%= visitor.party.albums.count %>&nbsp;-  &nbsp; Occassion Posts </div><br><br />
 

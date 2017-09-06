@@ -8,12 +8,12 @@
 
                  <div class="skill">
 
-                  <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; font-weight: bold; color: red">My memorable Occassions</h2>
-                  <div style="font-family: 'Annie Use Your Telescope', cursive; font-size: 18px; font-weight: bold;color: black">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed-load of fun.</div>
+                  <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; font-weight: bold; color: #00193a;">My memorable Occassions</h2>
+                  <div style="font-family: 'Montserrat', cursive; font-size: 18px; color: black">This is your one stop Occassion Diary, Load your occassion and manage it has never been done before. Couple of clicks and Bam!, you are having shed-load of fun.</div>
 
                  </div>   <br /><br />
 
-                 <div align="center"><%= link_to "All Occassions", parties_path, :type => "button", :class => "btn btn-primary", :style => "font-family: 'Mogra', cursive; font-size: 18px; color: black" %></div>
+                 <div align="center"><%= link_to "All Occassions", parties_path, :type => "button", :class => "btn btn-info", :style => "font-family: 'Montserrat', cursive; font-size: 18px; color: #00193a;" %></div>
 
 
                 
@@ -40,7 +40,7 @@
        <h3 class="panel-title">
 
                                                                 
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index.to_s %>"  aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: black; font-weight: bold; ">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index.to_s %>"  aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: white; font-weight: bold; ">
                                                                   <%= party.title %>
               <i class="fa fa-angle-right pull-right"></i>
           
@@ -65,10 +65,10 @@
 
                          <div class="media-body">
                                                                   
-                          <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;") %><br>
+                          <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %><br>
                             
                             <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
-              &nbsp;<%= link_to("Upload Album", {:controller => 'catalogues', :party_id => party.id, :title => party.title}, :class => 'action index', :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;") %></p>
+              &nbsp;<%= link_to("Upload Album", {:controller => 'catalogues', :party_id => party.id, :title => party.title}, :class => 'action index', :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %></p>
 
             
 

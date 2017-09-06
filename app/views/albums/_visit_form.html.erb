@@ -9,20 +9,20 @@
 
            <div class="form-group">
 
-            <div class="fileUpload btn btn-primary">
-                <span>Post an Image</span>
+            <div class="fileUpload btn btn-primary" style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; ">
+                <span>Add a Photo/Posts</span>
 
                 <input id="album_picture" type="file" class="upload" name="album[picture]" />
 
                 
-            </div>
+            </div><br /><br />
 
             <input id="album-picture" placeholder="Choose File" disabled="disabled" />
           <br /><br />
 
 
 
-            <div class="form-group" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: black;" >
+            <div class="form-group" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: #00193a;" >
 
            &nbsp;&nbsp; <label for="caption"> Put a Caption </label>
 
@@ -31,13 +31,12 @@
 
             </div>
 
-              <div class="group" style="font-family: 'Mogra', cursive; font-size: 14px;">
-
-             &nbsp;&nbsp;   <%= f.submit "Post Pictures" %>
+              <%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: black;") do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Post Pictures
+      <% end %>
 
                            
 
-          </div><br />
     
 
        

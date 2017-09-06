@@ -59,15 +59,12 @@ class ProfilesController < ApplicationController
 
     private
 
-    def profile_params
+  def profile_params
      
-         params.require(:profile).permit(:title, :name, :username, :age, :gender, :telephone, :hobbies, :image, :email, :user_id)
+    params.require(:profile).permit(:mobile, :address, :city, :post_code, :country, :state, :nationality, :work_place, :professional_skill,
+     :position, :work_phone,:title, :name, :username, :age, :gender, :telephone, :hobbies, :image, :work_address, :email, :user_id)
 
-   end
-
-
-
-
+  end
 
 
  

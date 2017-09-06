@@ -1,96 +1,171 @@
-<div class="well">
-
-      <div class="media">
-
-  
-        <div class="media-body">
-
-        <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: white">
-
-        <%= f.label :image %>&nbsp;&nbsp;&nbsp;&nbsp;
-
+ <div>
+<fieldset>
+    <h2 class="fs-title" style="font-family: 'Julius Sans One', font-size: 16px; color: #00193a;">Update Your Personal Details</h2>
+     <div class="row">
+       <div class="col-xs-6" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :image %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <%= f.file_field :image  %>
-       </div><br /><br />
-
-       <div class="row">
-
-            <div class="col-xs-6">
-
-             <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: white">
-
-               <%= f.label :name %>&nbsp;&nbsp;&nbsp;&nbsp;
-               <%= f.text_field :name %>
-
-
-
-            </div>
-
-            </div>
-
-            <div class="col-xs-6">
-
-              <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: white">
-
-                        <%= f.label :age %>&nbsp;&nbsp;&nbsp;&nbsp;
-
-                              <%= f.text_field :age %>
-
-                    
-
-
-
-              </div>
-
-              </div>
-
-              </div><br />
-
-        <div class="row">
-            <div class="col-xs-6">
-
-          <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: white">
-
-             <%= f.label :gender %>&nbsp;&nbsp;
-
-              <%= f.radio_button :gender, "Male" %>
-              <%= label :gender, "male"  %>&nbsp;&nbsp;&nbsp;&nbsp;
-
-              <%= f.radio_button :gender, "Female" %>
-              <%= label :gender, "female"  %>
-             
-
-
-              </div>
-
-           </div>  
-           
-        <div class="col-xs-6"> 
-
-           <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: white">
-
-           <%= f.label :telephone %>&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <%= f.text_field :telephone %>
-
-        </div>
-
-
-        </div>
-
-
-        </div><br />
-
-        <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: white">
-
+       </div>
+       <div class="col-xs-6">
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-xs-3" style="font-family: 'Julius Sans One', sans-serif; font-size: 8px; font-weight: bold; color: #00193a;">     
+          <%= f.label :title %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.select :title, options_for_select(["Mr","Mrs","Master","Miss","Madam","Chief"]), {}, class: "form-control" %>
+       </div>
+       <div class="col-xs-5" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">    
+          <%= f.label :name %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :name %>
+       </div>
+       <div class="col-xs-4" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :username %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :username %>
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-xs-4" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;"> 
+          <%= f.label :dob %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :age %>
+       </div>
+       <div class="col-xs-8" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+         <%= label :gender, "male"  %><%= f.radio_button :gender, "Male" %>
+         <%= label :gender, "female"  %><%= f.radio_button :gender, "Female" %>
+         
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-xs-6" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :phone_number %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :telephone %>
+       </div>
+       <div class="col-xs-6" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+           <%= f.label :mobile_number %>&nbsp;&nbsp;&nbsp;&nbsp;
+           <%= f.text_field :mobile %>
+       </div>
+      </div> 
+      <div style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">  
         <%= f.label :hobbies %>&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <%= f.text_area :hobbies %>
-
-        </div><br />
-
-
-      <%= button_tag(type: 'submit', class: "btn btn-info", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: black;") do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Profile Update
+        <%= f.text_area :hobbies %> 
+        </div> 
+         <%= button_tag(type: 'button', class: "next btn btn-primary", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #00193a;", :name => "next", :value => "Next") do %>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;Next
+      <% end %>
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title" style="font-family: 'Julius Sans One', font-size: 16px; color: #00193a;">Contact Details</h2>  
+      <div class="row">
+       <div class="col-xs-10" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :address %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_area :address  %>
+       </div>
+       <div class="col-xs-2">
+       </div>
+      </div><br />
+      <div class="row">
+       <div class="col-xs-4" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">     
+          <%= f.label :state %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.select :title, options_for_select(["Abia","Adamawa","Anambra","Bauchi Ibom","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Enugu","Edo","Ekiti","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo
+","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]), {}, class: "form-control" %>
+       </div>
+       <div class="col-xs-4" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">    
+          <%= f.label :city_town %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :city %>
+       </div>
+       <div class="col-xs-4" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :post_code %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :post_code%>
+       </div>
+      </div><br /> 
+      <div class="row">
+      <div class="col-xs-3">
+          
+       </div>
+       <div class="col-xs-6" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;" >
+          <%= f.label :country %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :country %>
+       </div>
+       <div class="col-xs-3">
+          
+       </div>
+      </div><br />
+      
+      <div class="row">
+      <div class="col-xs-3">
+          
+       </div>
+       <div class="col-xs-6" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;" >
+          <%= f.label :nationality%>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :nationality%>
+       </div>
+       <div class="col-xs-3">
+          
+       </div>
+      </div>   <br />
+      
+       <%= button_tag(type: 'button', class: "previous btn btn-warning", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #00193a;", :name => "previous", :value => "Previous") do %>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Previous
+      <% end %>
+     <%= button_tag(type: 'button', class: "next btn btn-primary", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #00193a;", :name => "next", :value => "Next") do %>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;Next
+      <% end %>
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title" style="font-family: 'Julius Sans One', font-size: 16px; color: #00193a;">Tell us more about you</h2>
+       <div class="row">
+       <div class="col-xs-10" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :work_place_school %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :work_place %>
+       </div>
+       <div class="col-xs-2">
+       </div>
+      </div><br />
+      <div class="row">
+       <div class="col-xs-10" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">     
+          <%= f.label :work_address %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_area :work_address %>
+       </div>
+       <div class="col-xs-2">    
+       </div>
+       </div><br /> 
+       <div class="row">
+       <div class="col-xs-10" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :work_phone %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :work_phone %>
+       </div>
+       <div class="col-xs-2">
+       </div>
+      </div><br />
+       <div class="row">
+       <div class="col-xs-10" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">     
+          <%= f.label :professional_skill %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :professional_skill %>
+       </div>
+       <div class="col-xs-2">    
+       </div>
+       </div><br />
+      
+      <div class="row">
+      <div class="col-xs-6" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
+          <%= f.label :position_year_of_study %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :position %>        
+       </div>
+       <div class="col-xs-6">
+          
+       </div>
+      
+      </div>   
+      
+   
+    <%= button_tag(type: 'button', class: "previous btn btn-warning", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: black;", :name => "previous", :value => "Previous") do %>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Previous
       <% end %>
 
- 
+      <%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: black;") do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Profile Update
+      <% end %>
+  </fieldset>
+
+</div>
+
+

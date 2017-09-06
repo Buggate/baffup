@@ -1,8 +1,6 @@
- <div class=well>
-
-
-
-  <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: white;">
+<div>
+<fieldset>
+  <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: #00193a;">
 
           <%= f.input :picture, :input_html => { :wrap => :soft, :rows => 3}, :label => 'Occassion Picture / IV Card', :label_html => { :class => 'file' }  %>
        </div><br />
@@ -10,9 +8,11 @@
     
 
 
-<%= button_tag(type: 'submit', class: "btn btn-default", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px;  color: black;" ) do %>
+<%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Montserrat', cursive; font-size: 14px;  color: #00193a;" ) do %>
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Picture
   <% end %>
 
-</div>
+  </fieldset>
+
+</div><br />
 

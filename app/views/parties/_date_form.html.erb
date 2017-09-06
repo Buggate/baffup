@@ -1,26 +1,19 @@
-<div class="well">
+<div>
+<fieldset>
 
-
-
-	                              <%= f.text_field :date %><br /><br />
-
-
-                          <%= f.time_select :time %><br /><br />
-
-              
-
-
-
-
-
-		<%= button_tag(type: 'submit', class: "btn btn-default", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px;  color: black;") do %>
-		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Date
+  <%= f.text_field :date %><br /><br />
+  <%= f.text_field :time, class: "timepicker" %><br /><br />
+	   
+   <%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Montserrat', cursive; font-size: 14px;  color: #00193a;") do %>
+		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Date&nbsp;&nbsp;/&nbsp;&nbsp;Time
 		  <% end %>
 
 
 
+</fieldset>
 
-</div>
+
+</div><br />
 
 
 
