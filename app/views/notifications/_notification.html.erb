@@ -8,13 +8,13 @@
            <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
 
 
-                <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">Host:-<%= notification.party.user.name %> Sents you an I.V </h4>
+                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">Host&nbsp;&nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.user.name %></strong> has sents you an Invitation</h4>
 
                 
-                <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">to the occassion - (<%= notification.party.title  %>)</h4>
+                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">to their occasion -&nbsp;&nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.title  %></strong></h4>
 
 
-                <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">This Occasion is scheduled for the &nbsp;<strong style="color: red; font-weight: bold;"><%= notification.party.date %><br />@&nbsp;&nbsp;<%= notification.party.time %></strong>
+                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">This Occasion is scheduled for the &nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.date %><br />@&nbsp;&nbsp;<%= @party.time.strftime("%I:%M%p") %></strong>
       
       </h4>
                 
@@ -24,7 +24,7 @@
                    <% @visitor = notification.visitor %>
 
 
-                <div class="btn btn-danger"><%= link_to "Accept", visitor_path(@visitor), :style =>"font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black" %></div>
+                <div class="btn btn-primary"><%= link_to "Accept", visitor_path(@visitor), :style =>"font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: #00193a;" %></div>
 
               
                <% end %>
