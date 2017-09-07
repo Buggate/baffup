@@ -14,7 +14,7 @@
                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">to their occasion -&nbsp;&nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.title  %></strong></h4>
 
 
-                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">This Occasion is scheduled for the &nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.date %><br />@&nbsp;&nbsp;<%= @party.time.strftime("%I:%M%p") %></strong>
+                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">This Occasion is scheduled for the &nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.date %><br />@&nbsp;&nbsp;<%= notification.party.time.strftime("%I:%M%p") %></strong>
       
       </h4>
                 
