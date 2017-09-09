@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
+<head>
 
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Montserrat|Julius+Sans+One" rel="stylesheet">
 
@@ -12,10 +13,7 @@
             font-family: 'Montserrat', sans-serif;
          
             font-family: 'Julius Sans One', sans-serif;
-
-
-             
-           
+   
       }
     </style>
 
@@ -145,7 +143,6 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
-            /* blue button */
 
             a.btn.btn-blue {
                 background-color: #699DB6;
@@ -164,7 +161,6 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
-            /* red button */
 
             a.btn.btn-red {
                 background-color: #E48681;
@@ -183,7 +179,6 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
-                 /* green button */
 
             a.btn.btn-green {
                 background-color: #36d89f;
@@ -202,7 +197,6 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
-        /* Media Queries */
         @media screen and (max-width: 600px) {
 
             .email-container {
@@ -210,7 +204,6 @@
                 margin: auto !important;
             }
 
-            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
             .fluid,
             .fluid-centered {
                 max-width: 100% !important;
@@ -253,8 +246,7 @@
 
     </style>
 </head>
-</head>
-<body bgcolor="#222222" width="100%" style="Margin: 0;">
+ <body bgcolor="#222222" width="100%" style="Margin: 0;">
     <center style="width: 100%; background: #f7f7f2;">
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
@@ -265,15 +257,12 @@
 
         <!-- Email Header : BEGIN -->
  <table cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
-      
-   <tr>
-
-    <td style="padding: 20px 0; text-align: center">
-
-    <h2 align="center">Baffsup<br />
-    <%= image_tag attachments['b_logo1.png'].url, alt: '', width: '170', height: '150', border: '0' %>
-    </h2>
-   </td>
+      <tr>
+        <td style="padding: 20px 0; text-align: center">
+        <h2 align="center">Baffsup<br />
+        <%= image_tag attachments['b_logo1.png'].url, alt: '', width: '160', height: '140', border: '0' %>
+        </h2>
+       </td>
       </tr>
   </table>
 
@@ -286,62 +275,62 @@
        <td width="25%" class="stack-column-center">
        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-        <td dir="ltr" valign="top" style="padding: 0;">
-         <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
-         <tr class="hot-container">
-           <h5><strong style="color:#111111;" align="center">Start Loading</strong></h5>
-            <h6><%= link_to "Occasion", @new_user_registration_url, :class => "btn btn-blue" %></h6>
-         </tr>
-          </table>
-        </td>
+          <td dir="ltr" valign="top" style="padding: 0;">
+            <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
+              <tr class="hot-container">
+                <h4><strong style="color:#111111;" align="center">Start Loading</strong></h4>
+                    <h5><%= link_to "Occasion", @new_user_registration_url %></h5>
+                 </tr>
+            </table>
+          </td>
         </tr>
         </table>
         </td>
 
-         <td width="25%" class="stack-column-center">
-       <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-        <td dir="ltr" valign="top" style="padding: 0;">
-         <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
-         <tr class="hot-container">
-           <h5><strong style="color:#111111;" align="center">Guest Invitation</strong></h5>
-            <h6><%= link_to "I V Card", @new_user_registration_url, :class => "btn btn-blue" %></h6>
+      <td width="25%" class="stack-column-center">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+           <td dir="ltr" valign="top" style="padding: 0;">
+            <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
+             <tr class="hot-container">
+              <h4><strong style="color:#111111;" align="center">Guest Invitation</strong></h4>
+              <h5><%= link_to "I V Card", @new_user_registration_url %></h5>
+             </tr>
+            </table>
+           </td>
          </tr>
-          </table>
-        </td>
-        </tr>
-        </table>
-        </td>
+       </table>
+     </td>
 
-         <td width="25%" class="stack-column-center">
-       <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-        <td dir="ltr" valign="top" style="padding: 0;">
-         <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
-         <tr class="hot-container">
-           <h5><strong style="color:#111111;" align="center">Guest Response</strong></h5>
-            <h6><%= link_to "R S V P", @new_user_registration_url, :class => "btn btn-blue" %></h6>
-         </tr>
+      <td width="25%" class="stack-column-center">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td dir="ltr" valign="top" style="padding: 0;">
+           <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
+             <tr class="hot-container">
+              <h4><strong style="color:#111111;" align="center">Guest Response</strong></h4>
+              <h5><%= link_to "R S V P", @new_user_registration_url %></h5>
+            </tr>
           </table>
-        </td>
+         </td>
         </tr>
-        </table>
-        </td>
+       </table>
+     </td>
 
-         <td width="25%" class="stack-column-center">
-       <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-        <td dir="ltr" valign="top" style="padding: 0;">
-         <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
-         <tr class="hot-container">
-           <h5><strong style="color:#111111;" align="center">Happy Memories</strong></h5>
-            <h6><%= link_to "Photo Album", @new_user_registration_url, :class => "btn btn-blue" %></h6>
-         </tr>
-          </table>
-        </td>
+      <td width="25%" class="stack-column-center">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+           <td dir="ltr" valign="top" style="padding: 0;">
+            <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
+             <tr class="hot-container">
+              <h4><strong style="color:#111111;" align="center">Happy Memories</strong></h4>
+              <h5><%= link_to "Photo Album", @new_user_registration_url %></h5>
+            </tr>
+           </table>
+          </td>
         </tr>
-        </table>
-        </td>
+       </table>
+    </td>
                          
                             <!-- Column : END -->
                         </tr>
@@ -351,27 +340,13 @@
             <!-- Thumbnail Left, Text Right : END -->
 
         </table>
-        <!-- Email Header : END -->
-        
-        <!-- Email Body : BEGIN -->
+
         
  <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="600" style="margin: auto;" class="email-container">
             
-           
-            <!-- 1 Column Text : BEGIN -->
-
-            <!-- Background Image with Text : BEGIN -->
-            <tr>
-                <!-- Bulletproof Background Images c/o https://backgrounds.cm -->
-                 <td background="" bgcolor="" valign="middle" style="text-align: center; background-position: center center !important; background-size: cover !important;">
-
-                    <!--[if gte mso 9]>
-                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:175px; background-position: center center !important;">
-                    <v:fill type="tile" src="http://placehold.it/600x230/222222/666666" color="#222222" />
-                    <v:textbox inset="0,0,0,0">
-                    <![endif]-->
-                    <div>
-                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr>
+          <div>
+              <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td valign="middle">
 
@@ -385,13 +360,11 @@
 
                                 </td>
 
-
-
-                          
-
                             </tr>
                         </table>
                         </div>
+
+                      </tr>  
 
 
                        <div> 
@@ -406,16 +379,10 @@
                             </table>
 
                       </div>
-                    <!--[if gte mso 9]>
-                    </v:textbox>
-                    </v:rect>
-                    <![endif]-->
+
                 </td>
             </tr>
-           
-        <!-- Email Body : END -->
-          
-        <!-- Email Footer : BEGIN -->
+
         <table cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
             <tr>
                 <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #
@@ -426,8 +393,9 @@
                 </td>
             </tr>
         </table>
-        <!-- Email Footer : END -->
 
     </center>
 </body>
 </html>
+
+ 
