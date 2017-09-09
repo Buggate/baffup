@@ -1,21 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
-<head>
-
-<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Montserrat|Julius+Sans+One" rel="stylesheet">
-
-     <style>
-      body {
-             
-            
-            font-family: 'Permanent Marker', cursive;
-
-            font-family: 'Montserrat', sans-serif;
-         
-            font-family: 'Julius Sans One', sans-serif;
-   
-      }
-    </style>
 
     <style type="text/css">
         html,
@@ -143,6 +127,7 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
+            /* blue button */
 
             a.btn.btn-blue {
                 background-color: #699DB6;
@@ -161,6 +146,7 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
+            /* red button */
 
             a.btn.btn-red {
                 background-color: #E48681;
@@ -179,6 +165,7 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
+                 /* green button */
 
             a.btn.btn-green {
                 background-color: #36d89f;
@@ -197,6 +184,7 @@
                     border-color: rgba(0,0,0,0.9);
                 }
 
+        /* Media Queries */
         @media screen and (max-width: 600px) {
 
             .email-container {
@@ -204,6 +192,7 @@
                 margin: auto !important;
             }
 
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
             .fluid,
             .fluid-centered {
                 max-width: 100% !important;
@@ -246,27 +235,42 @@
 
     </style>
 </head>
- <body bgcolor="#222222" width="100%" style="Margin: 0;">
+</head>
+<body bgcolor="#222222" width="100%" style="Margin: 0;">
     <center style="width: 100%; background: #f7f7f2;">
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
-        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: 'Julius Sans One', sans-serif;">
+       <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: 'Julius Sans One', sans-serif;">
             <b>Hurray its finally here !!!</b>
         </div>
         <!-- Visually Hidden Preheader Text : END -->
 
         <!-- Email Header : BEGIN -->
  <table cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
-      <tr>
-        <td style="padding: 20px 0; text-align: center">
-            <h1 align="center">Baffsup
+      
+   <tr>
+
+    <td style="padding: 20px 0; text-align: center">
+         
+              <h1>Baffsup</h1>
               <%= image_tag attachments['b_logo1.png'].url, alt: '', width: '160', height: '140', border: '0' %>
-            </h1>
-       </td>
+            
+
+        </td>
       </tr>
   </table>
+        <!-- Email Header : END -->
+        
+        <!-- Email Body : BEGIN -->
+        
+ <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="600" style="margin: auto;" class="email-container">
+          
+            <tr>
+                <td style="padding: 40px; text-align: center; font-family: 'Oswald'; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #840615;">
 
-    <table>
+                   
+                    <!-- Button : Begin -->
+                       <table>
       <tr>
         <td dir="ltr" align="center" valign="top" width="100%" style="padding: 0;">
          <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -278,8 +282,8 @@
               <td dir="ltr" valign="top" style="padding: 0;">
                 <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
                   <tr class="hot-container">
-                    <h4><strong style="color:#111111;" align="center">Start Loading</strong></h4>
-                        <h5><%= link_to "Occasion", @new_user_registration_url %></h5>
+                    <h5><strong style="color:#111111;" align="center">Start Loading</strong></h5>
+                        <h6><%= link_to "Occasion", @new_user_registration_url %></h6>
                      </tr>
                 </table>
               </td>
@@ -293,8 +297,8 @@
                <td dir="ltr" valign="top" style="padding: 0;">
                 <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
                  <tr class="hot-container">
-                  <h4><strong style="color:#111111;" align="center">Guest Invitation</strong></h4>
-                  <h5><%= link_to "I V Card", @new_user_registration_url %></h5>
+                  <h5><strong style="color:#111111;" align="center">Guest Invitation</strong></h5>
+                  <h6><%= link_to "I V Card", @new_user_registration_url %></h6>
                  </tr>
                 </table>
                </td>
@@ -308,8 +312,8 @@
               <td dir="ltr" valign="top" style="padding: 0;">
                <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
                  <tr class="hot-container">
-                  <h4><strong style="color:#111111;" align="center">Guest Response</strong></h4>
-                  <h5><%= link_to "R S V P", @new_user_registration_url %></h5>
+                  <h5><strong style="color:#111111;" align="center">Guest Response</strong></h5>
+                  <h6><%= link_to "R S V P", @new_user_registration_url %></h6>
                 </tr>
               </table>
              </td>
@@ -323,8 +327,8 @@
                <td dir="ltr" valign="top" style="padding: 0;">
                 <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
                  <tr class="hot-container">
-                  <h4><strong style="color:#111111;" align="center">Happy Memories</strong></h4>
-                  <h5><%= link_to "Photo Album", @new_user_registration_url %></h5>
+                  <h5><strong style="color:#111111;" align="center">Happy Memories</strong></h5>
+                  <h6><%= link_to "Photo Album", @new_user_registration_url %></h6>
                 </tr>
                </table>
               </td>
@@ -335,34 +339,56 @@
       </table>
     </td>
    </tr>
- </table>
+</td>
+</tr>
 
-        
-<table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="600" style="margin: auto;" class="email-container">
-  <tr>
-    <div> 
-       <table cellspacing="0" cellpadding="0" border="0" align="center" style="Margin: auto">
-         <tr class="hot-container">
-           <h3 style="font-family: 'Handlee', serif; font-size: 14px; font-weight: bold; color: #ffffff;">Welcome to Baffsup.com !!!<br />&nbsp;&nbsp;Keep your memorable occasions close to you at all times and everywhere <br /><br /><br />Never miss out on any occasion again. 
+ <tr>
+    <td background="" bgcolor=#e8eaef" valign="middle" style="text-align: center; background-position: center center !important; background-size: cover !important;">
+             <div>
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td valign="middle">
+
+                                   
+
+            <h3 style="font-family: 'Handlee', serif; font-size: 14px; font-weight: bold; color: #ffffff;">Welcome to Baffsup.com !!!<br />&nbsp;&nbsp;Keep your memorable occasions close to you at all times and everywhere <br /><br /><br />Never miss out on any occasion again. 
            </h3>
             <br>
             <h3 style="font-family: 'Handlee', serif; font-size: 14px; color: #ffffff;">It is free and easy to use. Try it now.</h3>
-          </tr>
+
+                                </td>
+
+                          
+
+                            </tr>
+                        </table>
+                        </div>
+     
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 40px; text-align: center; font-family: 'Oswald'; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #840615;">
+
+                   
+                    <!-- Button : Begin -->
+                    <table cellspacing="0" cellpadding="0" border="0" align="center" style="Margin: auto">
+                        <tr class="hot-container">
+                            
+
+                     <%= link_to "Sign_Up", @new_user_registration_url, :class => "btn btn-green" %>
+                            
+
+                        </tr>
+                    </table>
+                    <!-- Button : END -->
+                </td>
+            </tr>
+           
+
         </table>
-      </div>
-       <div> 
-            
-            <table cellspacing="0" cellpadding="0" border="0" align="center" style="Margin: auto">
-              <tr class="hot-container">
-                <%= link_to "Sign_Up", @new_user_registration_url, :class => "btn btn-green" %>
-              </tr>
-            </table>
-
-       </div>
-    </tr>
-    </table><br />
-    
-
+        <!-- Email Body : END -->
+          
+        <!-- Email Footer : BEGIN -->
         <table cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
             <tr>
                 <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #
@@ -373,9 +399,12 @@
                 </td>
             </tr>
         </table>
+        <!-- Email Footer : END -->
 
     </center>
 </body>
 </html>
+
+
 
  
