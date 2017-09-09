@@ -1,0 +1,19 @@
+
+<div class="menu">
+  <h2><%= @username %> Menu</h2>
+ <br />
+ 
+
+     <%= render 'launches/form', operator: @operator  %>
+     <br />
+
+
+      <ul>
+  
+    <li><%= link_to("Logout", access_logout_path) %></li>
+  </ul>
+
+
+</div>
+
+

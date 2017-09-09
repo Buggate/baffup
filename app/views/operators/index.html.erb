@@ -1,0 +1,32 @@
+<% @page_title = "All Operators" %>
+
+<%= link_to("<< Back to Menu", admin_path, :class => 'back-link') %>
+
+<div class="operators index">
+  <h2>Operators</h2>
+
+  <%= link_to('Add New Operator', new_operator_path, :class => 'action new') %>
+
+  <div><%= pluralize(@operators.size, 'Operator') %> found</div>
+
+  <table class="listing" summary="Operators list">
+    <tr>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    <% @operators.each do |operator| %>
+    <tr>
+      <td><%= operator.username %></td>
+      <td><%= operator.name %></td>
+      <td><%= mail_to(operator.email) %></td>
+      <td class="actions">
+        <%= link_to('Edit', edit_operator_path(operator), :class => 'action edit') %>
+        <%= link_to('Delete', delete_operator_path(operator), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

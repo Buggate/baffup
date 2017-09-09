@@ -1,9 +1,6 @@
 class Profile < ApplicationRecord
 
 
-include BaffupStepModel
-
-
 	belongs_to :user
 
 
@@ -14,12 +11,7 @@ include BaffupStepModel
 
         custom_slugs_with(:name)
 
-         def self.total_steps
-
-            3
-
-         end
-
+      
 
        
 end

@@ -102,5 +102,15 @@ class ApplicationController < ActionController::Base
         #          })
 
       #end
+
+
+
+  def confirm_logged_in
+    unless session[:operator_id]
+      flash[:notice] = "Please log in."
+      redirect_to(access_login_path)
+      # redirect_to prevents requested action from running
+    end
+  end
            
 end

@@ -9,10 +9,6 @@ class InvitesController < ApplicationController
 
       attr_accessor :placeholder, :password, :password_confirmation
 
-
-  
-
-
 def create
 
 

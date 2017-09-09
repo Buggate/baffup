@@ -12,6 +12,23 @@ Rails.application.routes.draw do
   resources :term_and_conditions, only: :show
   resources :privacies, only: :show
   resources :contacts, only: [:new, :create, :show]
+
+  resources :operators, :except => [:show] do
+    member do
+      get :delete
+    end
+    resources :launches
+  end
+
+
+
+  get 'staff', :to => 'access#menu'
+  get 'access/menu'
+  get 'access/login'
+  post 'access/attempt_login'
+  get 'access/logout'
+
+
  
   resources :parties do
     resources :invites
@@ -52,6 +69,19 @@ Rails.application.routes.draw do
    post 'photo-album', to: 'catalogues#create', as: 'create_catalogue'
    delete 'delete_catalogue', to: "catalogues#delete_catalogue"
    delete 'delete_all', to: 'catalogues#delete_all'
+
+
+
+
+  get 'admin', :to => 'access#menu'
+  get 'access/menu'
+  get 'access/login'
+  post 'access/attempt_login'
+  get 'access/logout'
+
+
+
+
    root 'public#index'
 
 

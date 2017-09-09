@@ -67,9 +67,9 @@
 
                          <div class="media-body">
                                                                   
-                          <p><i><img src="/envelop.png", width="30" height="30" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %><br>
+                          <p><i class="fa fa-envelope fa-2x" aria-hidden="true" style="color: #00193a;"></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %><br>
                             
-                            <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-picture-o fa-2x" aria-hidden="true" style="color: #00193a;"></i>
               &nbsp;<%= link_to("Upload Album", {:controller => 'catalogues', :party_id => party.id, :title => party.title}, :class => 'action index', :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %></p>
 
             

@@ -1,0 +1,17 @@
+<% @page_title = "Update Operator" %>
+
+<%= link_to("<< Back to List", operators_path, :class => 'back-link') %>
+
+<div class="operators edit">
+  <h2>Update Operator</h2>
+
+  <%= form_for(@operator) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Update Operator") %>
+    </div>
+
+  <% end %>
+</div>

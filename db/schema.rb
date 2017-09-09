@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901210307) do
+ActiveRecord::Schema.define(version: 20170909111405) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -68,14 +68,6 @@ ActiveRecord::Schema.define(version: 20170901210307) do
     t.index ["user_id"], name: "index_catalogues_on_user_id", using: :btree
   end
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "name"
-    t.integer  "party_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_categories_on_party_id", using: :btree
-  end
-
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
     t.text     "body",             limit: 65535
@@ -94,14 +86,6 @@ ActiveRecord::Schema.define(version: 20170901210307) do
     t.index ["user_id", "visitor_id"], name: "index_comments_on_user_id_and_visitor_id", using: :btree
   end
 
-  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "message",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "friends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "buddy_id"
     t.integer  "invite_id"
@@ -112,14 +96,6 @@ ActiveRecord::Schema.define(version: 20170901210307) do
     t.integer  "user_id"
     t.index ["invite_id"], name: "index_friends_on_invite_id", using: :btree
     t.index ["user_id"], name: "index_friends_on_user_id", using: :btree
-  end
-
-  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "party_id"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_groups_on_party_id", using: :btree
   end
 
   create_table "invites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -135,13 +111,12 @@ ActiveRecord::Schema.define(version: 20170901210307) do
     t.index ["party_id"], name: "index_invites_on_party_id", using: :btree
   end
 
-  create_table "media", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "file_name"
-    t.integer  "party_id"
-    t.integer  "visitor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_media_on_party_id", using: :btree
+  create_table "launches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "email"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "operator_id"
+    t.index ["operator_id"], name: "index_launches_on_operator_id", using: :btree
   end
 
   create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -162,6 +137,16 @@ ActiveRecord::Schema.define(version: 20170901210307) do
     t.index ["visitor_id"], name: "index_notifications_on_visitor_id", using: :btree
   end
 
+  create_table "operators", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "first_name",      limit: 25
+    t.string   "last_name",       limit: 50
+    t.string   "email",                      default: "", null: false
+    t.string   "password_digest"
+    t.string   "username",        limit: 25
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
+
   create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "title"
     t.string   "venue"
@@ -178,18 +163,6 @@ ActiveRecord::Schema.define(version: 20170901210307) do
     t.date     "rsvp_by"
     t.time     "time"
     t.index ["user_id"], name: "index_parties_on_user_id", using: :btree
-  end
-
-  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "party_id"
-    t.integer  "visitor_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.index ["party_id"], name: "index_photos_on_party_id", using: :btree
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -309,6 +282,7 @@ ActiveRecord::Schema.define(version: 20170901210307) do
   add_foreign_key "comments", "parties"
   add_foreign_key "friends", "users"
   add_foreign_key "invites", "parties"
+  add_foreign_key "launches", "operators"
   add_foreign_key "notifications", "users"
   add_foreign_key "requests", "friends"
   add_foreign_key "visitors", "requests"
