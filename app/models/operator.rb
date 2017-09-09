@@ -1,10 +1,9 @@
 class Operator < ApplicationRecord
 
-  after_create :create_dashboard
 
   has_secure_password
   
-  has_one :dashboard
+ 
   has_many :launches
  
 
@@ -36,12 +35,6 @@ class Operator < ApplicationRecord
 
   private
 
-
-  def create_dashboard
-
-  	Dashboard.create(operator_id: self.id, owner: self.name)
-
- end
 
   def username_is_allowed
     if FORBIDDEN_USERNAMES.include?(username)
