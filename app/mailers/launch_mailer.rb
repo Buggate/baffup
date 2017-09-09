@@ -1,10 +1,10 @@
 class LaunchMailer < ApplicationMailer
 
 
-	default from: "invitation@baffsup.com"
+	default from: "Launch_email@baffsup.com"
 
 
-    def baffsup_launch_invitation(launch, operator, new_user_registration_url)
+    def baffsup_ready(launch, operator, new_user_registration_url)
 
  
 
