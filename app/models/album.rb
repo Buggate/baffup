@@ -35,6 +35,11 @@ class Album < ApplicationRecord
 
     validates_attachment_presence :picture
 
+    process_in_background :picture
+
+
+
+
     #validates_attachment :image,
      #                     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 

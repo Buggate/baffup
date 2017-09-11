@@ -6,7 +6,9 @@ class Catalogue < ApplicationRecord
 	belongs_to :user, optional: true
 
 	mount_uploader :file_name, CatalogueUploader
+   
 
+    store_in_background :file_name
   
 	 
 

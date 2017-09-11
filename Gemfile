@@ -53,6 +53,10 @@ gem 'bcrypt', '~> 3.1.7'
 
    gem 'redis', '~> 3.3', '>= 3.3.1'
 
+   gem 'thin', '~> 1.7'
+
+   gem 'sidekiq', '~> 5.0', '>= 5.0.4'
+
 end
 
 group :development, :test do
@@ -145,10 +149,13 @@ end
   # gem 'inherited_resources', '~> 1.6'
 
   gem "paperclip", "~> 5.0.0"
+  gem 'delayed_paperclip', '~> 2.10'
+
 
   gem 'aws-sdk', '~> 2.9', '>= 2.9.1'
 
   gem 'carrierwave', '~> 0.11.2'
+  gem 'carrierwave_backgrounder', '~> 0.4.2'
 
   gem 'fog-aws'
 

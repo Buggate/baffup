@@ -36,6 +36,8 @@ class Party < ApplicationRecord
 	                    :styles => { thumb: "80x80", medium: "300x300", large: "640x640" }, default_url: "https://placehold.it/350x150.jpg&text=PLACE PICTURE example - I. V CARD "
 
     validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
+
+    process_in_background :picture
     
      custom_slugs_with(:title)
 

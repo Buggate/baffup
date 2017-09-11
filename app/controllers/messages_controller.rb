@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
 
       if @message.valid?
 
-        MessageMailer.contact_me(@message).deliver_now
+        MessageMailer.contact_me(@message).deliver_later
 
         redirect_to new_message_url, notice: "Message received, thanks!"
 
