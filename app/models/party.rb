@@ -2,6 +2,7 @@ class Party < ApplicationRecord
 
   include BaffupStepModel
 
+
 	belongs_to :user
 
 	has_many :catalogues
@@ -31,11 +32,16 @@ class Party < ApplicationRecord
 
     validates :venue, presence: true, if: :step3?
 
+    
+
 
 	has_attached_file :picture, 
 	                    :styles => { thumb: "80x80", medium: "300x300", large: "640x640" }, default_url: "https://placehold.it/350x150.jpg&text=PLACE PICTURE example - I. V CARD "
-  
+    
+
     validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
+
+    
 
     
     
