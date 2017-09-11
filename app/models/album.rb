@@ -31,11 +31,12 @@ class Album < ApplicationRecord
 	                 :styles => { thumb: "80x80", medium: "300x300", large: "800x800" }, default_url: "/images/:style/AddGist.png"
 
    
+
     validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
     validates_attachment_presence :picture
 
-    process_in_background :picture
+    
 
 
 
