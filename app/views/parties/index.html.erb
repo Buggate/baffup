@@ -10,7 +10,7 @@
 
       <div class="pull-left" style="font-family: 'Julius Sans One', sans-serif;">
 
-        <%= image_tag(party.picture.url(:large), alt: "", :weight => "40", :height => "40") %>&nbsp;&nbsp;
+        <%= image_tag(party.picture.url(:original), alt: "", :weight => "40", :height => "40") %>&nbsp;&nbsp;
 
         <i><img src="/envelop.png", width="10" height="10" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 10px;") %><br />
                                                     

@@ -2,7 +2,7 @@
   <li id="comment_<%= comment.id %>" class="comment">
     <small>
        <a class="pull-left" href="#" style ="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: bold; color: #915b05;">
-             <%= image_tag(comment.visitor.user.profile.image.url(:large), :weight => "40", :height => "30") %>&nbsp;&nbsp;&nbsp;
+             <%= image_tag(comment.visitor.user.profile.image.url(:original), :weight => "40", :height => "30") %>&nbsp;&nbsp;&nbsp;
              <%= comment.name %>&nbsp;&#x2605;&nbsp;&nbsp;<%= localize(comment.created_at, format: :long) %>
         </a> 
       </small><br /><br />

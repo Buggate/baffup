@@ -30,7 +30,7 @@
 
              
 
-			       <%= label_tag "request[email][][#{friend.email}]", "#{image_tag(friend.buddy.profile.image.url(:large), :width => "40", :height => "40" )}".html_safe + friend.name %><br />
+			       <%= label_tag "request[email][][#{friend.email}]", "#{image_tag(friend.buddy.profile.image.url(:original), :width => "40", :height => "40" )}".html_safe + friend.name %><br />
 			   
 		          <%= check_box_tag "request[email][]", friend.email, (checked = true if current_user.friends.include?(friend.email)), :email => friend.email %>
 

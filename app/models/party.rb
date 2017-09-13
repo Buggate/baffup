@@ -36,7 +36,7 @@ class Party < ApplicationRecord
 
 
 	has_attached_file :picture, 
-	                    :styles => { thumb: "80x80", medium: "300x300", large: "640x640" }, default_url: "https://placehold.it/350x150.jpg&text=PLACE PICTURE example - I. V CARD "
+	                    :styles => {:original => {}}, default_url: "https://placehold.it/350x150.jpg&text=PLACE PICTURE example - I. V CARD "
     
 
     validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/

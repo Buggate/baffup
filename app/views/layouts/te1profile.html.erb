@@ -45,7 +45,7 @@
 
     <div class="inner">
 
-       <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:large), cached: true ) %></a>
+       <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:original), cached: true ) %></a>
        <div class="actions">
         <%= link_to "Update Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;"  %>
         
