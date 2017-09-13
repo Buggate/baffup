@@ -37,6 +37,8 @@ Rails.application.config.assets.precompile += %w( salvattore.css )
 
 Rails.application.config.assets.precompile += %w( style.css )
 
+Rails.application.config.assets.precompile += %w( visitor.css )
+
 
 
 
@@ -79,6 +81,8 @@ Rails.application.config.assets.precompile += %w( jquery.magnific-popup.min.js )
 Rails.application.config.assets.precompile += %w( salvattore.min.js )
 
 Rails.application.config.assets.precompile += %w( main.js)
+
+#Rails.application.config.assets.precompile += %w( visitor.js)
 
 Rails.application.config.assets.precompile += %w( modernizr-2.6.2.min.js)
 

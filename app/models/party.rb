@@ -28,7 +28,7 @@ class Party < ApplicationRecord
 
     validates :category, presence: true, if: :step1?
 
-    validates :title, presence: true, if: :step2?
+    validates :date, presence: true, if: :step2?
 
     validates :venue, presence: true, if: :step3?
 

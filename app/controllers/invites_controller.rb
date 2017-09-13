@@ -36,7 +36,7 @@ def create
 
          
 
-         InviteMailer.baffsup_occasion_request(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_later
+         InviteMailer.baffsup_occasion_request(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
 
 
          create_friend @user, @buddy, @invite
@@ -46,7 +46,7 @@ def create
 
        else 
             
-         InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_later
+         InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now
 
          flash[:notice] = "Invitation Sent successfully."
 

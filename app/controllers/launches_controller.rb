@@ -22,7 +22,7 @@ def create
    if  @launch.save
 
             
-     LaunchMailer.baffsup_ready(@launch, @operator, new_user_registration_url(:email => @launch.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_later         
+     LaunchMailer.baffsup_ready(@launch, @operator, new_user_registration_url(:email => @launch.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now     
          
    end
   

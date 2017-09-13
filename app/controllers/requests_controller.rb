@@ -41,7 +41,7 @@ def create
                 
      
 
-       RequestMailer.baffsup_occasion_friend_request(@request, @party, visitor_url(:id => @request.visitor.id, :party_id => @request.party.id)).deliver_later
+       RequestMailer.baffsup_occasion_friend_request(@request, @party, visitor_url(:id => @request.visitor.id, :party_id => @request.party.id)).deliver_now
 
       
 
