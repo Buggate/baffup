@@ -42,8 +42,8 @@ def create
          flash[:notice] = "Invitation Sent successfully."
                   
 
-       else @invite.save
-            
+       else 
+        
          InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now
 
          flash[:notice] = "Invitation Sent successfully."
