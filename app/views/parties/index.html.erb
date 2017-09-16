@@ -1,20 +1,17 @@
 
    <% @parties.each do |party| %>
 
-     <% cache party do %>
-
-
-
-   <div class="col-xs-4 col-centered">
+   <div class="col-xs-3 col-centered"><br />
 
 
       <div class="pull-left" style="font-family: 'Julius Sans One', sans-serif;">
 
         <%= image_tag(party.picture.url(:original), alt: "", :weight => "40", :height => "40") %>&nbsp;&nbsp;
 
-        <i><img src="/envelop.png", width="10" height="10" alt=""></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 10px;") %><br />
+        <p><i class="fa fa-envelope fa-2x" aria-hidden="true" style="color: #00193a;"></i>&nbsp;<%= link_to("Invite Guests", party_path(party), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %><br>
                                                     
-            <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp; <%= link_to("Upload Album", {:controller => 'catalogues', :party_id => party.id, :title => party.title}, :class => 'action index', :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold;") %>
+             <i class="fa fa-picture-o fa-2x" aria-hidden="true" style="color: #00193a;"></i>
+              &nbsp;<%= link_to("Upload Album", {:controller => 'catalogues', :party_id => party.id, :title => party.title}, :class => 'action index', :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %></p>
 
 
 
@@ -27,6 +24,8 @@
   <% end %>  
 
 
-  <% end %>  
-  	
 
+
+ 
+                            
+                           

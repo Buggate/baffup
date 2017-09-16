@@ -45,7 +45,7 @@
 
     <div class="inner">
 
-       <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:original), cached: true ) %></a>
+       <a href="#" class="image avatar"><%= image_tag(@profile.image.url(:original)) %></a>
        <div class="actions">
         <%= link_to "Update Picture", edit_picture_profiles_path(@profile), :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;"  %>
         
@@ -54,15 +54,14 @@
 
       <% if @profile.username != nil %>
 
-      <p style="color: #00193a;"><i class="fa fa-user fa-fw fa-2x"></i>&nbsp;&nbsp;<strong style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @profile.username %></strong></p>
+         <p style="color: #00193a;"><i class="fa fa-user fa-fw fa-2x"></i>&nbsp;&nbsp;<strong style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @profile.username %></strong></p>
 
-         <% else %>
+      <% else %>
 
-       <p style="font-size: 12px; color: #00193a; font-weight: bold;"><i class="fa fa-user fa-fw fa-2x"></i>&nbsp;&nbsp;<strong style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @profile.name %></strong></p>
+         <p style="font-size: 12px; color: #00193a; font-weight: bold;"><i class="fa fa-user fa-fw fa-2x"></i>&nbsp;&nbsp;<strong style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @profile.name %></strong></p>
 
-        <% end %>
-
-
+      <% end %>
+  
   <div class="dropdown">
                                       
   <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #00193a; "><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
@@ -79,23 +78,19 @@
         <li><%= link_to "" %></li>
 
 
-      <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %></li>
+      <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %>
+      </li>
                   
 
     </ul>
                    
 
-  </div>
-  
-
-
-    
+  </div><br />
 <aside>
-           
                              
     <div class="media-body">
 
-      <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;">My Email <br /><strong style="font-family: 'Montserrat', sans-serif; font-size: 12px; sans-serif; color: #915b05; font-weight: bold; "><%= @profile.email %></strong></p>
+    <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;">My Email <br /><strong style="font-family: 'Montserrat', sans-serif; font-size: 12px; sans-serif; color: #915b05; font-weight: bold; "><%= @profile.email %></strong></p>
       
       </div>
 
@@ -228,7 +223,7 @@
 
   <section id="two">
 
-       <div style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; color: #00193a;"> Lists of my visitor's page for all occasions am invoveld in, either as the host or guest.<br /> Click the title of the occassion to be a part of the fun.</div><br /><br />
+       <div style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; color: #00193a;">Click the title of the occasion to be a part of the fun.<br />  See the visitors page for each occasion as guest or hosts</div><br /><br />
 
       <div class="row">
       

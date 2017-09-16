@@ -82,7 +82,7 @@ Rails.application.config.assets.precompile += %w( salvattore.min.js )
 
 Rails.application.config.assets.precompile += %w( main.js)
 
-#Rails.application.config.assets.precompile += %w( visitor.js)
+Rails.application.config.assets.precompile += %w( visitor.js)
 
 Rails.application.config.assets.precompile += %w( modernizr-2.6.2.min.js)
 

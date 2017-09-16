@@ -46,7 +46,7 @@
 				<div class="inner">
 
 
-				<a href="#" class="image gratar"><h2><%= image_tag(@party.picture.url(:original), :width => "200", :height => "200", cached: true )%></h2></a>
+				<a href="#" class="image gratar"><h2><%= image_tag(@party.picture.url(:original), :width => "200", :height => "200")%></h2></a>
         <p style="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;"><i class="fa fa-glass fa-2x" aria-hidden="true"></i>
 &nbsp;&nbsp;<strong style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @party.title %></strong></p>			
 
@@ -110,7 +110,7 @@
         <li><%= link_to "" %></li>
 
 
-      <li><%= link_to 'Date', edit_date_parties_path(@party), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %></li>
+      <li><%= link_to 'Date / Time', edit_date_parties_path(@party), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %></li>
                   
 
     </ul>

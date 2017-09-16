@@ -9,7 +9,7 @@
 
 
       <div class="well">
-        <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @party.title %>&nbsp;Album</h4><br />
+        <h4 style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @party.title %>&nbsp;-&nbsp;Album</h4><br />
         <div class="row">
           <div class="col-xs-12">
             <%= form_tag '/delete_catalogue', method: :delete do %>
@@ -22,7 +22,7 @@
                   <% else %>
                     <% @catalogues.each do |catalogue| %>
 
-                       <% cache catalogue do %>
+                       
 
                       <div class="col-xs-2">
                         <div class="thumbnail">
@@ -34,7 +34,7 @@
                           </div>
                         </div>
                       </div>
-                    <% end %>
+                    
                   <% end %>
                 </div>
               </div>

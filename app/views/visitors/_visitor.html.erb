@@ -13,9 +13,9 @@
                                   
        <h5 style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; color: #915b05;"><%= link_to (visitor.party.title), visitor_path(visitor) if visitor.party  %></h5>
 
-        <div style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: #00193a;"><%= visitor.party.comments.count %>&nbsp;-  &nbsp;Occassion Comments <br>
+        <div style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: #00193a;"><%= visitor.party.comments.count %>&nbsp;-  &nbsp;Occasion Comments <br>
 
-         <%= visitor.party.albums.count %>&nbsp;-  &nbsp; Occassion Photos </div><br><br />
+         <%= visitor.party.albums.count %>&nbsp;-  &nbsp; Occasion Photos </div><br><br />
 
 
 <% end %>

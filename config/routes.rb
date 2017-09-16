@@ -70,6 +70,7 @@ Rails.application.routes.draw do
    delete 'delete_catalogue', to: "catalogues#delete_catalogue"
    delete 'delete_all', to: 'catalogues#delete_all'
 
+   
 
 
 
