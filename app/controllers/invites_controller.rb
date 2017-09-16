@@ -26,10 +26,17 @@ def create
    
    if  @invite.save! 
 
-      if @invite.guest.present?
+      if @invite.guest = nil 
 
 
-         create_visitor @invite, @party, @user
+         InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now
+
+         flash[:notice] = "Invitation Sent successfully."
+                  
+
+       else
+
+        create_visitor @invite, @party, @user
 
          create_notification @invite, @party, @visitor, @user
                   
@@ -42,14 +49,8 @@ def create
          create_friend @user, @buddy, @invite
                
          flash[:notice] = "Invitation Sent successfully."
-                  
 
-       else
-
-         InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now
-
-         flash[:notice] = "Invitation Sent successfully."
-
+        
        end   
 
 
