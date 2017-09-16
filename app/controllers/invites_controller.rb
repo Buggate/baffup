@@ -24,10 +24,8 @@ def create
 
 
    
-   if  @invite.save
+   if  @invite.save && @invite.guest.present?
 
-
-       if @invite.guest != nil
 
          create_visitor @invite, @party, @user
 
@@ -44,7 +42,7 @@ def create
          flash[:notice] = "Invitation Sent successfully."
                   
 
-       else 
+       else @invite.save
             
          InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now
 
@@ -52,9 +50,7 @@ def create
 
        end     
          
-         
-   end
-  
+   
   end 
    
     redirect_to party_path(@party)
