@@ -11,11 +11,11 @@ class InvitesController < ApplicationController
 
 def create
 
-
-  emails = params[:invite][:email].split(',')
+   emails = params[:invite][:email].split(',')
 
 
    emails.each do |email|
+
 
 
     @invite = @party.invites.build(:party_id => @party.id, :host_id => @party.user_id, :email => email )
@@ -24,19 +24,12 @@ def create
 
 
    
-   if  @invite.save! 
-
-      if @invite.guest = nil 
+   if  @invite.save
 
 
-         InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now
+       if @invite.guest != nil
 
-         flash[:notice] = "Invitation Sent successfully."
-                  
-
-       else
-
-        create_visitor @invite, @party, @user
+         create_visitor @invite, @party, @user
 
          create_notification @invite, @party, @visitor, @user
                   
@@ -45,19 +38,24 @@ def create
 
          InviteMailer.baffsup_occasion_request(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
 
-
          create_friend @user, @buddy, @invite
                
          flash[:notice] = "Invitation Sent successfully."
+                  
 
-        
-       end   
+       else 
+            
+         InviteMailer.baffsup_occasion_invitation(@invite, @party, new_user_registration_url(:invite_token => @invite.token, :email => @invite.email, :password => @placeholder, :password_confirmation => @placeholder )).deliver_now 
 
+         flash[:notice] = "Invitation Sent successfully."
 
-       end  
+       end     
          
-   
-  end 
+         
+   end
+
+ end 
+  
    
     redirect_to party_path(@party)
 end 
@@ -109,16 +107,6 @@ end
   end
 
   
-
-
-
-
-
-
-
-
-
-
-  
+ 
 
 end

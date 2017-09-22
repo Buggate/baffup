@@ -34,8 +34,8 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
 
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = false
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
@@ -65,7 +65,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 1979 }
 
 
-  config.action_mailer.delivery_method = :smtp
+
 
   config.active_record.time_zone_aware_types = [:datetime, :time]
 

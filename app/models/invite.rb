@@ -5,7 +5,7 @@ class Invite < ApplicationRecord
 
     # after_create :new_user
 
-    before_save :check_user_existence
+   before_create :check_user_existence
 
     #belongs_to :group
 
@@ -32,7 +32,7 @@ class Invite < ApplicationRecord
 
  def check_user_existence
 
-    @user = User.find_by_email(email)
+    @user ||= User.find_by_email(self.email)
 
    if @user
 
@@ -41,6 +41,7 @@ class Invite < ApplicationRecord
    end
 
  end
+
 
 
 

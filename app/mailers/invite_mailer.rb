@@ -5,8 +5,6 @@ class InviteMailer < ApplicationMailer
 
 
 
-
-
     def baffsup_occasion_request(invite, party, visitor_url)
 
 
@@ -56,6 +54,6 @@ class InviteMailer < ApplicationMailer
     end
 
 
+
+
 end
-
-
