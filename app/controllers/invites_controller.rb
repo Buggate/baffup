@@ -7,7 +7,7 @@ class InvitesController < ApplicationController
 
      # before_action :find_group
 
-      attr_accessor :placeholder, :password, :password_confirmation
+attr_accessor :placeholder, :password, :password_confirmation
 
 def create
 
