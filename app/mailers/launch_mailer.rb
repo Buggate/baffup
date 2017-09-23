@@ -22,6 +22,12 @@ class LaunchMailer < ApplicationMailer
  
       attachments.inline['b_logo1.png'] = File.read('./public/b_logo1.png')
 
+      attachments.inline['launch_1.png'] = File.read('./public/launch_1.png')
+
+      attachments.inline['launch_2.png'] = File.read('./public/launch_2.png')
+
+      attachments.inline['launch_3.png'] = File.read('./public/launch_3.png')
+
 
       mail(to: @launch.email)
 

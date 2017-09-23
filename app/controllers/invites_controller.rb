@@ -32,10 +32,7 @@ def create
          create_visitor @invite, @party, @user
 
          create_notification @invite, @party, @visitor, @user
-                  
-
-         
-
+   
          InviteMailer.baffsup_occasion_request(@invite, @party, visitor_url(:id => @invite.visitor.id, :party_id => @invite.party.id)).deliver_now
 
          create_friend @user, @buddy, @invite
