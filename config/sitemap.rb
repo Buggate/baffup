@@ -10,11 +10,11 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
   region:                ENV["AWS_REGION"])
 
 
-SitemapGenerator::Sitemap.sitemapshost = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_my_BUCKET']}/"
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_my_BUCKET']}/"
 
 
-SitemapGenerator::Sitemap.sitemapspath = 'sitemaps/'
-SitemapGenerator::Sitemap.publicpath = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.public_path = 'tmp/'
 
 SitemapGenerator::Sitemap.create do
 
