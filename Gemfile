@@ -38,6 +38,8 @@ gem 'modernizr-rails', '~> 2.7', '>= 2.7.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'sitemap_generator', '~> 5.1'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

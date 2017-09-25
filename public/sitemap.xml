@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://www.baffsup.com/</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/users/sign_in</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/abouts/1</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/how_it_works/1</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/term_and_conditions/1</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/privacies/1</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/contact-me</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/users/sign_up</loc>
+</url>
+<url>
+  <loc>https://www.baffsup.com/users/password/new</loc>
+</url>
+</urlset>
