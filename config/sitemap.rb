@@ -1,19 +1,16 @@
-
+require 'rubygems'
+require 'sitemap_generator'
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.baffsup.com"
 
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
-  fog_provider:              'AWS',
-  aws_access_key_id:         ENV["AWS_ACCESS_KEY_ID"],
-  aws_secret_access_key:     ENV["AWS_SECRET_ACCESS_KEY"],
-  fog_directory:             ENV["S3_my_BUCKET_NAME"],
-  fog_region:                ENV["AWS_REGION"])
-
-SitemapGenerator::Sitemap.sitemaps_host = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_my_BUCKET_NAME']}/"
-
-
-SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3.#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_my_BUCKET_NAME']}/"
 SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new("#{ENV['S3_my_BUCKET_NAME']}", 
+                                   aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+                                   aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+                                   aws_region: ENV["AWS_REGION"])
 
 SitemapGenerator::Sitemap.create do
 
