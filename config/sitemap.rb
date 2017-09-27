@@ -1,5 +1,4 @@
 
-require 'fog/aws'
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.baffsup.com"
 
@@ -7,8 +6,10 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
   fog_provider:              'AWS',
   aws_access_key_id:         ENV["AWS_ACCESS_KEY_ID"],
   aws_secret_access_key:     ENV["AWS_SECRET_ACCESS_KEY"],
-  fog_directory:             ENV['S3_my_BUCKET_NAME'],
+  fog_directory:             ENV["S3_my_BUCKET_NAME"],
   fog_region:                ENV["AWS_REGION"])
+
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_my_BUCKET_NAME']}/"
 
 
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
@@ -51,4 +52,6 @@ end
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 end
+
+
 
