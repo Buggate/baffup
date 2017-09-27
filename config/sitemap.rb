@@ -10,7 +10,8 @@ SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new("#{ENV['S3_my_BUCKET_NAME']}", 
                                    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
                                    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-                                   aws_region: ENV["AWS_REGION"])
+                                   aws_region: ENV["AWS_REGION"]
+                                   endpoint:"https://s3.#{ENV['AWS_REGION']}.amazonaws.com")
 
 SitemapGenerator::Sitemap.create do
 
