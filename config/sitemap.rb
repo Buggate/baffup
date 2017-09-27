@@ -14,6 +14,18 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new("#{ENV['
 
 SitemapGenerator::Sitemap.create do
 
+  add '/'
+  add '/contact-me'
+  add '/about/1'
+  add '/how_it_works/1'
+  add '/privacies/1'
+  add '/term_and_conditions/1'
+  add '/users/sign_in'
+  add '/users/sign_up'
+  add '/users/password/new'
+  add '/photo-album'
+ 
+
   Party.find_each do |party|
     add @party
 end
@@ -21,10 +33,6 @@ end
  Visitor.find_each do |visitor|
     add @visitor
 end
-
-
-
-
 
   # Put links creation logic here.
   #
