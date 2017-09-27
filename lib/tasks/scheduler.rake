@@ -3,7 +3,9 @@ task :sitemap_refresh => :environment do
 
   puts "starting sitemap_refresh process"
 
-  	rake sitemap:refresh
+  #do something here  
+  #do something here  
+  #do something here
 
   puts "ending sitemap_refresh process"
 
