@@ -5,3 +5,6 @@
 # Disallow: /
 User-agent: *
 Sitemap: https://www.baffsup.com/sitemap.xml.gz
+Sitemap: https://s3.#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/sitemaps/sitemap.xml.gz
+
+
