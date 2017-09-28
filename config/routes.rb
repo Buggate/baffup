@@ -80,6 +80,10 @@ Rails.application.routes.draw do
   post 'access/attempt_login'
   get 'access/logout'
 
+  # routes.rb file
+  get '/sitemap.xml.gz', to: redirect("https://s3.#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/sitemaps/sitemap.xml.gz"), as: :sitemap
+
+
 
 
 
