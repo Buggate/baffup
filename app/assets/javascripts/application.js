@@ -17,6 +17,7 @@
 //= require bootstrap-sprockets
 //= require jquery-ui
 //= require turbolinks
+//= require social-share-button
 //= require dropzone
 //= require active_admin/base
 

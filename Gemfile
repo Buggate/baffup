@@ -138,6 +138,8 @@ end
 
   gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
+  gem 'social-share-button', '~> 0.1.10'
+
   # active admin integration
 
   #gem 'activeadmin', github: 'gdpelican/activeadmin'

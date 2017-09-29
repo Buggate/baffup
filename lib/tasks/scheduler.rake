@@ -10,3 +10,5 @@ task :sitemap_refresh => :environment do
   puts "ending sitemap_refresh process"
 
 end
+
+
