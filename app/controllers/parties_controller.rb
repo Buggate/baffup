@@ -19,6 +19,7 @@ class PartiesController < ApplicationController
        @party  = Party.find(params[:id])
        redirect_to_good_slug(@party) and return if bad_slug?(@party)
 
+
     end
 
     
@@ -200,9 +201,7 @@ class PartiesController < ApplicationController
          def create_catalogue(party, user) 
 
 
-          Catalogue.create(party_id: @party.id,
-
-                        :user_id => current_user.id)
+          Catalogue.create(party_id: @party.id, :user_id => current_user.id)
 
 
          end

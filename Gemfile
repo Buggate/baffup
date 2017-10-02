@@ -174,6 +174,7 @@ end
 
 
   gem 'railroady', '~> 1.5', '>= 1.5.2'
+  gem 'ransack', '~> 1.8', '>= 1.8.3'
 
  
 

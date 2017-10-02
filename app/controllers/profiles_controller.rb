@@ -12,6 +12,8 @@ class ProfilesController < ApplicationController
 
         @profile = current_user.profile
 
+       
+
 
     end
 

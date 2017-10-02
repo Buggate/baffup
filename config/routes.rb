@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :profiles
+  resources :profiles  do
+    collection { post :search, to: 'profiles#index' }
+
+  end
+
+
   
   resources :abouts, only: :show
   resources :how_it_works, only: :show
@@ -34,7 +39,10 @@ Rails.application.routes.draw do
     resources :invites
     resources :requests
 
+    
+
   end
+  
 
   resources :visitors do 
    
@@ -69,8 +77,6 @@ Rails.application.routes.draw do
    post 'photo-album', to: 'catalogues#create', as: 'create_catalogue'
    delete 'delete_catalogue', to: "catalogues#delete_catalogue"
    delete 'delete_all', to: 'catalogues#delete_all'
-
-   
 
 
 

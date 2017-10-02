@@ -512,6 +512,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-assets-tether (~> 1.1, >= 1.1.1)
   rails_12factor (~> 0.0.3)
+  ransack (~> 1.8, >= 1.8.3)
   redis (~> 3.3, >= 3.3.1)
   rmagick (~> 2.15, >= 2.15.4)
   sass-rails (~> 5.0)
