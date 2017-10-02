@@ -24,7 +24,7 @@ class LaunchMailer < ApplicationMailer
 
       attachments.inline['jesus_dove.jpg'] = File.read('./public/jesus_dove.jpg')
 
-      attachments.inline['bible_rostary.jpg'] = File.read('./public/bible_rostary.jpg')
+      attachments.inline['bible_rostary.png'] = File.read('./public/bible_rostary.png')
 
       attachments.inline['cross.jpg'] = File.read('./public/cross.jpg')
 
@@ -36,4 +36,5 @@ class LaunchMailer < ApplicationMailer
 
 
 end
+
 
