@@ -4,7 +4,7 @@ class LaunchMailer < ApplicationMailer
 	default from: "Baffsup@baffsup.com"
 
 
-    def baffsup_ready(launch, operator, new_user_registration_url)
+    def baffsup_occasion(launch, operator, new_user_registration_url)
 
  
 
