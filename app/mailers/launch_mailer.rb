@@ -36,5 +36,3 @@ class LaunchMailer < ApplicationMailer
 
 
 end
-
-
