@@ -22,11 +22,11 @@ class LaunchMailer < ApplicationMailer
  
       attachments.inline['b_logo1.png'] = File.read('./public/b_logo1.png')
 
-      attachments.inline['jesus_dove.jpg'] = File.read('./public/jesus_dove.jpg')
+      attachments.inline['sunset.jpeg'] = File.read('./public/sunset.jpeg')
 
-      attachments.inline['bible_rostary.png'] = File.read('./public/bible_rostary.png')
+      attachments.inline['al-quran.jpg'] = File.read('./public/al-quran.jpg')
 
-      attachments.inline['cross.jpg'] = File.read('./public/cross.jpg')
+      attachments.inline['cathedral-mosque.jpeg'] = File.read('./cathedral-mosque.jpeg')
 
 
       mail(to: @launch.email)
