@@ -26,7 +26,7 @@ class LaunchMailer < ApplicationMailer
 
       attachments.inline['al-quran.jpg'] = File.read('./public/al-quran.jpg')
 
-      attachments.inline['cathedral-mosque.jpeg'] = File.read('./cathedral-mosque.jpeg')
+      attachments.inline['cathedral-mosque.jpeg'] = File.read('./public/cathedral-mosque.jpeg')
 
 
       mail(to: @launch.email)
