@@ -22,8 +22,6 @@ class LaunchMailer < ApplicationMailer
  
       attachments.inline['b_logo1.png'] = File.read('./public/b_logo1.png')
 
-      attachments.inline['sunset.jpeg'] = File.read('./public/sunset.jpeg')
-
       attachments.inline['al-quran.jpg'] = File.read('./public/al-quran.jpg')
 
       attachments.inline['cathedral-mosque.jpeg'] = File.read('./public/cathedral-mosque.jpeg')
