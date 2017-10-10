@@ -65,7 +65,7 @@
                         <% else @visitor = @party.visitors.first %>
                         <li></li>
                         <% end %> 
-                        <li><%= link_to 'ALBUMS', visitor_catalogues_register_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id,  :title => @party.title), :style => "font-family: 'Permanent Marker', cursive;"  %></li>                    
+                        <li><%= link_to 'ALBUMS', visitor_catalogues_register_path(:visitor_id => @visitor.id, :party_id => @visitor.party.id,  :title => @party.title), :style => "font-family: 'Permanent Marker', cursive;" %></li>                    
                     </ul>
                 </div>
             </div><!--/.container-->
