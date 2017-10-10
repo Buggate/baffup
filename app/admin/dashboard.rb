@@ -17,6 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
 
 
       column do
+        
         panel "Platform Users" do
 
 
