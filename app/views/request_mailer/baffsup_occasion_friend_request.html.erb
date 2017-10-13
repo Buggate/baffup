@@ -54,7 +54,7 @@
     .header-lg,
     .header-md,
     .header-sm {
-      font-size: 32px;
+      font-size: 20px;
       font-weight: 700;
       line-height: normal;
       padding: 35px 0 0;
@@ -264,7 +264,7 @@
         <table cellspacing="0" cellpadding="0" width="600" class="w320">
           <tr>
             <td class="header-lg">
-              <%= @party.user.name %><br /> has requested the pleasure of your presence of their <%= @party.title %>, occasion.
+              <h2 style="color: #86a060; font-size: 45px;"><%= @party.user.name %>,</h2><br /> has requested the pleasure of your presence @ <h2 style="color: #86a060; font-size: 36px;"><%= @party.title %></h2>, occasion.
             </td>
           </tr>
           <tr>

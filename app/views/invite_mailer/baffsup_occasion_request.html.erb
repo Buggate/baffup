@@ -264,9 +264,9 @@
         <table cellspacing="0" cellpadding="0" width="600" class="w320">
           <tr>
             <td class="header-lg">
-              <%= @party.user.name %><br /> has requested the pleasure of your presence of their <%= @party.title %>, occasion.
+              <h2 style="color: #86a060; font-size: 40px;"><%= @party.user.name %>,</h2><br /> has requested the pleasure of your presence @ <h2 style="color: #86a060; font-size: 36px;"><%= @party.title %></h2>, occasion.
             </td>
-          </tr>
+           </tr><br /><br />
           <tr>
             <td class="free-text">
                <%= @party.message %>
@@ -317,9 +317,9 @@
                                   <tr>
                                     <td class="header-sf" style="text-align:left; width:155px">
                                       <a href=""><span class="header-sm">MEET A FRIEND</span></a><br /><br />
-                                      Show all Pre, Post Occasion Photos, and general posts. Meet other guests.<br /><br />
-                                      VENUE&nbsp;:&nbsp; <br /><%= @party.venue %><br /><br />
-                                      DATE&nbsp;:&nbsp; <br /><%= @party.date.strftime("%B #{@party.date.day.ordinalize}, %Y") %>
+                                      Show all Pre, Post Occasion Photos, and general posts.<br /> Meet other guests.<br /><br />
+                                      VENUE&nbsp;:&nbsp; <br /><br /><%= @party.venue %><br /><br />
+                                      DATE&nbsp;:&nbsp; <br /><br /><%= @party.date.strftime("%B #{@party.date.day.ordinalize}, %Y") %>
                                     </td>
                                   </tr>
                                 </table>
@@ -354,7 +354,7 @@
                                       <a href=""><span class="header-sm">R S V P</span></a><br /><br />
                                       Reserve a space for this occasion by clicking the botton below.<br /><br />
 
-                                      R S V P &nbsp;:&nbsp; <br /><%= localize(@party.rsvp_by, format: :long) %><br /><br />
+                                      R S V P &nbsp;:&nbsp; <br /><br /><%= localize(@party.rsvp_by, format: :long) %><br /><br />
                                       <!-- Remove bottom br and nbsp when item text longer than one line is -->
                                       <br />
                                       &nbsp;
@@ -458,170 +458,3 @@
 </body>
 </html>
 
-
-
-
-        }
-
-    </style>
-</head>
-<body bgcolor="#222222" width="100%" style="Margin: 0;">
-    <center style="width: 100%; background: #f7f7f2;">
-
-        <!-- Visually Hidden Preheader Text : BEGIN -->
-        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: "Lucida Console", Courier, monospace;font-style: oblique;">
-            <b><%= @party.user.name %></b>, has requested your presence at an Occasion
-        </div>
-        <!-- Visually Hidden Preheader Text : END -->
-
-        <!-- Email Header : BEGIN -->
-        <table cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
-      <tr>
-        <td style="padding: 20px 0; text-align: center">
-          
-           <%= image_tag attachments['baffup_6.png'].url, alt: '', width: '200', height: '150', border: '0' %>
-
-        </td>
-      </tr>
-        </table>
-        <!-- Email Header : END -->
-        
-        <!-- Email Body : BEGIN -->
-        <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="600" style="margin: auto;" class="email-container">
-             <tr>
-                <td style="padding: 40px; text-align: center; font-family: 'Oswald'; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #840615;">
-
-                   
-                    <!-- Button : Begin -->
-                    <table cellspacing="0" cellpadding="0" border="0" align="center" style="Margin: auto">
-                        <tr class="hot-container">
-                            
-
-                                <%= link_to "Accept Invitation", @visitor_url, :class => "btn btn-green" %>
-
-                            
-
-                        </tr>
-                    </table>
-                    <!-- Button : END -->
-                </td>
-            </tr>
-            <!-- 1 Column Text : BEGIN -->
-
-            <!-- Background Image with Text : BEGIN -->
-            <tr>
-                <!-- Bulletproof Background Images c/o https://backgrounds.cm -->
-                 <td background="" bgcolor="#67abb2" valign="middle" style="text-align: center; background-position: center center !important; background-size: cover !important;">
-
-                    <!--[if gte mso 9]>
-                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:175px; background-position: center center !important;">
-                    <v:fill type="tile" src="http://placehold.it/600x230/222222/666666" color="#222222" />
-                    <v:textbox inset="0,0,0,0">
-                    <![endif]-->
-                   <div>
-                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td valign="middle">
-
-                                   
-
-                                <h3 style="font-size: 14px; font-weight: bold; color: #ffffff;">DATE:&nbsp; <%= @party.date.strftime("%B #{@party.date.day.ordinalize}, %Y") %><br />@&nbsp;&nbsp;<%= @party.time.strftime("%I:%M%p") %><br /><br /><br /> VENUE:&nbsp; <%= @party.venue %></h3>
-
-
-
-                                    <br>
-
-                                   <h3 style="font-size: 14px; color: #ffffff;"><%= @party.message %><br /><br /><br /><br />
-                                      <br />R S V P :&nbsp; <%= localize(@party.rsvp_by, format: :long) %></h3>
-
-                                </td>
-
-                            </tr>
-                        </table>
-                        </div>
-                    <!--[if gte mso 9]>
-                    </v:textbox>
-                    </v:rect>
-                    <![endif]-->
-                </td>
-            </tr>
-            <tr>
-                <td dir="ltr" align="center" valign="top" width="100%" style="padding: 0;">
-                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-                        <tr>
-                            <!-- Column : BEGIN -->
-                            <td width="45%" class="stack-column-center">
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <td dir="ltr" valign="top" style="padding: 0;">
-                                           
-                                            <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="center" ">
-                                                <tr class="hot-container">
-                                                   <h2><strong style="color:#111111;" align="center">R S V P</strong></h2>
-
-                                                   <p>Reserve a space for this occasion by clicking the botton below</p><br />
-
-                                                   <%= link_to "Reserve A Space", @visitor_url, :class => "btn btn-blue" %>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <!-- Column : END -->
-
-                             <td width="10%" class="stack-column-center">
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <td dir="ltr" valign="top" style="padding: 0;">
-                                           
-                                            
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <!-- Column : BEGIN -->
-                            <td width="45%" class="stack-column-center">
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <td dir="ltr" valign="top" style="font-family: "Lucida Console", Courier, monospace; font-size: 25px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 0; text-align: right;" class="center-on-narrow">
-                                            <h2><strong style="color:#111111;">MEET A FRIEND</strong></h2>
-                                             <p>Share all pre, post occasion pictures and general posts. Meet other guests.</p><br />
-
-                                            <%= link_to "Post A Picture", @visitor_url, :class => "btn btn-red" %>
-
-
-                                           
-                                            <!-- Button : Begin -->
-                                            
-                                            <!-- Button : END -->    
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <!-- Column : END -->
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <!-- Thumbnail Left, Text Right : END -->
-
-        </table>
-        <!-- Email Body : END -->
-          
-        <!-- Email Footer : BEGIN -->
-        <table cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
-            <tr>
-                <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #
-                    <br><br>
-                    Baffsup.com<br><span class="mobile-link--footer">We provide the best social service and entertainment </span><br><span class="mobile-link--footer">00 44 07419818334 </span>
-                    <br><br> 
-                    <unsubscribe style="color:#888888; text-decoration:underline;">Have a lot of fun !!!</unsubscribe>
-                </td>
-            </tr>
-        </table>
-        <!-- Email Footer : END -->
-
-    </center>
-</body>
-</html>
