@@ -1,21 +1,24 @@
-<div>
 <fieldset>
+   <div class="row">
+     <div class="col-xs-1">
+       </div>
+       <div class="col-xs-10" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: #00193a;">
+          <%= f.label :change_venue %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.text_field :venue %>
 
-	 <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #00193a;">
-
-	   <%= f.input :venue, :input_html => { :style=> 'width: 420px', :rows => 3}, :label => 'Change Venue:', :label_html => { :class => 'text' } %>
-
-	</div>   <br />
+       </div>
+       <div class="col-xs-1">
+       </div>
+      </div><br />
 
 		<%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Montserrat', cursive; font-size: 14px;  color: #00193a;") do %>
 		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Venue
-		  <% end %>
+		  <% end %><br /><br />
+		  
 
 
 </fieldset>
 
 
-
-</div><br />
 
 
