@@ -1,17 +1,19 @@
-<div id="msform">
-	 <%= simple_form_for(@profile, :url => {:action => 'update', :id => @profile.id, :user_id => current_user.id}) do |f| %>
+<div class="msf-container">
+	<div class="container">
+	  <div class="row">
+		<div id="msform">
+			 <%= simple_form_for(@profile, :url => {:action => 'update', :id => @profile.id, :user_id => current_user.id}) do |f| %>
+			    <%= render(:partial => "picture_form", :locals => {:f => f}) %>
+
+			    <% end %>
+		
+		 </div>
 
 
-	    <%= render(:partial => "picture_form", :locals => {:f => f}) %>
+        </div>
 
-	 <% end %>
-	 
-	 <br />
-	 <br />
-	 <strong>
+     </div>
 
-	   <%= link_to 'Back', profiles_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: #00193a;" %>
-	 	
-	 </strong>
+</div>
 
- </div>
+

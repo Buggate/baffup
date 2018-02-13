@@ -1,52 +1,43 @@
 class ProfilesController < ApplicationController
 
-
-
-  layout 'te1profile'
-
-  
+layout :resolve_layout
    
     before_action :authenticate_user!
 
-     def index
+    def index
 
         @profile = current_user.profile
-
-       
-
 
     end
 
 
 
-       def show
+    def show
 
-        @profile = current_user.profile
-        redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
+      @profile = current_user.profile
+      redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
 
-       end
+    end
 
-      	 def edit
+    def edit
 
-            @profile = Profile.find(params[:id])
-            redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
-
-            
-            
-          end
-
-           def edit_picture
-
-            @profile ||= Profile.find(params[:id])
-            redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
+       @profile = Profile.find(params[:id])
+       redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
   
-         end
-          
+    end
+
+    def edit_picture
+
+      @profile ||= Profile.find(params[:id])
+      redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
+  
+    end
+         
 
 
-          def update
+    def update
 
-           @profile = Profile.find(params[:id])
+      @profile = Profile.find(params[:id])
 
             if @profile.update_attributes(profile_params)
               flash[:notice] = "Profile updated successfully."
@@ -61,14 +52,40 @@ class ProfilesController < ApplicationController
 
     private
 
+  
   def profile_params
      
-    params.require(:profile).permit(:mobile, :address, :city, :post_code, :country, :state, :nationality, :work_place, :professional_skill,
-     :position, :work_phone,:title, :name, :username, :age, :gender, :telephone, :hobbies, :image, :work_address, :email, :user_id)
+       params.require(:profile).permit(:title, :name, :username, :age, :email, :school_email, :work_email, :gender, :telephone, :hobbies, :mobile,
+                                    :country, :work_place, :professional_skill, :work_phone, :image, :header_photo,
+                                    :address_line_1, :address_line_2, :address_city, :address_lga, :address_state, :nationality, 
+                                    :school, :work_address_line_1, :work_address_line_2, :work_address_city, :work_address_lga,
+                                    :work_address_state, :course, :user_id, social_network_group:[])
+
 
   end
 
 
+
+ def resolve_layout
+
+    case action_name
+
+    when  "edit_picture", "edit"
+
+      "party_form"
+
+    when "show"
+
+    else
+
+      "te1profile"
+
+    end
+
+ end
+
  
 end
+
+
 

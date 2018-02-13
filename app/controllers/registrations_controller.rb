@@ -8,8 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
      @token = params[:invite_token]
      @email = params[:email]
      @password = params[:password]
-     @password_confirmation = params[:password_confirmation]
- 
+      
    end
 
 
@@ -63,7 +62,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     def user_params
 
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password )
 
     end
 

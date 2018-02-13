@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909111405) do
+ActiveRecord::Schema.define(version: 20180212223507) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -172,27 +172,40 @@ ActiveRecord::Schema.define(version: 20170909111405) do
     t.string   "email"
     t.string   "gender"
     t.integer  "user_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.date     "age"
     t.string   "telephone"
-    t.text     "hobbies",            limit: 65535
+    t.text     "hobbies",                   limit: 65535
     t.string   "mobile"
-    t.text     "address",            limit: 65535
-    t.string   "city"
-    t.string   "post_code"
     t.string   "country"
-    t.string   "state"
     t.string   "nationality"
     t.string   "work_place"
-    t.text     "work_address",       limit: 65535
     t.string   "professional_skill"
-    t.string   "position"
     t.string   "work_phone"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "address_city"
+    t.string   "address_lga"
+    t.string   "address_state"
+    t.string   "school"
+    t.string   "work_address_line_1"
+    t.string   "work_address_line_2"
+    t.string   "work_address_city"
+    t.string   "work_address_lga"
+    t.string   "work_address_state"
+    t.string   "social_network_group"
+    t.string   "course"
+    t.string   "work_email"
+    t.string   "school_email"
+    t.string   "header_photo_file_name"
+    t.string   "header_photo_content_type"
+    t.integer  "header_photo_file_size"
+    t.datetime "header_photo_updated_at"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 

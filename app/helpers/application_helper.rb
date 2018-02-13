@@ -20,4 +20,19 @@ module ApplicationHelper
   end
 =end
 
+
+def checked (area)
+
+    @profile.social_network_group.nil? ? false : @profile.social_network_group.match(area)
+
+  end 
+
+
+   def unchecked (area)
+
+    @profile.social_network_group.nil? ? true : @profile.social_network_group.match(area)
+
+  end 
+  
+
 end

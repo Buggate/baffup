@@ -1,16 +1,23 @@
-<div>
 <fieldset>
-	 <div class="field" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; font-weight: bold; color: #00193a;">
 
-          <%= f.input :image, :input_html => { :wrap => :soft, :rows => 3}, :label => 'Add your best Picture', :label_html => { :class => 'file' }  %>
-     </div><br />
+    <h2 style="font-family: 'Julius Sans One'; font-size: 16px; font-weight: bold; color: #00193a;">Update Your Pictures</h2><br /><br />
+     <div class="row" style="font-family: 'Julius Sans One'; font-size: 16px; font-weight: bold; color: #00193a;">
+       <div class="col-xs-6" >
+      
+          <h2>Your Picture</h2><br /><%= f.file_field :image  %>
 
-     <div>
+       </div>
+       <div class="col-xs-6">
+          <h2>Header Picture</h2><br /><%= f.file_field :header_photo  %>
+       </div>
+    </div><br />
 
-		<%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #00193a;") do %>
-		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Change Picture
+
+
+    <%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 18px; color: #00193a;") do %>
+		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Add / Change Picture
 		  <% end %>
 
-		</div>  
-</fieldset>
-</div>
+
+
+ </fieldset> 

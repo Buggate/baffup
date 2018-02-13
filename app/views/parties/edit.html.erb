@@ -1,7 +1,6 @@
 
 <div id="msform">
-<p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: #00193a; font-weight: bold;">Change your Occassion picture. Upload you Invitation Card if you have one. </p><br />
-
+<p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: #00193a; font-weight: bold;">Change your Occassion picture. Upload you Invitation Card if you have one. </p>
 
 
  <%= simple_form_for(@party, :url => {:action => 'update', :id => @party.id, :user_id => current_user.id}) do |f| %>

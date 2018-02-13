@@ -59,12 +59,44 @@
          <p style="font-size: 12px; color: #00193a; font-weight: bold;"><i class="fa fa-user fa-fw fa-2x"></i>&nbsp;&nbsp;<strong style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #915b05; font-weight: bold;"><%= @profile.name %></strong></p>
 
       <% end %>
+   
+                     
+
+    <div class="media-body">
+      
+       <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #560142; font-weight: bold;"><%= @profile.address_city %><br /><%= @profile.address_state %></p>
+                  
+     </div>
+
+    
+      <div class="media-body">
+     
+      
+      <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #560142; font-weight: bold;"><%= @profile.school %></p>
+      
+      </div>
+       <div class="media-body">
+     
+      
+      <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #560142; font-weight: bold;"><%= @profile.work_place %></p>
+      
+      </div>
+
+
+   
   
-  <div class="dropdown">
+<aside>
+                             
+    <div class="dropdown">
                                       
   <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #00193a; "><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
 
    <ul class="dropdown-menu">
+
+   <li><%= link_to "" %></li>
+
+     <li><%= link_to 'My_Profile', profile_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %>
+      </li>
 
                   
         <li><%= link_to "" %></li>
@@ -84,36 +116,10 @@
                    
 
   </div><br />
-<aside>
-                             
-    <div class="media-body">
 
-    <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;">My Email <br /><strong style="font-family: 'Montserrat', sans-serif; font-size: 12px; sans-serif; color: #915b05; font-weight: bold; "><%= @profile.email %></strong></p>
-      
-      </div>
 
-     
-                     
-
-    <div class="media-body">
-      
-       <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;">City/Town<br /><strong style="font-family: 'Montserrat', sans-serif; font-size: 12px; sans-serif; color: #915b05; font-weight: bold;"><%= @profile.city %></strong></p>
-                  
-     </div>
-
-    
-      <div class="media-body">
-     
-      
-      <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;">Phone/Mobile<br /><strong style="font-family: 'Montserrat', sans-serif; color: #915b05; font-weight: bold; font-size: 12px;"><%= @profile.mobile %></strong></p>
-      
-      </div>
-       <div class="media-body">
-     
-      
-      <p style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;">Hobbies<br /><strong style="font-family: 'Montserrat', sans-serif; color: #915b05; font-weight: bold; font-size: 12px;"><%= @profile.hobbies %></strong></p>
-      
-      </div>
+   <p><%= link_to "HOME", root_path, :style => "font-family: 'Permanent Marker', cursive; color: #af6305;" %>&nbsp;&nbsp;<i class="fa fa-home fa-fw fa-2x"></i></p>
+  
 
 
     
@@ -168,7 +174,7 @@
                                                           
                         </div>
                                                 
-                      <div class="modal-body" style="background-color: #e5f4f9; width: 100%; height: 100%; overflow: auto;">
+                  <div class="modal-body" style="background-color: #e5f4f9; width: 100%; height: 100%; overflow: auto;">
                                                        
                          <%= render @profile.user.notifications, modal: true %> 
 

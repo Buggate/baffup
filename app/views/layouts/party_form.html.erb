@@ -15,6 +15,8 @@
 
     <%= stylesheet_link_tag    'wickedpicker' %>
 
+    <%= stylesheet_link_tag    'multistep' %>
+
 
 
     
@@ -102,11 +104,15 @@
           <%= javascript_include_tag   'wickedpicker' %>
 
 
-         <script type="text/javascript">
+           <script type="text/javascript">
                     // When the document is ready
                     $(document).ready(function () {
                         
                         $('#party_date').datepicker({
+                            format: "dd/mm/yyyy"
+                        });
+
+                        $('#profile_age').datepicker({
                             format: "dd/mm/yyyy"
                         });  
                     
@@ -116,6 +122,10 @@
 
         </script>
 
+
+           <%= javascript_include_tag   'multistep' %>
+
+           <%= javascript_include_tag    'jquery.easing.1.3' %>
 
 
  
