@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
 
          has_one :profile
+         has_one :pouch
          has_many :parties
 
          has_many :invitations, :class_name => "Invite", :foreign_key => 'guest_id'
@@ -23,6 +24,8 @@ class User < ApplicationRecord
 
          has_many :catalogues
 
+         has_many :friend_notices
+
 
 
    private
@@ -30,10 +33,9 @@ class User < ApplicationRecord
          def create_profile
 
 
-         	Profile.create(user_id: self.id,
+         	Profile.create(user_id: self.id, name: self.name, email: self.email)
 
-         		            name: self.name,
-                        email: self.email)
+          Pouch.create(user_id: self.id) 
 
 
          end

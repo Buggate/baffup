@@ -42,6 +42,9 @@ Rails.application.config.assets.precompile += %w( visitor.css )
 
 Rails.application.config.assets.precompile += %w( multistep.css )
 
+Rails.application.config.assets.precompile += %w( pro_show.css )
+
+
 
 
 

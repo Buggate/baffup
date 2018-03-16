@@ -16,7 +16,7 @@ end
         validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
         has_attached_file :header_photo, 
-	                   :styles => {:original => {}}, default_url: "https://placehold.it/350x150.jpg&text=UPLOAD A PICTURE"
+	                   :styles => {large: "400x400"}, default_url: "https://placehold.it/350x150.jpg&text=UPLOAD A PICTURE"
 
         validates_attachment_content_type :header_photo, content_type: /\Aimage\/.*\z/
 
@@ -24,7 +24,4 @@ end
 
        
 end
-
-
-	
 

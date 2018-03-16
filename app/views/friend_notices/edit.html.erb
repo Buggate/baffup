@@ -1,0 +1,20 @@
+
+	 <%= form_for(friend_notice, :url => {:controller => 'friend_notices', :action => 'update', :id => friend_notice.id}) do |f| %>
+
+      <%= f.hidden_field :read_at, :value => Time.now %>
+
+       <%= f.check_box :action, :checked => true, :style => 'visibility: hidden' %>
+
+        <%= button_tag(type: 'submit', :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: #318706;" ) do %>&nbsp;Accept&nbsp;&nbsp;
+
+         <% end %>
+
+
+           <%= link_to 'Decline', friend_notice_path(:id => friend_notice.id), 
+                                                        :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color:#c60505;",
+                                               method: :delete,
+                                               data: { confirm: 'Not sure, Maybe some other time'} %>
+                          
+
+	 <% end %>
+	 

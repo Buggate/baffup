@@ -1,0 +1,12 @@
+<div id="msform">
+	 <%= simple_form_for(@friend, :url => {:action => 'update', :id => @friend.id, :pouch_id => @pouch.id}) do |f| %>
+
+
+	    <%= render(:partial => "friend_form", :locals => {:f => f}) %>
+
+	 <% end %>
+	 
+	 <br />
+	 <br />
+	
+</div>

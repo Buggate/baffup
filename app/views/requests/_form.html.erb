@@ -4,54 +4,27 @@
 
 <%= simple_form_for([@party, @request, @party.requests.build({:party_id => @party.id, :host_id => @party.user_id })], remote: remote, html: {role: :form, 'data-model' => 'request'}) do |f| %>
 
-
- 
-   
-
    <%= f.hidden_field(:party_id, :value => @party.id) %>
 
-   
    <%= f.hidden_field(:host_id, :value => @party.user_id) %>
 
 		<% @friends = current_user.friends.all %>
 
 <% @friends.each do |friend| %>
 
-                
-<% if friend.invite.party != @party %>
-
-	
        <div class="col-xs-4 ">
 
-        
-
-
-           <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: #915b05; font-weight: bold; ">
-
-             
+             <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: #915b05; font-weight: bold; ">
 
 			       <%= label_tag "request[email][][#{friend.email}]", "#{image_tag(friend.buddy.profile.image.url(:original), :width => "40", :height => "40" )}".html_safe + friend.name %><br />
 			   
 		          <%= check_box_tag "request[email][]", friend.email, (checked = true if current_user.friends.include?(friend.email)), :email => friend.email %>
 
-             
-
             </div><br />
 
-
-
-          
-
         </div>
-
-        
+    
  <% end %> 
-     
-
-
-     <% end %>
-
-
  
 <div class="col-xs-12 ">
      <%= button_tag(type: 'submit', class: "btn btn-primary" , :style => "font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a;" ) do %>
@@ -61,7 +34,9 @@
   <% end %>
 </div>
 
-
-
 <% end %>
+
+
+
+
 

@@ -9,11 +9,11 @@
     <meta name="description" content="Baffsup | Plan your unforgettable occasions &amp; Catalog everyone of your memeorable parties, events, gettogther, ceremonies and so on.">
  
   <%= javascript_include_tag "application", media: 'all', 'data-turbolinks-track': :reload %>
-  <%= javascript_include_tag   'datepicker' %>
+ 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
- <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Annie+Use+Your+Telescope|Mogra|Montserrat|Raleway" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Annie+Use+Your+Telescope|Mogra|Montserrat|Raleway|Karma" rel="stylesheet">
 
   <style>
       body {
@@ -22,6 +22,7 @@
              font-family: 'Mogra', cursive;
              font-family: 'Raleway', sans-serif;
              font-family: 'Julius Sans One', sans-serif;  
+             font-family: 'Karma', sans-serif;
       }
     </style>
 
@@ -87,38 +88,60 @@
   
 <aside>
                              
-    <div class="dropdown">
+  <div class="dropdown">
                                       
-  <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" type="button" style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #00193a; "><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
+<a href="#" class="dropdown-toggle btn btn-success" data-toggle="dropdown" type="button" style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #00193a; "><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></i></a>
 
    <ul class="dropdown-menu">
 
-   <li><%= link_to "" %></li>
+    <li><%= link_to "" %></li>
 
-     <li><%= link_to 'My_Profile', profile_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %>
+     <li><%= link_to 'My_Profile', profile_path(@profile), :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %>
       </li>
 
-                  
+
+      <li><%= link_to "" %></li>
+
+     <li><strong><%= link_to 'Friend/Family List', pouch_friends_path(:pouch_id => @profile.user.pouch.id), :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: #00193a; font-weight: bold;" %></strong></li>
+
+               
         <li><%= link_to "" %></li>
 
 
 
-      <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;" %></li>
+      <li><%= link_to "Edit_Profile", edit_profile_path(@profile), :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;" %></li>
 
+        
         <li><%= link_to "" %></li>
 
 
-      <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %>
+      <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;"  %>
       </li>
                   
 
     </ul>
                    
 
-  </div><br />
+  </div>
 
 
-   <p><%= link_to "HOME", root_path, :style => "font-family: 'Permanent Marker', cursive; color: #af6305;" %>&nbsp;&nbsp;<i class="fa fa-home fa-fw fa-2x"></i></p>
+
+
+
+  <br />
+
+
+   <p><%= link_to root_path, :type => "button", :class => "btn btn-danger", :style => "font-family: 'Permanent Marker', cursive; color: #00193a; font-size: 14px;" do %>
+
+        <i class="fa fa-home fa-fw "></i>
+
+        <%= content_tag :span, "Home" %>
+
+
+        <% end %>
+
+
+      </p>
   
 
 
@@ -142,58 +165,113 @@
 
     <div class="major">
 
-     <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 20px; font-weight: bold; color: #00193a;">Create and manage your occasions. Keep records of your most important moments and share with your loved ones.<br />Its easy and free !!!
+
+    <div class="row">
+
+    <div class="span12">
+      
+
+         <% if params[:q].present? %>
+
+          <% if @profiles.blank? %>
+
+             Find Your Friend
+
+          <% else %>
+
+           <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 20px; font-weight: bold; color: #00193a;">These are the lists of your Friends And Family ...
      </h2>
+                      
+            <% @profiles.each do |profile| %>
+
+             <div class="col-xs-4 ">
+
+              <%= image_tag(profile.image.url(:original), :weight => "50", :height => "45", :class => "img-rounded", :alt => "") %>
+              
+              
+                <%= link_to("#{profile.name}", profile_path(profile), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: #00193a;") %><br />
+
+                 <%= render 'friends/form', :profile => profile %>
+
+              </div>  
+
+           <% end %>
+         <% end %> <br /><br />
+
+         <%=will_paginate @profiles, :param_name => 'profile_page', renderer: BootstrapPagination::Rails %><br /><br />
 
 
+
+
+         <strong><%= link_to 'Back', profiles_path, :type => "button", :class => "btn btn-warning", :style => "font-family: 'Patrick Hand SC', cursive; sans-serif; font-size: 14px; color: #1e4f03;" %></strong>
+       <% end %>
+
+
+
+</div>
+
+
+</div><br /><br />
+
+ <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 20px; font-weight: bold; color: #00193a;">Create and manage your occasions. Keep records of your most important moments and share with your loved ones.<br />Its easy and free !!!
+     </h2>
 
       <p>
 
-       <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a;" %></strong></h2>
+       <h2><strong><%= link_to 'Start_Loading', new_party_path, :type => "button", :class => "btn btn-default", :style => "font-family: 'Karma', sans-serif; font-size: 22px; color: #2c0138; font-weight: bold;" %></strong></h2>
 
        </p>
 
-       <p>
+    <% if @notifications != nil  %> 
 
+ <a href="" data-toggle="modal" data-target="#index_notifications_modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 14px; color: black; font-weight: bold;" title="Occassion | Invitations ..." ><span class="badge bg-important"><%= "#{@notifications.all.where(:read => false).count}" %></span><i class="fa fa-globe fa-3x " aria-hidden="true" style="color: #00193a;" ></i></a>
 
- <a href="" data-toggle="modal" data-target="#index_notifications_modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 14px; color: black; font-weight: bold;" title="Occassion | Invitations ..." ><span class="badge bg-important"><%= "#{@profile.user.notifications.count}" %></span><i class="fa fa-bell fa-3x " aria-hidden="true" style="color: #00193a;" ></i></a>
-
-      <div class="modal fade" id="index_notifications_modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
+      <div class="modal fade" id="index_notifications_modal" role="dialog" >    
 
  
 
-          <div class="modal-dialog">  
+                  <div class="modal-dialog">  
 
-                   <div class="modal-content">
+                      <div class="modal-content">
 
-                        <div class="modal-header" >
+                              <div class="modal-header" >
 
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                 
+                                <button type="button" class="close" data-dismiss="modal" >&times;</button>                 
 
-                             <h4 class="modal-title" id="myModalLabel" style="font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a; font-weight: bold;">Invivitation Notifications</h4>
+                                <h4 class="modal-title" id="myModalLabel" style="font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a; font-weight: bold;">Invitation Notifications</h4>
                                                           
-                        </div>
+                               </div>
                                                 
-                  <div class="modal-body" style="background-color: #e5f4f9; width: 100%; height: 100%; overflow: auto;">
-                                                       
-                         <%= render @profile.user.notifications, modal: true %> 
+                          <div class="modal-body" style="background-color: #e5f4f9; width: 100%; height: 100%; overflow: auto;">
+
+                             
+
+<%= render partial: "notifications/notification", collection: @notifications.all.where(:read => false), modal: true %> 
+
+      
+    
+                                  <% end %> 
 
 
 
-                                  <div class="modal-footer">
+                                    <div class="modal-footer">
 
-                                     <button type="button" class="btn btn-default" data-dismiss="modal" style="font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a; font-weight: bold;">Close</button>
+                                       <button type="button" class="btn btn-default" data-dismiss="modal" style="font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a; font-weight: bold;">Close</button>
 
-                              </div>
+                                    </div>
                                               
-                         </div>
+                               </div>
 
-                  </div>
+                      </div>
                               
-            </div>
+                  </div>
                           
-      </div>
-      </p>
+      </div> 
+
+      </p>   
+
+      </p>   
+      
             
 
      </div>
@@ -212,7 +290,54 @@
 
 
 
-            <%= yield %>
+            <%= yield %><br /><br />
+
+
+              <p>
+
+
+ <% if @friend_notices != nil  %>
+    
+<a href="" data-toggle="modal" data-target="#index_bulletins_modal" style="font-family: 'Annie Use Your Telescope', cursive; font-size: 14px; color: black; font-weight: bold;" title="Friend/Family | Requests ..." ><span class="badge bg-important"><%= "#{@friend_notices.all.where(:action => false).count}" %></span><i class="fa fa-cubes fa-3x " aria-hidden="true" style="color: #00193a;" ></i></a>
+
+         <div class="modal fade" id="index_bulletins_modal" role="dialog" >    
+
+                    <div class="modal-dialog">  
+
+                        <div class="modal-content">
+
+                              <div class="modal-header" >
+
+                                <button type="button" class="close" data-dismiss="modal" >&times;</button>                 
+
+   <h4 class="modal-title" id="myModalLabel" style="font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a; font-weight: bold;">Friend/Family Request</h4>
+                                                                
+                              </div>
+                                                
+ <div class="modal-body" style="background-color: #e5f4f9; width: 100%; height: 100%; overflow: auto;">
+                                                  
+<%= render partial: "friend_notices/friend_notice", collection: @friend_notices.all.where(:action => false), modal: true %> 
+       
+
+                             <% end %>  
+
+                                  <div class="modal-footer">
+
+                                     <button type="button" class="btn btn-default" data-dismiss="modal" style="font-family: 'Montserrat', cursive; font-size: 16px; color: #00193a; font-weight: bold;">Close</button>
+
+                              </div>
+                                              
+                         </div>
+
+                    </div>
+                              
+            </div>
+
+
+
+
+ </p><br /><br />
+ <p>
 
             
 
@@ -244,19 +369,7 @@
 
   </div>
 
-   <script type="text/javascript">
-            // When the document is ready
-            $(document).ready(function () {
-                
-                $('#profile_age').datepicker({
-                    format: "dd/mm/yyyy"
-                });  
-            
-            });
-        </script>
-
-
-  
+   
 
   </body>
 
@@ -271,10 +384,7 @@
         <%= stylesheet_link_tag    'stratamain' %>
 
 
-
-        <%= stylesheet_link_tag    'datepicker' %>
-
-        <%= javascript_include_tag   'stratamain' %>
+       
 
 
 

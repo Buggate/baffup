@@ -1,0 +1,13 @@
+<div>
+<fieldset>
+	 <%= f.hidden_field(:name, :value => @friend.buddy.name) %><br />
+
+     <div>
+
+		<%= button_tag(type: 'submit', class: "btn btn-primary", :style => "font-family: 'Patrick Hand SC', cursive; font-size: 14px; color: #00193a;") do %>
+		    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Accepts Request
+		  <% end %>
+
+		</div>  
+</fieldset>
+</div>

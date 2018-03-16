@@ -37,10 +37,11 @@ class ApplicationController < ActionController::Base
     end
      
     def create_friend(user, buddy, invite) 
+      
 
-        current_user = @party.user
-        
-        @friend  = current_user.friends.build(user_id: current_user.id, buddy_id: @invite.guest.id, invite_id: @invite.id)
+      @user = @party.user
+
+        @friend  = @user.friends.build(user_id: @user.id, buddy_id: @invite.guest.id, invite_id: @invite.id, :pouch_id => @user.pouch.id)
 
         @friend.name = @invite.guest.name
 
@@ -50,6 +51,15 @@ class ApplicationController < ActionController::Base
 
    end  
 
+   def create_friend_other_way(friend, pouch, buddy, user, friend_notice) 
+
+       Friend.create(:user_id => @friend_notice.friend.buddy.id, 
+                     :pouch_id => @friend_notice.friend.buddy.pouch.id,
+                     :buddy_id => @friend_notice.pouch.user.id,
+                     :invite_id => 0,
+                     :name => @friend_notice.pouch.user.name,
+                     :email => @friend_notice.pouch.user.email)
+    end  
 
     def redirect_url
 

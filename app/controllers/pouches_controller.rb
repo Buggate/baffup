@@ -1,0 +1,2 @@
+class PouchesController < ApplicationController
+end

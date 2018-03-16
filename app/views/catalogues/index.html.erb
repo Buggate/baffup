@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-xs-12">
             <%= form_tag '/delete_catalogue', method: :delete do %>
-              <%= submit_tag 'Delete', id: 'delete', class: 'btn btn-primary', :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00193a; font-weight: bold;", disabled: @catalogues.empty? %>
+              <%= submit_tag 'Delete', id: 'delete', class: 'btn btn-default', :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; color: red; font-weight: bold;", disabled: @catalogues.empty? %>
               <br /> <br />
               <div class="row">
                 <div id="media-contents" class="col-xs-12">
@@ -39,10 +39,13 @@
               </div>
 
               <% end %>
+
+
+              <%= will_paginate @catalogues, renderer: BootstrapPagination::Rails %><br /><br />
             <% end %>
           </div>
           <div class="col-xs-1">
-            <%= link_to 'Delete All', delete_all_path, method: :delete, id: 'delete-all', class: 'btn btn-primary', :style => "font-family: 'Montserrat', cursive; font-size: 14px;  color: #00193a;", disabled: @catalogues.empty? %>
+            <%= link_to 'Delete All', delete_all_path, method: :delete, id: 'delete-all', data: { confirm: 'Are you sure?' }, class: 'btn btn-default', :style => "font-family: 'Montserrat', cursive; font-size: 14px;  color: red; font-weight: bold;", disabled: @catalogues.empty? %>
           </div>
         </div>
       </div>
@@ -52,7 +55,7 @@
 <br />
 
 
-<%= link_to 'View Album', visitor_catalogues_register_path(:visitor_id => @party.visitors.first.id, :party_id => @party.id, :title => @party.title), :type => "button", :class => "btn btn-info", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: bold; color: #00193a;"  %>
+<%= link_to 'View Album', visitor_catalogues_register_path(:visitor_id => @party.visitors.first.id, :party_id => @party.id, :title => @party.title), :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: bold; color: #00193a;"  %>
 
 
 </section>

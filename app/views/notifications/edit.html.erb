@@ -1,0 +1,15 @@
+ <%= form_for(notification, :url => {:controller => 'notifications', :action => 'update', :id => notification.id, :visitor_id => notification.visitor.id }) do |f| %>
+
+    
+       <%= f.check_box :read, :checked => true, :style => 'visibility: hidden' %>
+
+        <%= button_tag(type: 'submit', :class => "btn btn-default", :style => "font-family: 'Montserrat', cursive; font-size: 16px; color: #318706;" ) do %>Accept
+
+         <% end %>
+         
+         <%= link_to 'Decline', visitor_notification_path(:id => notification.id, :visitor_id => notification.visitor.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: #c60505;",
+                                               method: :delete,
+                                               data: { confirm: 'Are you sure?'} %>
+
+
+         <% end %>

@@ -1,0 +1,47 @@
+
+ <div ><%= link_to 'MyCatlog', profiles_path, :style => "font-family: 'Patrick Hand SC', cursive; color: #00193a; font-size: 22px;",     :type => "button", :class => "btn btn-success" %></div>
+ <div class="container" id="team" name="team">
+
+    <br />
+
+    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 34px; color: #915b05; text-align: center;">Friend / Family Lists</h4><br /><br />
+  <div class="row">
+
+   <div class="span12">
+
+
+
+          <% (@friends.sort.uniq).each  do |friend| %>
+
+           <% if friend.name? %>
+
+
+          <div class="col-xs-4 ">
+
+            <br /><br />
+
+                    
+          <%= image_tag(friend.buddy.profile.image.url(:original), :weight => "150", :height => "145", :class => "img-rounded", :alt => "") %><br /><br />
+
+
+          <%= link_to("#{friend.name}", profile_path(friend.buddy.profile), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 18px; font-weight: bold; color: #00193a;") %><br /><br />
+         
+          
+          <%= link_to 'Remove Friend', pouch_friend_path(:id => friend.id, :pouch_id => friend.pouch.id), 
+                                                        :type => "button", :class => "btn btn-primary", :style => "font-family: 'Montserrat', cursive; font-size: 16px; color: #820116;",
+                                               method: :delete,
+                                               data: { confirm: 'Are you sure?'} %><br />
+
+
+          </div>
+
+          <% end %>
+
+          <% end %>
+
+           
+
+    </div>
+
+         
+  </div>

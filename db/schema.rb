@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212223507) do
+ActiveRecord::Schema.define(version: 20180214205050) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -86,6 +86,19 @@ ActiveRecord::Schema.define(version: 20180212223507) do
     t.index ["user_id", "visitor_id"], name: "index_comments_on_user_id_and_visitor_id", using: :btree
   end
 
+  create_table "friend_notices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "friend_id"
+    t.integer  "user_id"
+    t.datetime "read_at"
+    t.integer  "buddy_id"
+    t.integer  "pouch_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "action",     default: false
+    t.index ["friend_id"], name: "index_friend_notices_on_friend_id", using: :btree
+    t.index ["user_id"], name: "index_friend_notices_on_user_id", using: :btree
+  end
+
   create_table "friends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "buddy_id"
     t.integer  "invite_id"
@@ -94,7 +107,9 @@ ActiveRecord::Schema.define(version: 20180212223507) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "pouch_id"
     t.index ["invite_id"], name: "index_friends_on_invite_id", using: :btree
+    t.index ["pouch_id"], name: "index_friends_on_pouch_id", using: :btree
     t.index ["user_id"], name: "index_friends_on_user_id", using: :btree
   end
 
@@ -123,15 +138,13 @@ ActiveRecord::Schema.define(version: 20180212223507) do
     t.integer  "guest_id"
     t.integer  "party_id"
     t.integer  "host_id"
-    t.boolean  "read"
     t.integer  "invite_id"
     t.integer  "visitor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "comment_id"
-    t.integer  "album_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
     t.integer  "request_id"
+    t.boolean  "read",       default: false
     t.index ["party_id"], name: "index_notifications_on_party_id", using: :btree
     t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
     t.index ["visitor_id"], name: "index_notifications_on_visitor_id", using: :btree
@@ -163,6 +176,13 @@ ActiveRecord::Schema.define(version: 20180212223507) do
     t.date     "rsvp_by"
     t.time     "time"
     t.index ["user_id"], name: "index_parties_on_user_id", using: :btree
+  end
+
+  create_table "pouches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pouches_on_user_id", using: :btree
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

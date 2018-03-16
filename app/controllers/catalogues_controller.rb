@@ -11,7 +11,7 @@ class CataloguesController < ApplicationController
 
     @party = Party.find_by_title(@title)
 
-    @catalogues = Catalogue.where(:party_id => @party)
+    @catalogues = Catalogue.where(:party_id => @party).paginate(page: params[:page], per_page: 6)
 
    
 

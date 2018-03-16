@@ -1,0 +1,28 @@
+ <% modal ||= false %>
+   <% remote = modal ? true : false %>
+
+         <div class="page_wrapper">
+
+          <div class="row">
+
+            <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
+
+             <div class="col-xs-9" >
+
+                 <%= image_tag(friend_notice.user.profile.image.url(:original), :class => "img-rounded", :alt => "", :weight => "60", :height => "60") %>&nbsp;&nbsp;<strong style="color: #915b05; font-weight: bold;"><%= friend_notice.user.name %></strong>
+                </div>
+
+                <div class="col-xs-3" >
+               
+                <%= render(:template => "friend_notices/edit", :locals => { :friend_notice => friend_notice}) %>
+
+             
+              </div>
+
+
+            </div>
+
+          </div>
+
+      
+      </div><br /><br />

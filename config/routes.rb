@@ -5,24 +5,25 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :profiles  do
-    collection { post :search, to: 'profiles#index' }
-  end
+  resources :profiles
   resources :abouts, only: :show
   resources :how_it_works, only: :show
   resources :term_and_conditions, only: :show
   resources :privacies, only: :show
   resources :contacts, only: [:new, :create, :show]
+
   resources :operators, :except => [:show] do
     member do
       get :delete
     end
     resources :launches
   end
+
     resources :parties do
     resources :invites
     resources :requests
   end
+
  resources :visitors do 
    resources :notifications
    resources :reservations
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
           put "dislike", to: "albums#downvote"
        end
    end
+   
  resources :comments, except: [:index, :new, :show] do
    member do
     get :reply
@@ -39,6 +41,21 @@ Rails.application.routes.draw do
 end
   get 'catalogues/register'
 end
+
+
+resources :pouches do
+
+    resources :friends
+
+  end
+
+
+
+ resources :friend_notices do
+    collection do
+      post :mark_as_read
+    end
+  end
 
  get 'staff', :to => 'access#menu'
  get 'access/menu'

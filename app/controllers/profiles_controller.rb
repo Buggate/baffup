@@ -1,20 +1,39 @@
 class ProfilesController < ApplicationController
 
-layout :resolve_layout
-   
+     layout :resolve_layout
+
     before_action :authenticate_user!
 
     def index
 
         @profile = current_user.profile
 
-    end
+        @pouch = @profile.user.pouch
 
+        @notifications = @profile.user.notifications
+       
+        @visitors = @profile.user.visitors
 
+       @friend_notices = FriendNotice.all.where(:buddy_id => @profile.user)
+
+      if params[:q].present?
+
+           @q = Profile.ransack(params[:q])
+           @profiles = @q.result(distinct: true)
+
+           @profiles = @profiles.paginate(page: params[:profile_page], per_page: 9)
+
+      else
+           @q = Profile.ransack(params[:q])
+           @profiles = @q.result(distinct: true)
+
+      end
+
+   end
 
     def show
 
-      @profile = current_user.profile
+      @profile = Profile.find(params[:id])
       redirect_to_good_slug(@profile) and return if bad_slug?(@profile)
 
     end
@@ -76,6 +95,8 @@ layout :resolve_layout
 
     when "show"
 
+       "pro_show"
+
     else
 
       "te1profile"
@@ -86,6 +107,4 @@ layout :resolve_layout
 
  
 end
-
-
 

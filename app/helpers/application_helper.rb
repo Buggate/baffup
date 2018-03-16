@@ -33,6 +33,7 @@ def checked (area)
     @profile.social_network_group.nil? ? true : @profile.social_network_group.match(area)
 
   end 
-  
+
+
 
 end

@@ -1,30 +1,18 @@
- <% modal ||= false %>
+<% modal ||= false %>
    <% remote = modal ? true : false %>
 
          <div class="page_wrapper">
 
-           <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
+           <div style="font-family: 'Karma', serif; border-bottom: 1px solid lightgrey; padding-bottom: 0.5em ">
+             <%= image_tag(notification.party.user.profile.image.url(:original), :class => "img-rounded", :alt => "", :weight => "60", :height => "60") %>
+                <h3 style="font-size: 18px; color: #00193a; font-weight: bold;">
+                    <%= notification.party.user.name %>,&nbsp;&nbsp;has invited you to their<br /><br />
+                <b style="color: blue;"><%= notification.party.title  %></b><br />This Occasion is scheduled for the <br /></h3>
 
+                <h4><strong style="color: #915b05; font-weight: bold;"><%= notification.party.date %>&nbsp;&nbsp;&nbsp;@&nbsp;<%= notification.party.time.strftime("%I:%M%p") %></strong>   
+                </h4>
 
-                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">Host&nbsp;&nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.user.name %></strong> has sents you an Invitation</h4>
-
-                
-                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">to their occasion -&nbsp;&nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.title  %></strong></h4>
-
-
-                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #00193a; font-weight: bold;">This Occasion is scheduled for the &nbsp;<strong style="color: #915b05; font-weight: bold;"><%= notification.party.date %><br />@&nbsp;&nbsp;<%= notification.party.time.strftime("%I:%M%p") %></strong>
-      
-      </h4>
-                
-
-                <% if notification != nil %>
-
-                   <% @visitor = notification.visitor %>
-
-
-                <div class="btn btn-primary"><%= link_to "Accept", visitor_path(@visitor), :style =>"font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: #00193a;" %></div>
-
-              
-               <% end %>
-             
-         </div>
+    
+             <%= render(:template => "notifications/edit", :locals => { :notification => notification}) %>
+  
+         </div><br /><br />

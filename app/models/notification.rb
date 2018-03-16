@@ -7,8 +7,9 @@ class Notification < ApplicationRecord
 	    #belongs_to :comment 
 	    #belongs_to :album
 		belongs_to :party 
-		belongs_to :visitor
+		belongs_to :visitor, dependent: :destroy
 		belongs_to :user
 
 
 end
+
