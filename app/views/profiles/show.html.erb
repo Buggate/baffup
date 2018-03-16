@@ -210,3 +210,20 @@
 </div>
 
 </div>
+
+
+
+
+
+
+
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18] ActionView::Template::Error (undefined method `id' for nil:NilClass): 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]     100:   <div class="middlebar_content_inner wow fadeInUp"> 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]     101:                   <ul class="middlebar_nav"> 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]     102:                     <li class="mbar_title"><a class="mbar_thubnail" href="#"><%= image_tag(friend.buddy.profile.image.url(:original), :alt => "") %></a><strong><%= link_to("#{friend.buddy.name}", profile_path(friend.buddy.profile), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %></strong><br /><br /> 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]     103:                      <strong><%= link_to 'delete friend', pouch_friend_path(:id => friend.id, :pouch_id => friend.pouch.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: #820116;", method: :delete, data: { confirm: 'Are you sure?'} if friend.name? %></strong> 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]     104:                     </li> 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]     105:                   </ul> 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]     106:                 </div> 
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18]    
+Mar 16 07:14:14 secret-castle-41003 app/web.1: [f47efb3b-ffb7-4fa6-a92a-204edc8bff18] app/views/profiles/show.html.erb:103:in `block in 

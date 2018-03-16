@@ -21,7 +21,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Platform Users" do
 
 
-            table_for User.order('id desc').limit(10).each do |user|
+            table_for User.order('id desc').all.each do |user|
             column(:id)    {|user| user.id }
             column(:name)    {|user| user.profile.name }
             column(:email)    {|user| user.email }
