@@ -63,16 +63,13 @@
         <div class="col-xs-3">
        </div>
        <div class="col-xs-6" >
-          <%= f.label :address_line_1 %>&nbsp;&nbsp;&nbsp;&nbsp;
-          <%= f.text_field :address_line_1 %><br />
-          <%= f.label :address_line_2 %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.label :address_line_1 %><br />
+          <%= f.text_field :address_line_1 %><br /><br />
+          <%= f.label :address_line_2 %><br />
           <%= f.text_field :address_line_2 %><br /><br />
-          <%= f.label :city %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.label :city %><br />
            <%= f.text_field :address_city %><br /><br />
-          
-          <%= f.label :LGA_OPTIONAL %>
-          <%= f.text_field :address_lga %><br /><br />
-         <%= f.label :STATE %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.label :STATE %><br />
           <%= f.text_field :address_state %>
 
        </div>
@@ -91,10 +88,10 @@
        </div>
        <div class="col-xs-6" >
 
-        <%= f.label :country %>&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= f.label :country %><br />
         <%= f.text_field :country %><br /><br />
 
-        <%= f.label :nationality %>&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= f.label :nationality %><br />
         <%= f.text_field :nationality %>
           
        </div>
@@ -118,30 +115,29 @@
       <div class="row" style="font-family: 'Julius Sans One'; font-size: 16px; font-weight: bold; color: #00193a;">
     <div class="col-xs-6" >
       
-           <%= f.label :work_place %>&nbsp;&nbsp;&nbsp;
+           <%= f.label :work_place %><br />
           <%= f.text_field :work_place %>
 
        </div>
       <div class="col-xs-6">
-          <%= f.label :school %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.label :school %><br />
           <%= f.text_field :school %>
        </div>
     </div><br /><br /><br /><br />
 
 <div class="row" style="font-family: 'Julius Sans One'; font-size: 16px; font-weight: bold; color: #00193a;">
-        <div class="col-xs-1">
+        <div class="col-xs-3">
        </div>
-       <div class="col-xs-8" >
-          <%= f.label :work_address_line_1 %>&nbsp;&nbsp;&nbsp;&nbsp;
-          <%= f.text_field :work_address_line_1 %><br />
-          <%= f.label :work_address_line_2 %>&nbsp;&nbsp;&nbsp;&nbsp;
+       <div class="col-xs-7" >
+          <%= f.label :work_address_line_1 %><br />
+          <%= f.text_field :work_address_line_1 %><br /><br />
+          <%= f.label :work_address_line_2 %><br />
           <%= f.text_field :work_address_line_2 %><br /><br />
-          <%= f.label :city %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.label :city %><br />
            <%= f.text_field :work_address_state %><br /><br />
           
-          <%= f.label :lga_optional %>
-          <%= f.text_field :work_address_lga %><br /><br />
-         <%= f.label :state %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+         <%= f.label :state %><br />
           <%= f.text_field :work_address_state %>
 
        </div>
@@ -156,33 +152,36 @@
    <div class="row" style="font-family: 'Julius Sans One'; font-size: 16px; font-weight: bold; color: #00193a;">
        <div class="col-xs-6" >
       
-           <%= f.label :work_email %>&nbsp;&nbsp;&nbsp;
+           <%= f.label :work_email %><br />
            <%= f.text_field :work_email %>
 
        </div>
        <div class="col-xs-6">
-          <%= f.label :school_email %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.label :school_email %><br />
           <%= f.text_field :school_email %>
        </div>
     </div><br /><br /><br /><br />
 
   <div class="row" style="font-family: 'Julius Sans One'; sans-serif; font-size: 16px; font-weight: bold; color: #00193a;">
        <div class="col-xs-6" >
-           <%= f.label :professional_skill %>&nbsp;&nbsp;&nbsp;&nbsp;
+           <%= f.label :professional_skill %><br />
           <%= f.text_field :professional_skill %>
        </div>
        <div class="col-xs-6">
-          <%= f.label :course %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.label :course %><br />
           <%= f.text_field :course %>
        </div>
       </div><br /><br /><br /><br />
      
   <div class="row">
-       <div class="col-xs-8" style="font-family: 'Julius Sans One', sans-serif; font-size: 13px; font-weight: bold; color: #00193a;">
-          <%= f.label :work_phone %>&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <div class="col-xs-3">
+       </div>
+       <div class="col-xs-7" style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; font-weight: bold; color: #00193a;">
+          <%= f.label :work_phone %><br />
           <%= f.text_field :work_phone %>
        </div>
-       <div class="col-xs-4">
+       <div class="col-xs-2">
        </div>
   </div><br /><br /><br /><br />
 

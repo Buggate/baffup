@@ -33,6 +33,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .search-people form {
   border: 1px solid #00193a;
   border-radius: 5px; 
+  box-shadow: inset 3px 3px 5px 6px #0c0000;
   display: inline-block;
   font-size: 0px;
   margin: 150px auto 0;
@@ -44,7 +45,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .search-people input {
   border: 1px solid #444;
   border-radius: 5px 0 0 5px;
-  background-color: lightgrey;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  color: #888;
   display: block;
   float: left;
   font-family: 'Ubuntu', sans-serif;
@@ -53,8 +55,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   height: 40px;
   margin: 0;
   padding: 0 10px;
-  text-shadow: -1px 0 black, 0 1px blue,
-      1px 0 blue, 0 -1px blue;
+  text-shadow: 0 -1px 0 #000;
   width: 400px;
 }
 
@@ -91,7 +92,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 1px solid #444;
   border-left-color: #000;
   border-radius: 0 5px 5px 0;
-  background-color: lightgrey;
+  box-shadow: 0 2px 0 #000;
+  color: #fff;
   display: block;
   float: left;
   font-family: 'Cabin', helvetica, arial, sans-serif;
@@ -102,6 +104,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin: 0;
   padding: 0;
   position: relative;
+  text-shadow: 0 -1px 0 #000;
   width: 40px;
 } 
 

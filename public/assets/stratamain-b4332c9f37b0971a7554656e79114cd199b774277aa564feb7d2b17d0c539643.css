@@ -53,8 +53,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   height: 40px;
   margin: 0;
   padding: 0 10px;
-  text-shadow: -1px 0 black, 0 1px blue,
-      1px 0 blue, 0 -1px blue;
+  text-shadow: -1px 0 black 0 1px black
+      1px 0 black 0 -1px black;
   width: 400px;
 }
 

@@ -1,6 +1,3 @@
-
-<div><%= link_to 'myCatlog', profiles_path, :type => "button", :class => "btn btn-success", :style => "font-family: 'Patrick Hand SC', cursive; color: #00193a;" %></div>
-
 <div class="container">
     <div class="fb-profile">
         <%= image_tag(@profile.header_photo.url(:large), :class => "fb-image-lg", :alt => "", :align => 'left' ) %>
@@ -44,7 +41,8 @@
              
                 <div class="right1-w3ls">
                    
-                    <p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: #00193a; font-weight: bold;"><%= @profile.hobbies %></p>
+                    <p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: #00193a; font-weight: bold;"><%= @profile.hobbies || "You are unique!!! Tell us about what you do to chill. How do you unwind? This could be by urself of with family and friends. 
+                      Hope you get it."%></p>
                 </div>
                
             </div>
@@ -63,7 +61,7 @@
         
           <div class="leftbar_content">
            <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #895404; font-weight: bold;">My Occasions</h2>
-             <% @visitors = @profile.user.visitors.paginate(page: params[:visitor_page], per_page: 3) %>
+             <% @visitors = @profile.user.visitors.paginate(page: params[:visitor_page], per_page: 10) %>
                    
         <% @visitors.each do |visitor| %>
             <div class="single_stuff wow fadeInDown">
@@ -72,7 +70,7 @@
                 <div class="single_sarticle_inner"><a class="stuff_category", style="font-family: 'Julius Sans One', sans-serif; font-size: 16px; color: #895404; font-weight: bold;" href="#"><i  class="fa fa-glass"  fa-4x aria-hidden="true"></i>&nbsp;<strong><%= link_to (visitor.party.title), visitor_path(visitor) if visitor.party  %></strong></a></div>
 
           <div class="stuff_article_inner"> <span class="stuff_date"><%= visitor.party.date.strftime("%b #{visitor.party.date.day.ordinalize}, %Y") %><br /><%= visitor.party.time.strftime("%I:%m%p") %></span>
-                    <h2><a href="pages/single.html"><%= visitor.party.venue %></a></h2>
+                    <h5 style="font-weight: bold;"><a href="pages/single.html"><%= visitor.party.venue %></a></h5>
                     <q style="color: #890323; font-weight: bold;"><%= visitor.party.message %></q>
                   </div>
                 </div>
@@ -92,18 +90,22 @@
 
             <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #028c09; font-weight: bold;">Friend/Family List</h2>
 
-            <% @friends = @profile.user.friends.paginate(page: params[:friend_page], per_page: 6) %>
+            <% @friends = @profile.user.friends.paginate(page: params[:friend_page], per_page: 20) %>
                          
                 <% @friends.each do |friend| %>
+
+                <% if friend.name? %>
                 
 
   <div class="middlebar_content_inner wow fadeInUp">
                   <ul class="middlebar_nav">
                     <li class="mbar_title"><a class="mbar_thubnail" href="#"><%= image_tag(friend.buddy.profile.image.url(:original), :alt => "") %></a><strong><%= link_to("#{friend.buddy.name}", profile_path(friend.buddy.profile), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %></strong><br /><br />
-                     <strong><%= link_to 'delete friend', pouch_friend_path(:id => friend.id, :pouch_id => friend.pouch.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: #820116;", method: :delete, data: { confirm: 'Are you sure?'} if friend.name? %></strong>
+                     <strong><%= link_to 'delete friend', pouch_friend_path(:id => friend.id, :pouch_id => friend.pouch.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: #820116;", method: :delete, data: { confirm: 'Are you sure?'}  %></strong>
                   </ul>
                 </div>
               
+               <% end %>
+
                <% end %>
 
             <%= will_paginate @friends, :param_name => 'friend_page', renderer: BootstrapPagination::Rails %>
@@ -114,25 +116,27 @@
       <div class="col-6 col-sm-4 col-md-4 col-lg-4 ">
         
           <div class="rightbar_content">
-            <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #8c0207; font-weight: bold;">Featured Photo Album</h2>
-              <% @catalogues = @profile.user.catalogues.paginate(page: params[:catalogue_page], per_page: 3) %>
+            <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #8c0207; font-weight: bold;">My Photo Albums</h2>
+              <% @catalogues = @profile.user.catalogues.paginate(page: params[:catalogue_page], per_page: 12) %>
 
                <% @catalogues.each do |catalogue| %>
               <div class="single_blog_sidebar wow fadeInUp">
                
                   
-                      <ul class="featured_nav">
-                        <li><a href="#" class="featured_nav"><%= image_tag(catalogue.file_name.url, :weight => "270", :height => "200", :alt => "") %></a>
+                      <ul>
+                        <li><a ><%= image_tag(catalogue.file_name.url, :weight => "270", :height => "200", :alt => "") %></a>
 
 
                         </li>
                        
                       </ul>
 
+                  </div>     
+
                       <% end %>
 
               <%= will_paginate @catalogues, :param_name => 'catalogue_page', renderer: BootstrapPagination::Rails %>
-            </div>
+           
           
 
           </div>
@@ -140,10 +144,6 @@
                    
 
        </div>
-
-
-    </div>    
-
 
   </section> 
 
@@ -157,12 +157,14 @@
 
                     <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #8c0207; font-weight: bold;"> Interesting Post</h2>
                           <% @profile.user.visitors.each do |visitor| %>
-                          <% @albums = visitor.albums.paginate(page: params[:album_page], per_page: 3) %>
+                          <% @albums = visitor.albums.paginate(page: params[:album_page], per_page: 12) %>
                             <% @albums.each do |album| %>
                     <div class="single_blog_sidebar wow fadeInUp">
                           <ul class="featured_nav">
                             <li><a class="mbar_thubnail" href="#"><%= image_tag(album.picture.url(:original))%></a>
-                              <div >Owner:&nbsp;<strong><a class="" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #0e171c; font-weight: bold;" href="#"><%= album.visitor.name %></a></strong></div>
+                              <div >Owner:&nbsp;<strong><a class="" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #0e171c; font-weight: bold;" href="#"><%= album.visitor.name %></a><br />
+                              Description:&nbsp;<strong><a class="" style="font-family: 'Julius Sans One', sans-serif; font-size: 14px; color: #0e171c; font-weight: bold;" href="#"><%= album.caption %></a>
+                              </strong></div>
                             </li>
                           </ul>
                   </div>
@@ -209,4 +211,5 @@
 </div>
 
 </div>
+
 

@@ -22,6 +22,11 @@ end
 
         custom_slugs_with(:name)
 
+
+
+
+
+ 
        
 end
 

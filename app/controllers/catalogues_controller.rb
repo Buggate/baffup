@@ -18,6 +18,7 @@ class CataloguesController < ApplicationController
   end
 
 
+
 def register
 
   @party = Party.find_by_title(@title)
@@ -27,11 +28,12 @@ def register
   
 end
 
+
   def create
 
     @party = Party.find_by_title(@title)
 
-    @catalogue = @party.catalogues.build({:party_id => @party.id, :title => @party.title, file_name: params[:file] })
+    @catalogue = @party.catalogues.build({:user_id => @party.user.id, :party_id => @party.id, :title => @party.title, file_name: params[:file] })
 
     if @catalogue.save!
 
@@ -49,14 +51,18 @@ end
 
   end
 
+
 def delete_catalogue
+  
 
   Catalogue.where(id: params[:catalogues]).destroy_all
-  redirect_to root_url
 
+  redirect_to root_url
+ 
 end
 
 def delete_all
+   
   Catalogue.delete_all
   redirect_to root_url
 end
@@ -84,15 +90,11 @@ end
 
  end
 
-
   def catalogue_params
 
-    params.require(:catalogue).permit(:file_name, :party_id, :title)
+    params.require(:catalogue).permit(:file_name, :party_id, :title, :user_id)
 
   end
-
-
-  
 
   def find_party
 
@@ -107,20 +109,12 @@ end
       end
   end
 
-
-
   def find_title
 
     @title = params[:title]
 
       
   end
-
-
-
-
-
-
 
 
     def initialize_party
@@ -135,6 +129,6 @@ end
 
 
 
-
-
 end
+
+
