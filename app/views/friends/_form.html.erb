@@ -3,15 +3,15 @@
          
      
            
-            <%= f.text_field(:pouch_id) %>
+            <%= f.hidden_field(:pouch_id) %>
       
-            <%= f.text_field(:buddy_id) %>
+            <%= f.hidden_field(:buddy_id) %>
       
-            <%= f.text_field(:user_id) %>
+            <%= f.hidden_field(:user_id) %>
        
-            <%= f.text_field(:email) %>
+            <%= f.hidden_field(:email) %>
        
-            <%= f.text_field(:invite_id, :value => 0 ) %>
+            <%= f.hidden_field(:invite_id, :value => 0 ) %>
 
    <%= button_tag(type: 'submit' , class: "btn btn-success", :style => "font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: bold; color: #00193a; ") do %>
     <i class="fa fa-user-plus" aria-hidden="true" style="color: #00193a;"></i>&nbsp;send_request
