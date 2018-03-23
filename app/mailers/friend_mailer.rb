@@ -1,10 +1,10 @@
 class FriendMailer < ApplicationMailer
 
-	default from: "Baffsup_Invitation@baffsup.com"
+	default from: "Baffsup<notify@baffsup.com>"
 
 
 
-    def baffsup_pouch_friend(friend, pouch, edit_pouch_friend_url)
+    def baffsup_friend_request(friend, pouch, edit_pouch_friend_url)
 
 
         @friend = friend
@@ -18,8 +18,10 @@ class FriendMailer < ApplicationMailer
            
         @url = 'https://secret-castle-41003.herokuapp.com'
 
+        attachments.inline['b_logo1.png'] = File.read('./public/b_logo1.png')
+
   
-        mail(to: @friend.email)
+        mail(to: @friend.name)
 
 
     end

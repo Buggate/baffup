@@ -30,7 +30,7 @@ class FriendsController < ApplicationController
    if  @friend.save!
 
          
-         FriendMailer.baffsup_pouch_friend(@friend, @pouch, edit_pouch_friend_url(:id => @friend.id, :pouch_id => @pouch.id)).deliver_now
+         FriendMailer.baffsup_friend_request(@friend, @pouch, edit_pouch_friend_url(:id => @friend.id, :pouch_id => @pouch.id)).deliver_now
          
          create_friend_notice @friend, @pouch, @user, @buddy
          

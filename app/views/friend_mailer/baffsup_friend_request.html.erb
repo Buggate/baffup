@@ -224,7 +224,7 @@
 <table align="center" cellpadding="0" cellspacing="0" class="container-for-gmail-android" width="100%">
 
   <div style="display:none;font-size:2px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: 'Julius Sans One', sans-serif;">
-             <b><strong><%= @pouch.user.name %></strong>, wants to be your party buddy on Baffsup</b>
+             <b><strong><%= @friend.name %></strong>, you have a friend request waiting.</b>
         </div>
   <tr>
     <td align="left" valign="top" width="100%" style="background: #ffffff;">
@@ -242,7 +242,8 @@
                 <table cellpadding="0" cellspacing="0" width="600" class="w320">
                   <tr>
                     <td align="center" style="vertical-align: middle;">
-                      <a href="https://www.baffsup.com"><%= @pouch.user.profile.image %></a>
+                     
+                         <a href="https://www.baffsup.com"><%= image_tag attachments['b_logo1.png'].url, alt: '', width: '120', height: '100', border: '5' %></a>
 
                     </td>
                    </tr>
