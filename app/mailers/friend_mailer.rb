@@ -20,8 +20,8 @@ class FriendMailer < ApplicationMailer
 
         attachments.inline['b_logo1.png'] = File.read('./public/b_logo1.png')
 
-  
-        mail(to: @friend.name)
+
+        mail to: "#{@friend.name}<#{@friend.email}>"
 
 
     end

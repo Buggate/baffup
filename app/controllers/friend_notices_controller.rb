@@ -43,15 +43,13 @@ class FriendNoticesController < ApplicationController
 
 		  def destroy
 		    
-		   @friend_notice = FriendNotice.find(params[:id]) 
-		    notification.destroy
-		    flash[:notice] = "Friend Record '#{notification.visitor.name}' destroyed successfully."
+		    friend_notice = FriendNotice.find(params[:id]) 
+		    friend_notice.destroy
+		    flash[:notice] = "Friend Request '#{friend_notice}' destroyed successfully."
 
 		    redirect_to profiles_path
 
 		  end 
-
-
 
 
 			private

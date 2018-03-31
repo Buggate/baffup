@@ -42,14 +42,19 @@
                       Hope you get it." %></p>
                 </div>
 
+                <% social_network_groups = @profile.social_network_group  %>
+                <% if social_network_groups != nil %>
+
                  <div class="right1-w3ls">
 
                    <br />
                    <br />
-                    <p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: #00193a; font-weight: bold;"><%= @profile.social_network_group.chomp(' ') %></p>
+                    <p style="font-family: 'Julius Sans One', sans-serif; font-size: 18px; color: #00193a; font-weight: bold;"><%= social_network_groups.chomp(' ') %></p>
 
                      
                 </div>
+
+                <% end %>
 
                
             </div>
@@ -63,7 +68,7 @@
     
      <div class="row">
      
-       <div class=" col-6 col-sm-4 col-md-4 col-lg-4">
+       <div class=" col-12 col-sm-6 col-md-6 col-lg-6">
         
           <div class="leftbar_content">
            <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #895404; font-weight: bold;">My Occasions</h2>
@@ -90,66 +95,64 @@
        </div>    
         
             
-      <div class="col-6 col-sm-4 col-md-4 col-lg-4">
-    
-          <div class="middlebar_content">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+
+      
+         
+         <div class="middlebar_content">
 
             <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #028c09; font-weight: bold;">Friend/Family List</h2>
 
             <% @friends = @profile.user.friends.paginate(page: params[:friend_page], per_page: 20) %>
+
+
+        
                          
                 <% @friends.each do |friend| %>
+
+                 
 
                 <% if friend.name? %>
                 
 
-  <div class="middlebar_content_inner wow fadeInUp">
+                <div class="middlebar_content_inner wow fadeInUp">
+                
+                 
                   <ul class="middlebar_nav">
+
+                 
+
+                
                     <li class="mbar_title"><a class="mbar_thubnail" href="#"><%= image_tag(friend.buddy.profile.image.url(:original), :alt => "") %></a><strong><%= link_to("#{friend.buddy.name}", profile_path(friend.buddy.profile), :style => "font-family: 'Julius Sans One', sans-serif; font-size: 12px; font-weight: bold; color: #00193a;") %></strong><br /><br />
                      <strong><%= link_to 'delete friend', pouch_friend_path(:id => friend.id, :pouch_id => friend.pouch.id), :type => "button", :class => "btn btn-default", :style => "font-family: 'Montserrat', cursive; font-size: 14px; color: #820116;", method: :delete, data: { confirm: 'Are you sure?'}  %></strong>
-                  </ul>
+                     </li>
+
+
+              
+
                 </div>
+                  </ul>
+               
+
+                
               
                <% end %>
 
+
                <% end %>
+
+           
+
+               
+               
 
             <%= will_paginate @friends, :param_name => 'friend_page', renderer: BootstrapPagination::Rails %>
         </div>
      
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-4 col-lg-4 ">
-        
-          <div class="rightbar_content">
-            <h2 style="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: #8c0207; font-weight: bold;">My Photo Albums</h2>
-              <% @catalogues = @profile.user.catalogues.paginate(page: params[:catalogue_page], per_page: 12) %>
-
-               <% @catalogues.each do |catalogue| %>
-              <div class="single_blog_sidebar wow fadeInUp">
-               
-                  
-                      <ul>
-                        <li><a ><%= image_tag(catalogue.file_name.url, :weight => "270", :height => "200", :alt => "") %></a>
-
-
-                        </li>
-                       
-                      </ul>
-
-                  </div>     
-
-                      <% end %>
-
-              <%= will_paginate @catalogues, :param_name => 'catalogue_page', renderer: BootstrapPagination::Rails %>
-           
-          
-
-          </div>
-
-                   
-
-       </div>
+     
+   
+    </div>
+      
 
   </section> 
 

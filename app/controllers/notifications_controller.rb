@@ -18,8 +18,10 @@ before_action :authenticate_user!, except: [:index, :show]
 
     def edit
 
-    	@notification = Notification.find(params[:id]) 
-	
+       @notification = Notification.find(params[:id]) 
+     @visitor = @notification.visitor
+
+    		
     end
           
     def update
@@ -42,9 +44,6 @@ before_action :authenticate_user!, except: [:index, :show]
         end
 
   end
-
-
-
 
 
     def delete
@@ -97,6 +96,3 @@ before_action :authenticate_user!, except: [:index, :show]
 
 
 end
-
-
-

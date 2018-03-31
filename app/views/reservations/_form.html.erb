@@ -10,18 +10,16 @@
                    <%= f.input :name, as: :hidden, input_html: {value: @visitor.user.name} %>
 
                  
+                  <div style ="font-family: 'Vollkorn SC', serif; font-size: 16px; color: #020a00; font-weight: bold; ">
 
-        <p style ="font-family: 'Julius Sans One', sans-serif; font-size: 24px; color: green; font-weight: bold;">
-        R S V P</p>
-                      <div style ="font-family: 'Julius Sans One', sans-serif; font-size: 12px; color: black; font-weight: bold;">
                         <%= label :accept, "Accept With Pleasure" %>&nbsp;&nbsp;
-                        <%= f.radio_button :accept, true, :value => true %>&nbsp;&nbsp;&nbsp;
+                        <%= f.radio_button :accept, true, :value => true %><br /><br />
 
                       <%= label :accept, "Decline With Regards" %>&nbsp;&nbsp;
                         <%= f.radio_button :accept, false, :value => false %>
                       </div><br />
 
-                         <div class="form-group" class="group" style="font-family: 'Patrick Hand SC', cursive; font-size: 12px;  color: black;">
+                         <div class="form-group" class="group" style="font-family: 'Vollkorn SC', serif; font-size: 16px;  color: #020a00;">
 
                           <%= f.submit %>
                           
